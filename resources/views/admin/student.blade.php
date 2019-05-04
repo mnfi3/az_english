@@ -51,6 +51,15 @@
                         </select>
                     </div>
                 </div>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="form-group row py-4">
+                        <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">News Title :</label>
+                        <div class="col-md-8 mr-auto">
+                            <input type="text" id="title" required=""
+                                   class="form-control" name="name" placeholder="set title here">
+
+                        </div>
+                    </div>
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">description text :</label>
                     <div class="col-md-8 mr-auto">
