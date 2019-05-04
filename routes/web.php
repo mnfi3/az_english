@@ -10,6 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
 //News
 Route::get('/news', function () {
   return view('news.news');
@@ -113,7 +127,7 @@ Route::get('/message', function () {
 
 
 
-//Adimin
+//Admin
 Route::get('/login', function () {
 
   return view('admin.logIn');
@@ -173,4 +187,5 @@ Route::get('/admin-course', function () {
 Route::get('/admin-image', function () {
   return view('admin.image');
 });
+
 
