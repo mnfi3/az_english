@@ -29,8 +29,17 @@
                     <div class="col-md-8 mr-auto">
                             <input type="text" id="title" required=""
                                       class="form-control" name="name" placeholder="Slider Title">
-
                     </div>
+                </div>
+                <div class="form-group row py-4">
+                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Select Image :</label>
+                    <div class="col-md-8 mr-auto">
+                        <div  id="">
+                            <div class="d-flex flex-row justify-content-between">
+                                <input type="file" id=""
+                                       class="form-control-file" name="documents[]">
+                            </div>
+                        </div> </div>
                 </div>
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">News Link (if exist) :</label>
