@@ -213,11 +213,11 @@
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Document :</label>
                     <div class="col-md-8 mr-auto">
-                        <div  id="fileInputsContainer">
+                        <div  id="fileInputsContainer2">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
                                        class="form-control-file" name="documents[]">
-                                <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Doc</button>
+                                <button class="btn btn-outline-success text-dark " onclick="addDocumentInput2()">Add New Doc</button>
 
                             </div>
                         </div> </div>
@@ -289,11 +289,11 @@
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Document :</label>
                     <div class="col-md-8 mr-auto">
-                        <div  id="fileInputsContainer">
+                        <div  id="fileInputsContainer3">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
                                        class="form-control-file" name="documents[]">
-                                <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Doc</button>
+                                <button class="btn btn-outline-success text-dark " onclick="addDocumentInput3()">Add New Doc</button>
 
                             </div>
                         </div> </div>
@@ -361,14 +361,15 @@
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Document :</label>
                     <div class="col-md-8 mr-auto">
-                        <div  id="fileInputsContainer">
+                        <div id="fileInputsContainer4">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
                                        class="form-control-file" name="documents[]">
-                                <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Doc</button>
+                                <button class="btn btn-outline-success text-dark " onclick="addDocumentInput4()">Add New Doc</button>
 
                             </div>
-                        </div> </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
@@ -398,6 +399,38 @@
 <script>
   function addDocumentInput() {
     var referenceNode = document.getElementById('fileInputsContainer').lastChild;
+    var newNode = document.createElement("DIV");
+    newNode.className += 'mt-1'
+    newNode.innerHTML = '<input type="file"  required=""\n' +
+      '                       class="form-control-file" name="documents[]">'
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+  function addDocumentInput1() {
+    var referenceNode = document.getElementById('fileInputsContainer1').lastChild;
+    var newNode = document.createElement("DIV");
+    newNode.className += 'mt-1'
+    newNode.innerHTML = '<input type="file"  required=""\n' +
+      '                       class="form-control-file" name="documents[]">'
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+  function addDocumentInput2() {
+    var referenceNode = document.getElementById('fileInputsContainer2').lastChild;
+    var newNode = document.createElement("DIV");
+    newNode.className += 'mt-1'
+    newNode.innerHTML = '<input type="file"  required=""\n' +
+      '                       class="form-control-file" name="documents[]">'
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+  function addDocumentInput3() {
+    var referenceNode = document.getElementById('fileInputsContainer3').lastChild;
+    var newNode = document.createElement("DIV");
+    newNode.className += 'mt-1'
+    newNode.innerHTML = '<input type="file"  required=""\n' +
+      '                       class="form-control-file" name="documents[]">'
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+  function addDocumentInput4() {
+    var referenceNode = document.getElementById('fileInputsContainer4').lastChild;
     var newNode = document.createElement("DIV");
     newNode.className += 'mt-1'
     newNode.innerHTML = '<input type="file"  required=""\n' +

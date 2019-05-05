@@ -64,7 +64,8 @@
                                 <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Doc</button>
 
                             </div>
-                        </div> </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>

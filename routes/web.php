@@ -14,6 +14,9 @@
 Route::get('/news', function () {
   return view('news.news');
 });
+Route::get('/test', function () {
+  return view('test');
+});
 Route::get('/news-detail', function () {
   return view('news.news-detail');
 });
