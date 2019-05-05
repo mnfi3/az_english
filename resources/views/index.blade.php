@@ -28,48 +28,25 @@
     <div class="hero-slides owl-carousel">
 
         <!-- Single  Slide -->
-        <div class="single-hero-slide bg-img " style="background-image: url({{asset('img/bg-img/library.jpg')}});">
+        @foreach($sliders as $slider)
+        <div class="single-hero-slide bg-img " style="background-image: url( @if($slider->image != null) {{asset($slider->image->path)}} @endif );">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <div class="hero-slides-content">
-                            <h4 data-animation="fadeInUp" data-delay="100ms">All thing you need</h4>
-                            <h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br> University</h2>
-                            <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>
+                            <h4 data-animation="fadeInUp" data-delay="100ms"></h4>
+                            <h2 data-animation="fadeInUp" data-delay="400ms">{{$slider->title}}</h2>
+                            @if($slider->link !== null)
+                                <a href="{{$slider->link}}" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
 
         <!-- Single  Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url({{asset('img/bg-img/bg-2.jpg')}});">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <div class="hero-slides-content">
-                            <h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>
-                            <h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br> University</h2>
-                            <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="single-hero-slide bg-img" style="background-image: url({{asset('img/bg-img/Entery.jpg')}});">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <div class="hero-slides-content">
-                            <h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>
-                            <h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br> University</h2>
-                            <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 <!-- ##### Slider End ##### -->
@@ -140,60 +117,25 @@
         <div class="row">
 
             <!-- Single Top Popular Course -->
+            @foreach($posts as $post)
             <div class="col-12 col-lg-6">
                 <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
                     <div class="popular-course-content">
                         <div class="popular-course-thumb bg-img " style="background-image: url({{asset('img/bg-img/pc-3.jpg')}});"></div>
 
-                        <h4 >Know More About ASMU</h4>
-                        <span style="font-weight: 500; font-size: 0.9rem">By Ali Arabgary   |  March 18, 2018</span>
+                        <h4 >{{$post->title}}</h4>
+                        <span style="font-weight: 500; font-size: 0.9rem">{{date_format($post->created_at, 'g:ia \o\n l jS F Y')}}</span>
 
-                        <p style="font-size: 0.95rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dolorem eaque modi, numquam optio quo totam!</p>
+                        <p style="font-size: 0.95rem">
+                            {{substr(strip_tags($post->content), 0, 130)}}...
+                        </p>
                         <a href="#" class="btn academy-btn btn-sm">See More</a>
                     </div>
                  </div>
             </div>
+                @endforeach
 
-            <!-- Single Top Popular Course -->
-            <div class="col-12 col-lg-6">
-                <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
-                    <div class="popular-course-content">
-                        <div class="popular-course-thumb bg-img " style="background-image: url({{asset('img/bg-img/pc-3.jpg')}});"></div>
 
-                        <h4>Know More About ASMU</h4>
-                        <span style="font-weight: 500; font-size: 0.9rem">By Ali Arabgary   |  March 18, 2018</span>
-
-                        <p style="font-size: 0.95rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dolorem eaque modi, numquam optio quo totam!</p>
-                        <a href="#" class="btn academy-btn btn-sm">See More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
-                    <div class="popular-course-content">
-                        <div class="popular-course-thumb bg-img " style="background-image: url({{asset('img/bg-img/pc-3.jpg')}});"></div>
-
-                        <h4>Know More About ASMU</h4>
-                        <span style="font-weight: 500; font-size: 0.9rem">By Ali Arabgary   |  March 18, 2018</span>
-
-                        <p style="font-size: 0.95rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dolorem eaque modi, numquam optio quo totam!</p>
-                        <a href="#" class="btn academy-btn btn-sm">See More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
-                    <div class="popular-course-content">
-                        <div class="popular-course-thumb bg-img " style="background-image: url({{asset('img/bg-img/pc-3.jpg')}});"></div>
-
-                        <h4>Know More About ASMU</h4>
-                        <span style="font-weight: 500; font-size: 0.9rem">By Ali Arabgary   |  March 18, 2018</span>
-
-                        <p style="font-size: 0.95rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dolorem eaque modi, numquam optio quo totam!</p>
-                        <a href="#" class="btn academy-btn btn-sm">See More</a>
-                    </div>
-                </div>
-            </div>
 
 
 

@@ -21,6 +21,19 @@
                 <!--</div>-->
                 <!--</div>-->
                 <!-- Footer Widget Area -->
+
+                @php
+                use App\About;
+                use App\Contact;
+                use App\Link;
+                $images = null;
+                $history = About::orderBy('id', 'desc')->where('type', '=', 'HISTORY')->first();
+                if($history != null) {
+                  $images = $history->images()->orderBy('id', 'desc')->take(9)->get();
+                }
+                $links = Link::all();
+                $contact = Contact::orderBy('id', 'desc')->first();
+                @endphp
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="footer-widget mb-100">
                         <div class="widget-title">
@@ -28,10 +41,9 @@
                         </div>
                         <nav>
                             <ul class="useful-links">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="http://www.ui.ac.ir/index.php">University of Isfahan</a></li>
-                                <li><a href="http://www.tabrizu.ac.ir/en">University of Tabriz</a></li>
-                                <li><a href="http://search.aol.com/aol/webhome">AOL Search</a></li>
+                                @foreach($links as $link)
+                                    <li><a href="{{$link->link}}">{{$link->title}}</a></li>
+                                @endforeach
                             </ul>
                         </nav>
                     </div>
@@ -43,12 +55,11 @@
                             <h6>Gallery</h6>
                         </div>
                         <div class="gallery-list d-flex justify-content-between flex-wrap">
-                            <a href="img/bg-img/uni.jpg" class="gallery-img" title="Gallery Image 1"><img src="img/bg-img/uni.jpg" alt=""></a>
-                            <a href="img/bg-img/uni2.jpg" class="gallery-img" title="Gallery Image 2"><img src="img/bg-img/uni2.jpg" alt=""></a>
-                            <a href="img/bg-img/uni3.jpg" class="gallery-img" title="Gallery Image 3"><img src="img/bg-img/uni3.jpg" alt=""></a>
-                            <a href="img/bg-img/library.jpg" class="gallery-img" title="Gallery Image 4"><img src="img/bg-img/library.jpg" alt=""></a>
-                            <a href="img/bg-img/gallery1.jpg" class="gallery-img" title="Gallery Image 5"><img src="img/bg-img/gallery1.jpg" alt=""></a>
-                            <a href="img/bg-img/pc-2.jpg" class="gallery-img" title="Gallery Image 6"><img src="img/bg-img/pc-2.jpg" alt=""></a>
+                            @if($images != null)
+                            @foreach($images as $image)
+                                <a href="{{asset($image->path)}}" class="gallery-img" title="Gallery Image 1"><img src="{{asset($image->path)}}" alt=""></a>
+                            @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -60,15 +71,15 @@
                         </div>
                         <div class="single-contact d-flex mb-30">
                             <i class="icon-placeholder"></i>
-                            <p>I.R.Iran,Tabriz,Shahid Madani University</p>
+                            <p>{{$contact->address}}</p>
                         </div>
                         <div class="single-contact d-flex mb-30">
                             <i class="icon-telephone-1"></i>
-                            <p>Main:  +98-41-34327526 <br>Office: +98-41-34327526</p>
+                            <p>Main:  {{$contact->phone1}} <br>Office: {{$contact->phone2}}</p>
                         </div>
                         <div class="single-contact d-flex">
                             <i class="icon-contract"></i>
-                            <p>office@azaruniv.com</p>
+                            <p>{{$contact->email}}</p>
                         </div>
                     </div>
                 </div>

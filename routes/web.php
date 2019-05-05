@@ -23,7 +23,7 @@ Route::get('/login', function () {
 })->middleware('guest');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 
@@ -44,29 +44,14 @@ Route::middleware('auth')->group(function () {
   Route::get('/admin-student', 'AdminPanelController@student');
   Route::get('/admin-office', 'AdminPanelController@office');
   Route::get('/admin-llc', 'AdminPanelController@llc');
+  Route::get('/admin-contact', 'AdminPanelController@contactUs');
+  Route::get('/admin-dep', 'AdminPanelController@department');
+  Route::get('/admin-slider', 'AdminPanelController@slider');
+  Route::get('/admin-image', 'AdminPanelController@images');
 
-
-
-
-
-  Route::get('/admin-contact', function () {
-
-    return view('admin.contact');
-  });
-  Route::get('/admin-slider', function () {
-
-    return view('admin.slider');
-  });
-  Route::get('/admin-course', function () {
-    return view('admin.course');
-  });
-  Route::get('/admin-image', function () {
-    return view('admin.image');
-  });
-  Route::get('/admin-dep', function () {
-
-    return view('admin.dep');
-  });
+//  Route::get('/admin-course', function () {
+//    return view('admin.course');
+//  });
 
 
 
@@ -96,6 +81,22 @@ Route::middleware('auth')->group(function () {
   Route::post('/conference-remove', 'OfficeController@conferenceRemove');
   Route::post('/partnership-add', 'OfficeController@partnershipAdd');
   Route::post('/partnership-remove', 'OfficeController@partnershipRemove');
+  Route::post('/llc-add', 'LlcController@llcAdd');
+  Route::post('/llc-remove', 'LlcController@llcRemove');
+  Route::post('/course-add', 'LlcController@courseAdd');
+  Route::post('/course-remove', 'LlcController@courseRemove');
+  Route::post('/contact-add', 'ContactController@contactAdd');
+  Route::get('/contact-remove', 'ContactController@contactRemove');
+  Route::post('/link-add', 'ContactController@linkAdd');
+  Route::post('/link-remove', 'ContactController@linkRemove');
+  Route::post('/department-add', 'DepartmentController@departmentAdd');
+  Route::post('/department-remove', 'DepartmentController@departmentRemove');
+  Route::post('/master-add', 'DepartmentController@masterAdd');
+  Route::post('/master-remove', 'DepartmentController@masterRemove');
+  Route::post('/slider-add', 'SliderController@add');
+  Route::post('/slider-remove', 'SliderController@remove');
+  Route::post('/image-add', 'SliderController@imageAdd');
+
 
 });
 
@@ -108,16 +109,13 @@ Route::middleware('auth')->group(function () {
 
 
 
-//News
-Route::get('/news', function () {
-  return view('news.news');
-});
-Route::get('/news-detail', function () {
-  return view('news.news-detail');
-});
-Route::get('/', function () {
-    return view('index');
-});
+
+Route::get('/', 'SiteController@index');
+Route::get('/news', 'SiteController@posts');
+Route::get('/news-detail/{id}', 'SiteController@post');
+
+
+
 Route::get('/contact-us', function () {
   return view('contact-us');
 });

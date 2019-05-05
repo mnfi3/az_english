@@ -23,14 +23,15 @@
 <div class="container bg" style="border-radius: 15px;">
     <div class="row mt-50 ">
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('image-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Select Image :</label>
                     <div class="col-md-8 mr-auto">
                         <div  id="">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id=""
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="images[]">
                             </div>
                         </div> </div>
                 </div>
@@ -50,105 +51,30 @@
 <div class="container-fluid mt-25 bg mb-100" style="">
 
     <div class="row">
+        @foreach($images as $image)
         <div class="col-12 col-md-3">
 
                 <div class="card1 card">
                     <div class="card_image1">
-                        <img src="img/bg-img/library.jpg" />
+                        <img src="{{$image->path}}" />
                     </div>
+
                     <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                        <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                        </a>  </div>
+                        <div>
+                            <input cl type="url" id="copyInput{{$image->id}}"
+                                    value="{{\Illuminate\Support\Facades\URL::to('/').'/' . $image->path}}" style="background : transparent; opacity : 0.0001;width: 0px; height: 0px";>
+                            <button class="text-white btn btn-danger"  onclick="copyLink({{$image->id}})"  style="font-size: 1rem; bottom: 50px">Copy Link</button>
+                        </div>
+                    </div>
+
+
                 </div>
 
         </div>
-        <div class="col-12 col-md-3">
+        @endforeach
 
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
-            </div>
-
-        </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-md-3">
 
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
-            </div>
-
-        </div>
-    </div>
 
 </div>
 </body>
@@ -160,6 +86,30 @@
     newNode.innerHTML = '<input type="file"  required=""\n' +
       '                       class="form-control-file" name="documents[]">'
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+
+  function copyFunction(id) {
+    /* Get the text field */
+    var copyText = document.getElementById("myInput" + id);
+    console.log(copyText);
+
+    /* Select the text field */
+    copyText.select();
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
+  }
+
+  function copyLink(id) {
+    var copyText = document.getElementById("copyInput"+id);
+    copyText.select();
+    document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+    console.log(copyText.value);
+
   }
 </script>
 </html>

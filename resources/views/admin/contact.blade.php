@@ -29,13 +29,15 @@
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('contact-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Location :</label>
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Address :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                               class="form-control" name="address"
+                        @if($contact != null) value="{{$contact->address}}" @endif>
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -43,7 +45,8 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Phone Number 1 :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                               class="form-control" name="phone1"
+                               @if($contact != null) value="{{$contact->phone1}}" @endif>
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -51,7 +54,8 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Phone Number 2 :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                               class="form-control" name="phone2"
+                               @if($contact != null) value="{{$contact->phone2}}" @endif>
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -59,12 +63,13 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Email :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                               class="form-control" name="email"
+                               @if($contact != null) value="{{$contact->email}}" @endif>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success btn-lg mx-3" type="submit">Save</button>
-                    <button class="btn btn-danger btn-lg mx-3" type="submit">Remove All</button>
+                    <a href="{{url('contact-remove')}}" class="btn btn-danger btn-lg mx-3" type="submit">Remove All</a>
                 </div>
             </form>
         </div>
@@ -82,13 +87,14 @@
 <div class="container bg" >
     <div class="row mt-50 ">
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('link-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Title :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name" placeholder="Enter Link Here">
+                               class="form-control" name="title" placeholder="Enter Link Here">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -96,7 +102,7 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Link :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name" placeholder="Enter Link Here">
+                               class="form-control" name="link" placeholder="Enter Link Here">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
@@ -110,12 +116,17 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
+                @foreach($links as $link)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">TabrizUni.com</a>
-                    <form class="align-self-center" action="" method="post">
+                    <a href="{{$link->link}}" class="text-white mt-2" style="font-size: 1rem">{{$link->title}}</a>
+                    <form class="align-self-center" action="{{url('link-remove')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$link->id}}">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
+                    @endforeach
+
             </ul>
         </div>
 
@@ -144,32 +155,22 @@
         </tr>
         </thead>
         <tbody >
+        @php($i = 0)
+        @foreach($messages as $message)
         <tr>
-            <th scope="row">1</th>
-            <td>Bahram Nouraie</td>
-            <td>aliarabgary@gmail.com</td>
-            <td >1397/01/29</td>
-            <td><button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal">Observe</button></td>
-            <td><a href="">download</a>  </td>
+            <th scope="row">{{++$i}}</th>
+            <td>{{$message->full_name}}</td>
+            <td>{{$message->email}}</td>
+            <td >{{$message->created_at}}</td>
+            <td><button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal{{$message->id}}">Observe</button></td>
+            @if($message->doc != null)
+            <td><a href="{{$message->doc->path}}"  download>download</a>  </td>
+            @else
+            <td><a href=""></a></td>
+            @endif
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>farzade hassani</td>
-            <td>farjamiiii@gmail.com</td>
-            <td >1396/11/09</td>
-            <td><button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal">Observe</button></td>
-            <td><a href="">download</a>  </td>
+        @endforeach
 
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Ali noori</td>
-            <td>m.molaee@gmail.com</td>
-            <td >1395/08/13</td>
-             <td><button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal">Observe</button></td>
-            <td><a href="">download</a> </td>
-
-        </tr>
         </tbody>
     </table>
     <br>
@@ -177,7 +178,8 @@
 </div>
 
 <!--MESSAGE MODAL-->
-<div class="modal rtl" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@foreach($messages as $message)
+<div class="modal rtl" id="Modal{{$message->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
@@ -196,6 +198,7 @@
         </div>
     </div>
 </div>
+@endforeach
 <!-- Modal -->
 
 {{--<div class="container">--}}

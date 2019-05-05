@@ -25,17 +25,17 @@
 <div class="container bg" style=" border-radius: 15px;">
     <div class="row mt-50 ">
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('department-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
                     <div class="col-md-8 mr-auto">
-                        <select name="fac-id" id="" class="form-control">
-                            <option value="1"></option>
-                            <option value="2">Engineering</option>
-                            <option value="3">power</option>
-                            <option value="4">It</option>
-                            <option value="5">Chemistry</option>
+                        <select name="faculty_id" id="" class="form-control">
+                            <option value="0"></option>
+                            @foreach($faculties as $faculty)
+                                <option value="{{$faculty->id}}">{{$faculty->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -59,24 +59,17 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
+                @foreach($departments as $department)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Physics</a>
-                    <form class="align-self-center" action="" method="post">
+                    <a href="#" class="text-white mt-2" style="font-size: 1rem">{{$department->name}}</a>
+                    <form class="align-self-center" action="{{url('department-remove')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$department->id}}">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
-                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Electric</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Delete">
-                    </form>
-                </li>
-                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Computer</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Delete">
-                    </form>
-                </li>
+                @endforeach
+
             </ul>
         </div>
     </div>
@@ -93,18 +86,17 @@
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
-
+            <form action="{{url('master-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Dempartment Name :</label>
                     <div class="col-md-8 mr-auto">
-                        <select name="fac-id" id="" class="form-control">
-                            <option value="1"></option>
-                            <option value="2">Engineering</option>
-                            <option value="3">power</option>
-                            <option value="4">It</option>
-                            <option value="5">Chemistry</option>
+                        <select name="department_id" id="" class="form-control">
+                            <option value="0"></option>
+                            @foreach($departments as $department)
+                            <option value="{{$department->id}}">{{$department->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -118,10 +110,10 @@
                 </div>
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's Specialty :</label>
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's Speciality :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                               class="form-control" name="speciality">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -129,7 +121,7 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's Academic Rank :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                               class="form-control" name="rank">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -137,7 +129,7 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's Email :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                               class="form-control" name="email">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -145,7 +137,7 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's CV Link (if exist) :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                               class="form-control" name="cv_link">
                     </div>
                 </div>
                 <div class="form-group row py-4">
@@ -155,7 +147,7 @@
                         <div id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="images[]">
                              </div>
                         </div>
                     </div>
@@ -183,18 +175,17 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
+                @foreach($masters as $master)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Ali Zmani</a>
-                    <form class="align-self-center" action="" method="post">
+                    <a href="#" class="text-white mt-2" style="font-size: 1rem">{{$master->name}}</a>
+                    <form class="align-self-center" action="{{url('master-add')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$master->id}}">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
-                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Mehdi Norani</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Delete">
-                    </form>
-                </li>
+                    @endforeach
+
             </ul>
         </div>
     </div>

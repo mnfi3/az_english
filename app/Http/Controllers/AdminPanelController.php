@@ -5,16 +5,22 @@ namespace App\Http\Controllers;
 use App\About;
 use App\CampusLife;
 use App\Conference;
+use App\Contact;
 use App\Course;
+use App\Department;
 use App\Document;
 use App\Faculty;
 use App\Image;
+use App\Link;
 use App\LLCForm;
+use App\Master;
+use App\Message;
 use App\Mou;
 use App\Partnership;
 use App\Post;
 use App\Project;
 use App\Research;
+use App\Slider;
 use App\Staff;
 use App\Student;
 use Illuminate\Http\Request;
@@ -80,6 +86,32 @@ class AdminPanelController extends Controller
       $forms = LLCForm::all();
       $courses = Course::all();
       return view('admin.llc', compact(['forms', 'courses']));
+    }
+
+
+    public function contactUs(){
+      $contact = Contact::orderBy('id', 'desc')->first();
+      $links = Link::all();
+      $messages = Message::orderBy('id', 'desc')->paginate(200);
+      return view('admin.contact', compact(['contact', 'links', 'messages']));
+    }
+
+    public function department(){
+      $faculties = Faculty::all();
+      $departments = Department::all();
+      $masters = Master::orderBy('id', 'desc')->get();
+      return view('admin.dep', compact(['faculties', 'masters', 'departments']));
+    }
+
+
+    public function slider(){
+      $sliders = Slider::all();
+      return view('admin.slider', compact('sliders'));
+    }
+
+    public function images(){
+      $images = Image::orderBy('id', 'desc')->get();
+      return view('admin.image', compact('images'));
     }
 
 
