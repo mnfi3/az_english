@@ -36,26 +36,35 @@
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('student-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row pt-4">
                     <label class="col-md-3 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Type :</label>
                     <div class="col-md-8 mr-auto">
-                        <select name="fac-id" id="" class="form-control">
+                        <select name="type" id="" class="form-control">
                             <option value="1"></option>
-                            <option value="2">Admission</option>
-                            <option value="3">Scholarship</option>
-                            <option value="4">programs</option>
-                            <option value="5">cost and fee</option>
-                            <option value="5">how to apply</option>
+                            <option value="ADMISSION">Admission</option>
+                            <option value="SCHOLARSHIP">Scholarship</option>
+                            <option value="PROGRAMS">programs</option>
+                            <option value="COST AND FREE">cost and fee</option>
+                            <option value="HOW TO PLAY">how to apply</option>
                         </select>
                     </div>
                 </div>
+                    <div class="form-group row py-4">
+                        <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">News Title :</label>
+                        <div class="col-md-8 mr-auto">
+                            <input type="text" id="title" required=""
+                                   class="form-control" name="title" placeholder="set title here">
+
+                        </div>
+                    </div>
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">description text :</label>
                     <div class="col-md-8 mr-auto">
                                <textarea type="text" id="editor1" required=""
-                                         class="form-control" name="editor1" placeholder="set content here">
+                                         class="form-control" name="description" placeholder="set content here">
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor1' );
@@ -65,10 +74,10 @@
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Image :</label>
                     <div class="col-md-8 mr-auto">
-                        <div  id="fileInputsContainer">
+                        <div  id="imageInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
-                                <input type="file" id="documents"
-                                       class="form-control-file" name="documents[]">
+                                <input type="file" id="images"
+                                       class="form-control-file" name="images[]">
                                 {{--<button class="btn btn-outline-success text-dark " onclick="">Add New Image</button>--}}
                             </div>
                         </div> </div>
@@ -90,29 +99,24 @@
                 </div>
             </form>
         </div>
+
         <div class="col-12 col-md-4">
             <div class="d-flex justify-content-end">
                 <h2 class="text-white">All Parts</h2>
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
+                @foreach($students as $student)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">scholarship</a>
-                    <form class="align-self-center" action="" method="post">
+                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$student->title}}</a>
+                    <form class="align-self-center" action="{{url('student-remove')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$student->id}}">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
-                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">Admission</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Delete">
-                    </form>
-                </li>  <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">Cost and fee</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Delete">
-                    </form>
-                </li>
+                @endforeach
+
             </ul>
         </div>
     </div>

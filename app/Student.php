@@ -9,7 +9,7 @@ class Student extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['type', 'description'];
+    protected $fillable = ['type', 'title', 'description'];
 
   public function image(){
     return $this->morphOne('App\Image', 'imageable');

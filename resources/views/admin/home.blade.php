@@ -19,9 +19,12 @@
 <body style="background-color: #002147; font-family: Vazir; color: #ffffff;">
 <section id="manage">
     <div class="container-fluid" style="border-radius: 2rem">
-        <div class="d-flex flex-row justify-content-start ml-3">
-            <a href="" class="btn btn-danger btn-sm"><h5 class=" text-white">Exit</h5></a>
-        </div>
+        <form action="{{url('logout')}}" method="post">
+            @csrf
+            <div class="d-flex flex-row justify-content-start ml-3">
+                <button type="submit" class="btn btn-danger btn-sm"><h5 class=" text-white">Exit</h5></button>
+            </div>
+        </form>
         <div class="d-flex flex-row justify-content-center mt-50">
             <h2 class=" text-white">  به پنل مدیریت خوش آمدید</h2>
         </div>

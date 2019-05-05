@@ -17,9 +17,93 @@
 
 
 
-Auth::routes();
+//Auth::routes();
+Route::get('/login', function () {
+  return view('admin.logIn');
+})->middleware('guest');
+Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+
+
+
+//Admin
+Route::middleware('auth')->group(function () {
+  Route::get('/admin-home', 'AdminPanelController@home');
+  Route::get('/admin-news', 'AdminPanelController@news');
+  Route::get('/admin-about', 'AdminPanelController@about');
+  Route::get('/admin-academic', 'AdminPanelController@academic');
+  Route::get('/admin-research', 'AdminPanelController@researches');
+  Route::get('/admin-campus','AdminPanelController@campus');
+  Route::get('/admin-student', 'AdminPanelController@student');
+  Route::get('/admin-office', 'AdminPanelController@office');
+  Route::get('/admin-llc', 'AdminPanelController@llc');
+
+
+
+
+
+  Route::get('/admin-contact', function () {
+
+    return view('admin.contact');
+  });
+  Route::get('/admin-slider', function () {
+
+    return view('admin.slider');
+  });
+  Route::get('/admin-course', function () {
+    return view('admin.course');
+  });
+  Route::get('/admin-image', function () {
+    return view('admin.image');
+  });
+  Route::get('/admin-dep', function () {
+
+    return view('admin.dep');
+  });
+
+
+
+
+
+  Route::post('/post-add', 'PostController@add');
+  Route::post('/post-remove', 'PostController@remove');
+  Route::post('/history-add', 'AboutController@historyAdd');
+  Route::get('/history-remove', 'AboutController@historyRemove');
+  Route::post('/president-message-add', 'AboutController@presidentMessageAdd');
+  Route::get('/president-message-remove', 'AboutController@presidentMessageRemove');
+  Route::post('/faculty-add', 'FacultyController@add');
+  Route::post('/faculty-remove', 'FacultyController@remove');
+  Route::post('/research-add', 'ResearchController@add');
+  Route::post('/research-remove', 'ResearchController@remove');
+  Route::post('/campus-add', 'CampusController@add');
+  Route::post('/campus-remove', 'CampusController@remove');
+  Route::post('/student-add', 'StudentController@add');
+  Route::post('/student-remove', 'StudentController@remove');
+  Route::post('/staff-add', 'OfficeController@staffAdd');
+  Route::post('/staff-remove', 'OfficeController@staffRemove');
+  Route::post('/mou-add', 'OfficeController@mouAdd');
+  Route::post('/mou-remove', 'OfficeController@mouRemove');
+  Route::post('/project-add', 'OfficeController@projectAdd');
+  Route::post('/project-remove', 'OfficeController@projectRemove');
+  Route::post('/conference-add', 'OfficeController@conferenceAdd');
+  Route::post('/conference-remove', 'OfficeController@conferenceRemove');
+  Route::post('/partnership-add', 'OfficeController@partnershipAdd');
+  Route::post('/partnership-remove', 'OfficeController@partnershipRemove');
+
+});
+
+
+
+
+
+
 
 
 
@@ -127,65 +211,5 @@ Route::get('/message', function () {
 
 
 
-//Admin
-Route::get('/login', function () {
-
-  return view('admin.logIn');
-});
-Route::get('/admin-home', function () {
-
-  return view('admin.home');
-});
-Route::get('/admin-about', function () {
-
-  return view('admin.about');
-});
-Route::get('/admin-news', function () {
-
-  return view('admin.news');
-});
-Route::get('/admin-academic', function () {
-
-  return view('admin.academic');
-});
-Route::get('/admin-dep', function () {
-
-  return view('admin.dep');
-});
-
-Route::get('/admin-campus', function () {
-
-  return view('admin.campus');
-});
-Route::get('/admin-research', function () {
-
-  return view('admin.research');
-});
-Route::get('/admin-student', function () {
-
-  return view('admin.student');
-});
-Route::get('/admin-office', function () {
-
-  return view('admin.office');
-});
-Route::get('/admin-llc', function () {
-
-  return view('admin.llc');
-});
-Route::get('/admin-contact', function () {
-
-  return view('admin.contact');
-});
-Route::get('/admin-slider', function () {
-
-  return view('admin.slider');
-});
-Route::get('/admin-course', function () {
-  return view('admin.course');
-});
-Route::get('/admin-image', function () {
-  return view('admin.image');
-});
 
 

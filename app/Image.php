@@ -9,5 +9,5 @@ class Image extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['path'];
+    protected $fillable = ['imageable_id', 'imageable_type', 'path'];
 }

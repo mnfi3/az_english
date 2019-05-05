@@ -20,72 +20,23 @@
         <h3 class="text-white"><a href="{{url('/admin-home')}}" class="text-white btn btn-lg btn-outline-warning" style="font-size: 20px"> <span><div class="fa fa-home"></div></span>  Back to home </a></h3>
         <h2 class=" text-white">Facultie Section</h2>
     </div>
-    <div class="container bg" style=" border-radius: 15px;">
-        <div class="row mt-50 ">
-            <div class="col-12 col-md-8">
-                <form action="" method="post" enctype="multipart/form-data">
-                    <div class="form-group row py-4">
-                        <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
-                        <div class="col-md-8 mr-auto">
-                                <input type="text" id="title" required=""
-                                          class="form-control" name="name" placeholder="Enter Name Here">
-                        </div>
-                 </div>
-                  <div class="d-flex justify-content-center mb-3">
-                       <button class="btn btn-success btn-lg" type="submit">Save</button>
-                    </div>
-              </form>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="d-flex justify-content-end">
-                    <h2 class="text-white">All Faculties</h2>
-                </div>
-                <div class="divider-red"></div>
-                <ul class="nav-list d-flex flex-column p-0">
-                    <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                        <a href="#" class="text-white mt-2" style="font-size: 1rem">Computer</a>
-                        <form class="align-self-center" action="" method="post">
-                            <input type="submit" class="btn btn-success  " value="Delete">
-                        </form>
-                    </li>
-                    <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                        <a href="#" class="text-white mt-2" style="font-size: 1rem">Electric</a>
-                        <form class="align-self-center" action="" method="post">
-                            <input type="submit" class="btn btn-success  " value="Delete">
-                        </form>
-                    </li>
-                </ul>
-            </div>
-     </div>
-     <br>
-     <br>
-</div>
-<div class="container">
-    <div class="d-flex flex-row justify-content-between mt-50">
-    </div>
-    {{--<h3 class="text-white"><a href="{{url('/admin-home')}}" class="text-white btn btn-lg btn-outline-warning" style="font-size: 20px"> <span><div class="fa fa-home"></div></span>  Back to home </a></h3>--}}
-    <h2 class=" text-white">Description for faculties</h2>
-</div>
 <div class="container bg" style=" ">
     <div class="row mt-50 ">
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
-                <div class="form-group row py-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Facultie Name :</label>
+            <form action="{{url('faculty-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group row pt-4">
+                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
                     <div class="col-md-8 mr-auto">
-                        <select name="fac-id" id="" class="form-control">
-                            <option value="1">Engineering</option>
-                            <option value="2">power</option>
-                            <option value="3">It</option>
-                            <option value="4">Chemistry</option>
-                        </select>
+                        <input type="text" id="title" required=""
+                               class="form-control" name="name" placeholder="Enter Name Here">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Description text :</label>
                     <div class="col-md-8 mr-auto">
                             <textarea type="text" id="editor1" required=""
-                                      class="form-control" name="editor1" placeholder="set content here">
+                                      class="form-control" name="description" placeholder="set content here">
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor1' );
@@ -98,7 +49,7 @@
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="images[]">
                                 {{--<button class="btn btn-outline-success text-dark " onclick="">Add New Image</button>--}}
                             </div>
                         </div> </div>
@@ -115,12 +66,16 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
+                @foreach($faculties as $faculty)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Physics</a>
-                    <form class="align-self-center" action="" method="post">
+                    <a href="#" class="text-white mt-2" style="font-size: 1rem">{{$faculty->name}}</a>
+                    <form class="align-self-center" action="{{url('faculty-remove')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$faculty->id}}">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
+               @endforeach
             </ul>
         </div>
     </div>

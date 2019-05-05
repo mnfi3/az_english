@@ -25,22 +25,23 @@
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('campus-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row pt-4">
                     <label class="col-md-3 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Name :</label>
                     <div class="col-md-8 mr-auto">
-                        <select name="fac-id" id="" class="form-control">
+                        <select name="name" id="" class="form-control">
                             <option value="1"></option>
-                            <option value="2">transport</option>
-                            <option value="3">resturant</option>
-                            <option value="4">bank</option>
-                            <option value="5">sport</option>
-                            <option value="5">dormitory</option>
-                            <option value="5">health center</option>
-							<option value="5">Kindergarten</option>
-							<option value="5">masque</option>
-							<option value="5">fruit shop</option>
+                            <option value="TRANSPORT">transport</option>
+                            <option value="RESTURANT">resturant</option>
+                            <option value="BANK">bank</option>
+                            <option value="SPORT">sport</option>
+                            <option value="DORMITORY">dormitory</option>
+                            <option value="HEALTH CENTER">health center</option>
+							<option value="KINDERGARTEN">Kindergarten</option>
+							<option value="MOSQUE">mosque</option>
+							<option value="FRUIT SHOP">fruit shop</option>
                         </select>
                     </div>
                 </div>
@@ -48,7 +49,7 @@
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title"> text :</label>
                     <div class="col-md-8 mr-auto">
                            <textarea type="text" id="editor1" required=""
-                                     class="form-control" name="editor1" placeholder="set content here">
+                                     class="form-control" name="content" placeholder="set content here">
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor1' );
@@ -61,7 +62,7 @@
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="images[]">
                             </div>
                         </div> </div>
                 </div>
@@ -76,18 +77,17 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
+                @foreach($campuses as $campus)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">Bank</a>
-                    <form class="align-self-center" action="" method="post">
+                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$campus->name}}</a>
+                    <form class="align-self-center" action="{{url('campus-remove')}}" method="post">
+                        @csrf
                         <input type="submit" class="btn btn-success  " value="Delete">
+                        <input type="hidden" name="id"  value="{{$campus->id}}">
                     </form>
                 </li>
-                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">transport</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Delete">
-                    </form>
-                </li>
+                @endforeach
+
             </ul>
         </div>
     </div>

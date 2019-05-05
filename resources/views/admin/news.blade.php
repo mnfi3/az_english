@@ -23,12 +23,13 @@
 <div class="container bg" style="border-radius: 15px;">
     <div class="row mt-50 ">
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('post-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">News Title :</label>
                     <div class="col-md-8 mr-auto">
                             <input type="text" id="title" required=""
-                                      class="form-control" name="name" placeholder="set title here">
+                                      class="form-control" name="title" placeholder="set title here">
 
                     </div>
                 </div>
@@ -37,7 +38,7 @@
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">News Content:</label>
                     <div class="col-md-8 mr-auto">
                           <textarea type="text" id="editor1" required=""
-                                    class="form-control" name="editor1" placeholder="set content here">
+                                    class="form-control" name="content" placeholder="set content here">
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor1' );
@@ -50,7 +51,7 @@
                         <div  id="">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id=""
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="image">
                                    </div>
                         </div> </div>
                 </div>
@@ -77,12 +78,17 @@
             </div>
            <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
+                @foreach($posts as$post)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">Latest News in ASMU</a>
-                    <form class="align-self-center" action="" method="post">
+                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$post->title}}</a>
+                    <form class="align-self-center" action="{{url('post-remove')}}" method="post">
+                        @csrf
+                        <input name="id" type="hidden" value="{{$post->id}}">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
+                @endforeach
+
             </ul>
         </div>
     </div>

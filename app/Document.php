@@ -9,5 +9,5 @@ class Document extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['path'];
+    protected $fillable = ['documentable_id', 'documentable_type', 'path'];
 }

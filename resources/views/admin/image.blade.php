@@ -39,23 +39,117 @@
                 </div>
             </form>
         </div>
-        <div class="col-12 col-md-4">
-            <div class="d-flex justify-content-end">
-                <h2 class="text-white">All Images</h2>
-            </div>
-            <div class="divider-red"></div>
-            <ul class="nav-list d-flex flex-column p-0">
-                <li class="d-flex flex-row justify-content-between bg-danger mt-2 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white " style="font-size: 1rem">Image of ASMU</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Copy Link">
-                    </form>
-                </li>
-            </ul>
-        </div>
     </div>
     <br>
     <br>
+</div>
+
+<div class="container mt-50">
+    <h2 class=" text-white">All Images</h2>
+</div>
+<div class="container-fluid mt-25 bg mb-100" style="">
+
+    <div class="row">
+        <div class="col-12 col-md-3">
+
+                <div class="card1 card">
+                    <div class="card_image1">
+                        <img src="img/bg-img/library.jpg" />
+                    </div>
+                    <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                        <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
+                        </a>  </div>
+                </div>
+
+        </div>
+        <div class="col-12 col-md-3">
+
+            <div class="card1 card">
+                <div class="card_image1">
+                    <img src="img/bg-img/library.jpg" />
+                </div>
+                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
+                    </a>  </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-3">
+
+            <div class="card1 card">
+                <div class="card_image1">
+                    <img src="img/bg-img/library.jpg" />
+                </div>
+                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
+                    </a>  </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-3">
+
+            <div class="card1 card">
+                <div class="card_image1">
+                    <img src="img/bg-img/library.jpg" />
+                </div>
+                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
+                    </a>  </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-3">
+
+            <div class="card1 card">
+                <div class="card_image1">
+                    <img src="img/bg-img/library.jpg" />
+                </div>
+                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
+                    </a>  </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-3">
+
+            <div class="card1 card">
+                <div class="card_image1">
+                    <img src="img/bg-img/library.jpg" />
+                </div>
+                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
+                    </a>  </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-3">
+
+            <div class="card1 card">
+                <div class="card_image1">
+                    <img src="img/bg-img/library.jpg" />
+                </div>
+                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
+                    </a>  </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-3">
+
+            <div class="card1 card">
+                <div class="card_image1">
+                    <img src="img/bg-img/library.jpg" />
+                </div>
+                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
+                    </a>  </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 </body>
 <script>
