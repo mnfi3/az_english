@@ -10,4 +10,8 @@ class Department extends Model
     use SoftDeletes;
 
     protected $fillable = ['faculty_id', 'name'];
+
+    public function masters(){
+      return $this->hasMany('App\Master');
+    }
 }

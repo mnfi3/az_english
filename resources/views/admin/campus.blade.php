@@ -33,15 +33,17 @@
                     <div class="col-md-8 mr-auto">
                         <select name="name" id="" class="form-control">
                             <option value="1"></option>
-                            <option value="TRANSPORT">transport</option>
-                            <option value="RESTURANT">resturant</option>
-                            <option value="BANK">bank</option>
-                            <option value="SPORT">sport</option>
-                            <option value="DORMITORY">dormitory</option>
-                            <option value="HEALTH CENTER">health center</option>
-							<option value="KINDERGARTEN">Kindergarten</option>
-							<option value="MOSQUE">mosque</option>
-							<option value="FRUIT SHOP">fruit shop</option>
+                            <option value="accommodation">accommodation</option>
+                            <option value="transport">transport</option>
+                            <option value="restaurants">restaurants</option>
+                            <option value="shopping center">Shopping Center</option>
+                            <option value="banks">banks</option>
+                            <option value="sports">sports</option>
+                            <option value="dormitory">dormitory</option>
+                            <option value="health center">health center</option>
+							<option value="kindergarten">kindergarten</option>
+							<option value="mosque">mosque</option>
+							<option value="fruit shop">fruit shop</option>
                         </select>
                     </div>
                 </div>

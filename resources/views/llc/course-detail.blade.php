@@ -12,10 +12,10 @@
     <title>Azarbayjan Shahid Madani University</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
 
 </head>
 
@@ -52,18 +52,27 @@
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
                                 <div class="mb-50 ">
-                                    <img src="img/blog-img/1.jpg" alt="" style="border-radius: 10px">
+                                    @if($course->image != null)
+                                    <img src="{{asset($course->image->path)}}" alt="" style="border-radius: 10px">
+                                    @endif
                                 </div>
                                 <!-- Post Title -->
-                                <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">learning Persian In 6 Month</p>
+                                <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">{{$course->title}}</p>
                                 <!-- Post Meta -->
                                 <div class="post-meta py-3">
-                                    <p>By <a href="#">Ali Arabagry</a> | <a href="#">March 18, 2018</a></p>
+                                    <p >{{date_format($course->created_at, 'g:ia \o\n l jS F Y')}}</p>
                                 </div>
                                 <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p class="" style="font-size: 1.1rem">
+                                    @php
+                                    echo $course->content;
+                                    @endphp
+                                </p>
                                 <!-- Download Docs btn -->
-                                <a href="#" class="btn academy-btn btn-sm mt-15">Get Documents</a>
+                                @php($i=0)
+                                @foreach($course->docs as $doc)
+                                <a href="{{\Illuminate\Support\Facades\URL::to('/').'/'.$doc->path}}" download class="btn academy-btn btn-sm mt-15">Get Document{{++$i}}</a><br>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -76,53 +85,21 @@
                     <div class="latest-blog-posts mb-30" style="border-radius: 10px">
                         <h5>Latest Posts</h5>
                         <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-1.jpg" alt="">
+                        @foreach($posts as $post)
+                            <div class="single-latest-blog-post d-flex mb-30">
+                                <div class="latest-blog-post-thumb">
+                                    @if($post->image != null)
+                                        <img src="{{asset($post->image->path)}}" alt="">
+                                    @endif
+                                </div>
+                                <div class="latest-blog-post-content">
+                                    <a href="{{url('/news-detail', $post->id)}}" class="post-title">
+                                        <h6>{{$post->title}}</h6>
+                                    </a>
+                                    <a href="{{url('/news-detail', $post->id)}}" class="post-date">{{date_format($post->created_at, 'g:ia Y-M-d')}}</a>
+                                </div>
                             </div>
-                            <div class="latest-blog-post-content">
-                                <a href="#" class="post-title">
-                                    <h6>New Courses for you</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-2.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="#" class="post-title">
-                                    <h6>A great way to start</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-3.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="#" class="post-title">
-                                    <h6>New Courses for you</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-4.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="#" class="post-title">
-                                    <h6>Start your training</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -143,15 +120,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 </body>
 
 </html>

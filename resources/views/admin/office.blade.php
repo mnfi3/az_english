@@ -38,17 +38,27 @@
         <div class="col-12 col-md-8">
             <form action="{{url('staff-add')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                <div class="form-group row pt-4">
-                    <label class="col-md-3 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Staff Type :</label>
+                {{--<div class="form-group row pt-4">--}}
+                    {{--<label class="col-md-3 col-form-label "--}}
+                           {{--style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Staff Type :</label>--}}
+                    {{--<div class="col-md-8 mr-auto">--}}
+                        {{--<select name="type" id="" class="form-control">--}}
+                            {{--<option value="1"></option>--}}
+                            {{--<option value="Assistant">Assistant</option>--}}
+                            {{--<option value="Director">Director</option>--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+
+                <div class="form-group row py-4">
+                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Staff Type (Role) :</label>
                     <div class="col-md-8 mr-auto">
-                        <select name="type" id="" class="form-control">
-                            <option value="1"></option>
-                            <option value="Assistant">Assistant</option>
-                            <option value="Director">Director</option>
-                        </select>
+                        <input type="text" id="title" required=""
+                               class="form-control" name="type">
                     </div>
                 </div>
+
+
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Full Name :</label>
                     <div class="col-md-8 mr-auto">
@@ -185,6 +195,15 @@
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
                                class="form-control" name="title" placeholder="set title here">
+
+                    </div>
+                </div>
+
+                <div class="form-group row py-4">
+                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Project Executers :</label>
+                    <div class="col-md-8 mr-auto">
+                        <input type="text" id="title"
+                               class="form-control" name="executers" placeholder="set title here">
 
                     </div>
                 </div>

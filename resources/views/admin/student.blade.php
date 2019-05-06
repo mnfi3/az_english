@@ -44,11 +44,11 @@
                     <div class="col-md-8 mr-auto">
                         <select name="type" id="" class="form-control">
                             <option value="1"></option>
-                            <option value="ADMISSION">Admission</option>
-                            <option value="SCHOLARSHIP">Scholarship</option>
-                            <option value="PROGRAMS">programs</option>
-                            <option value="COST AND FREE">cost and fee</option>
-                            <option value="HOW TO PLAY">how to apply</option>
+                            <option value="admission">Admission</option>
+                            <option value="scholarship">Scholarship</option>
+                            <option value="programs">programs</option>
+                            <option value="cost and free">cost and free</option>
+                            <option value="how to apply">how to apply</option>
                         </select>
                     </div>
                 </div>

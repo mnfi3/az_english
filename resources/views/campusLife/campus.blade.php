@@ -12,10 +12,10 @@
     <title>Azarbayjan Shahid Madani University</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
 
 </head>
 
@@ -29,7 +29,7 @@
 
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
+<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
     {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
         {{--<h2>Dormitory</h2>--}}
     {{--</div>--}}
@@ -47,14 +47,18 @@
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
                                 <div class="mb-50 d-flex justify-content-center ">
-                                    <img src="img/bg-img/acc.jpg" alt="" class="" style="border-radius: 10px;max-height: 400px">
+                                    @if($campus->image != null)
+                                    <img src="{{asset($campus->image->path)}}" alt="" class="" style="border-radius: 10px;max-height: 400px">
+                                    @endif
                                 </div>
 
+                                <h4>{{$campus->name}}</h4>
+
                                 <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem"> 	Dormitory is part of the welfare facilities of the university where students can spend their free and relaxing time according to the relevant general regulations and make use of its cultural, educational, and sporting facilities by observing other students’ rights while he is residing. The university and students both are considered as pivots of the country’s scientific, cultural, social development, and dormitories as the students’ second home are of vital importance in reinforcing spiritual joy, psychological peace and quiet, mental development, personality development, and educational improvement in term of quality.
-
-
-                                </p></div>
+                                <p class="" style="font-size: 1.1rem">
+                                    {{$campus->content}}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,15 +76,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 </body>
 
 </html>

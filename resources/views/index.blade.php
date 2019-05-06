@@ -121,7 +121,9 @@
             <div class="col-12 col-lg-6">
                 <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
                     <div class="popular-course-content">
-                        <div class="popular-course-thumb bg-img " style="background-image: url({{asset('img/bg-img/pc-3.jpg')}});"></div>
+                        @if($post->image != null)
+                            <div class="popular-course-thumb bg-img " style="background-image: url({{asset($post->image->path)}});"></div>
+                        @endif
 
                         <h4 >{{$post->title}}</h4>
                         <span style="font-weight: 500; font-size: 0.9rem">{{date_format($post->created_at, 'g:ia \o\n l jS F Y')}}</span>
@@ -129,7 +131,7 @@
                         <p style="font-size: 0.95rem">
                             {{substr(strip_tags($post->content), 0, 130)}}...
                         </p>
-                        <a href="#" class="btn academy-btn btn-sm">See More</a>
+                        <a href="{{url('news-detail', $post->id)}}" class="btn academy-btn btn-sm">See More</a>
                     </div>
                  </div>
             </div>

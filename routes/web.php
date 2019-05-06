@@ -113,6 +113,32 @@ Route::middleware('auth')->group(function () {
 Route::get('/', 'SiteController@index');
 Route::get('/news', 'SiteController@posts');
 Route::get('/news-detail/{id}', 'SiteController@post');
+Route::get('/history', 'SiteController@history');
+Route::get('/message', 'SiteController@message');
+Route::get('/faculty/{id}', 'SiteController@faculty');
+Route::get('/research/{type}', 'SiteController@research');
+Route::get('/campus-life/{type}', 'SiteController@campus');
+Route::get('/campus-container', 'SiteController@campuses');
+Route::get('/staff', 'SiteController@staff');
+Route::get('/cooperation', 'SiteController@cooperation');
+Route::get('/mou', 'SiteController@mou');
+Route::get('/projects', 'SiteController@projects');
+Route::get('/project-detail/{id}', 'SiteController@project');
+Route::get('/conferences', 'SiteController@conferences');
+Route::get('/conference-detail/{id}', 'SiteController@conference');
+Route::get('/partnerships', 'SiteController@partnerships');
+Route::get('/student/{type}', 'SiteController@student');
+Route::get('/forms', 'SiteController@forms');
+Route::get('/courses', 'SiteController@courses');
+Route::get('/course-detail/{id}', 'SiteController@course');
+
+
+
+
+
+
+
+
 
 
 
@@ -129,80 +155,31 @@ Route::get('/news-not-found', function () {
 //Research
 
 
-Route::get('/conferences', function () {
-  return view('Research.conferences');
-});
-Route::get('/conference-detail', function () {
-  return view('Research.conference-detail');
-});
 
 
-Route::get('/libraries', function () {
-  return view('Research.libraries');
-});
+
+
 
 //Internation
 
-Route::get('/mou', function () {
-  return view('International.mou');
-});
-Route::get('/Partnership', function () {
-  return view('International.Partnership');
-});
-Route::get('/cooperation', function () {
-  return view('International.cooperation');
-});
-Route::get('/staff', function () {
-  return view('International.staff');
-});
-Route::get('/projects', function () {
-  return view('International.projects');
-});
-Route::get('/student', function () {
-  return view('International.student');
-});
-Route::get('/project-detail', function () {
-  return view('International.project-detail');
-});
 
-Route::get('/courses', function(){
-  return view('llc.courses');
-});
-Route::get('/forms', function(){
-  return view('llc.forms');
-});
-Route::get('/course-detail', function(){
-  return view('llc.course-detail');
-});
+
+
+
+
+
+
 
 
 //Faculties
 Route::get('/dep', function () {
   return view('faculties.dep');
 });
-Route::get('/faculty', function () {
-  return view('faculties.facultie');
-});
 
-//CampusLife
-Route::get('/campus', function () {
 
-  return view('campusLife.campus');
-});
-Route::get('/campus-container', function () {
 
-  return view('campusLife.campus-container');
-});
 
-//About
-Route::get('/history', function () {
 
-  return view('about.history');
-});
-Route::get('/message', function () {
-
-  return view('about.message');
-});
 
 
 

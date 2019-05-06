@@ -71,14 +71,13 @@
                                 <li><a href="#">Academics</a>
                                     <ul class="dropdown" style="width:180px">
                                         <li class="edit-list"><a href="#">faculties</a>
+                                            @php
+                                            $faculties = \App\Faculty::all();
+                                            @endphp
                                             <ul class="dropdown" style="width:500px">
-                                                <li><a href="{{url('/faculty')}}" style="">Agriculture</a></li>
-                                                <li><a href="{{url('/faculty')}}" style="" >Basic Science</a></li>
-                                                <li><a href="{{url('/faculty')}}" style="">Education and Psychology</a></li>
-                                                <li><a href="{{url('/faculty')}}" style="">IT and Computer Engineering</a></li>
-                                                <li><a href="{{url('/faculty')}}" style="">Literature and Humanities</a></li>
-                                                <li><a href="{{url('/faculty')}}" style="">Technology and Engineering</a></li>
-                                                <li><a href="{{url('/faculty')}}" style="">Theology and Islamic Science</a></li>
+                                                @foreach($faculties as $faculty)
+                                                <li><a href="{{url('/faculty', $faculty->id)}}" style="">{{$faculty->name}}</a></li>
+                                                @endforeach
 
                                             </ul>
                                         </li>
@@ -89,16 +88,16 @@
                                 <li><a href="#">Research</a>
                                     <ul class="dropdown" style="width:300px">
 
-                                        <li><a href="{{url('/libraries')}}">Libraries</a></li>
+                                        <li><a href="{{url('/research/libraries')}}">Libraries</a></li>
                                         <li><a href="#">Lab</a>
                                             <ul class="dropdown " style="width:300px ;margin-left: 40%">
-                                                <li class="dropdown1"><a href="{{url('/libraries')}}">Computer Labs</a></li>
-                                                <li class="dropdown1"><a href="{{url('/libraries')}}">Basic sciences Labs</a></li>
-                                                <li class="dropdown1"><a href="{{url('/libraries')}}">Technical and engineering</a></li>
+                                                <li class="dropdown1"><a href="{{url('/research/computer_labs')}}">Computer Labs</a></li>
+                                                <li class="dropdown1"><a href="{{url('/research/basic_sciences_labs')}}">Basic sciences Labs</a></li>
+                                                <li class="dropdown1"><a href="{{url('/research/technical_and_engineering')}}">Technical and engineering</a></li>
                                             </ul>
                                         </li>
                                         {{--<li><a href="{{url('/conferences')}}">Conferences/Workshops</a></li>--}}
-                                        <li><a href="about-us.html">Innovation</a></li>
+                                        <li><a href="{{url('/research/innovation')}}">Innovation</a></li>
                                     </ul>
                                     {{--{{route('home')}}--}}
                                 </li>
@@ -106,18 +105,41 @@
 
                                 <li><a href="{{url('campus-container')}}">Campus life</a>
                                     <ul class="dropdown" style="width:250px">
-                                        <li><a href="{{url('/campus')}}">Accomodation</a></li>
-                                        <li><a href="{{url('/campus')}}">Transportation</a></li>
-                                        <li><a href="{{url('/campus')}}">Restaurants</a></li>
-                                        <li><a href="{{url('/campus')}}">Shopping Center</a></li>
-                                        <li><a href="{{url('/campus')}}">Health Center</a></li>
-                                        <li><a href="{{url('/campus')}}">Sports</a></li>
-                                        <li><a href="{{url('/campus')}}">Banks</a></li>
+                                        @if(\App\CampusLife::where('name', 'like', 'accommodation')->first() != null)
+                                            <li><a href="{{url('/campus-life/accommodation')}}">accomodation</a></li>
+                                        @endif
+                                        @if(\App\CampusLife::where('name', 'like', 'transport')->first() != null)
+                                            <li><a href="{{url('/campus-life/transport')}}">transportation</a></li>
+                                        @endif
+                                        @if(\App\CampusLife::where('name', 'like', 'restaurants')->first() != null)
+                                            <li><a href="{{url('/campus-life/restaurants')}}">Restaurants</a></li>
+                                        @endif
+                                        @if(\App\CampusLife::where('name', 'like', 'shopping center')->first() != null)
+                                            <li><a href="{{url('/campus-life/shopping center')}}">Shopping Center</a></li>
+                                        @endif
+                                        @if(\App\CampusLife::where('name', 'like', 'health center')->first() != null)
+                                            <li><a href="{{url('/campus-life/health center')}}">Health Center</a></li>
+                                        @endif
+                                        @if(\App\CampusLife::where('name', 'like', 'sports')->first() != null)
+                                            <li><a href="{{url('/campus-life/sports')}}">Sports</a></li>
+                                        @endif
+                                        @if(\App\CampusLife::where('name', 'like', 'dormitory')->first() != null)
+                                            <li><a href="{{url('/campus-life/dormitory')}}">dormitory</a></li>
+                                        @endif
+                                        @if(\App\CampusLife::where('name', 'like', 'banks')->first() != null)
+                                            <li><a href="{{url('/campus-life/banks')}}">Banks</a></li>
+                                        @endif
                                         <li><a href="#">Other</a>
                                             <ul class="dropdown" style="width:250px ; margin-left: 28%">
-                                                <li><a href="{{url('/staff')}}">kindergarten</a></li>
-                                                <li><a href="{{url('/mou')}}">mosque</a></li>
-                                                <li><a href="{{url('/projects')}}">Fruit shop</a></li>
+                                                @if(\App\CampusLife::where('name', 'like', 'kindergarten')->first() != null)
+                                                    <li><a href="{{url('/campus-life/kindergarten')}}">kindergarten</a></li>
+                                                @endif
+                                                @if(\App\CampusLife::where('name', 'like', 'mosque')->first() != null)
+                                                    <li><a href="{{url('/campus-life/mosque')}}">mosque</a></li>
+                                                @endif
+                                                @if(\App\CampusLife::where('name', 'like', 'fruit shop')->first() != null)
+                                                    <li><a href="{{url('/campus-life/fruit shop')}}">Fruit shop</a></li>
+                                                @endif
                                             </ul>
                                         </li>
                                     </ul>
@@ -134,12 +156,26 @@
                                         </li>
                                         <li><a href="#" >students</a>
                                             <ul class="dropdown " style="width:250px; margin-left: 48%">
-                                                <li class="dropdown1" ><a href="{{url('/student')}}">admission</a></li>
-                                                <li class="dropdown1"><a href="{{url('/student')}}">Scholarship</a></li>
-                                                <li class="dropdown1"><a href="{{url('/student')}}">Programs</a></li>
-                                                <li class="dropdown1"> <a href="{{url('student')}}">Costs and Fees</a></li>
-                                                <li class="dropdown1"><a href="{{url('/student')}}">How to apply</a></li>
+                                                @if(\App\Student::where('type', 'like', 'admission')->first() != null)
+                                                    <li class="dropdown1" ><a href="{{url('/student/admission')}}">admission</a></li>
+                                                @endif
+                                                @if(\App\Student::where('type', 'like', 'scholarship')->first() != null)
+                                                    <li class="dropdown1"><a href="{{url('/student/scholarship')}}">Scholarship</a></li>
+                                                @endif
+                                                @if(\App\Student::where('type', 'like', 'programs')->first() != null)
+                                                    <li class="dropdown1"><a href="{{url('/student/programs')}}">Programs</a></li>
+                                                @endif
+
+                                                @if(\App\Student::where('type', 'like', 'cost and free')->first() != null)
+                                                    <li class="dropdown1"> <a href="{{url('student/cost and free')}}">Costs and Frees</a></li>
+                                                @endif
+                                                @if(\App\Student::where('type', 'like', 'how to apply')->first() != null)
+                                                    <li class="dropdown1"><a href="{{url('/student/how to apply')}}">How to apply</a></li>
+                                                @endif
+
+
                                                 <li class="dropdown1"><a href="{{url('/campus-container')}}">Campus Life</a></li>
+
                                             </ul>
                                         </li>
                                         <li><a href="#" >Language Learning Center(LLC)</a>

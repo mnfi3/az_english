@@ -136,7 +136,7 @@
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's CV Link (if exist) :</label>
                     <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
+                        <input type="text" id="title"
                                class="form-control" name="cv_link">
                     </div>
                 </div>

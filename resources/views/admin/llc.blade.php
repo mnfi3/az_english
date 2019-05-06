@@ -114,7 +114,7 @@
                         <div  id="">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id=""
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="images[]">
                             </div>
                         </div> </div>
                 </div>

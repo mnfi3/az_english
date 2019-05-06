@@ -44,12 +44,21 @@
                     <div class="col-md-8 mr-auto">
                         <select name="type" id="" class="form-control">
                             <option value="1"></option>
-                            <option value="LIBRARY">library</option>
-                            <option value="COMPUTER LAB">computer lab</option>
-                            <option value="BASIC SCIENCES LAB">basic sciences lab</option>
-                            <option value="TECHNICAL AND ENGINEERING">Technical and engineering</option>
-                            <option value="INNOVATION">Innovation</option>
+                            <option value="libraries">libraries</option>
+                            <option value="computer_labs">computer lab</option>
+                            <option value="basic_sciences_labs">basic sciences lab</option>
+                            <option value="technical_and_engineering">Technical and engineering</option>
+                            <option value="innovation">Innovation</option>
                         </select>
+                    </div>
+                </div>
+
+                <div class="form-group row py-4">
+                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">title :</label>
+                    <div class="col-md-8 mr-auto">
+                        <input type="text" id="title" required=""
+                               class="form-control" name="title" placeholder="set title here">
+
                     </div>
                 </div>
                 <div class="form-group row py-4">

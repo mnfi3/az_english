@@ -46,7 +46,9 @@
 
         <div class="row">
             <div class="col-12 col-md-12 wow fadeInUp" data-wow-delay="400ms">
-                <p class="text-white" style="font-size: 1.1rem; font-weight: 600 ">Azarbaijan Shahid Madani University was founded in 1988 as an extension of Tarbiat Moa’lem (teacher education) University of Tehran, with the purpose of educating high school teachers for the Ministry of Education. In 2001, however, based on revisions of the objectives and needs, the university transformed itself into an all-purpose university offering degree courses at both undergraduate and postgraduate levels. The university was originally located in Tabriz, but later was moved to the outskirts of the city. Currently, near 7000 students study at 29 departments within 7 faculties, of which about 1200 study at postgraduate level. The total number of academic staff (inclusive of part time staff) is currently 320.</p>
+                <p class="text-white" style="font-size: 1.1rem; font-weight: 600 ">
+                    {{$history->content}}
+                </p>
             </div>
 
         </div>
@@ -61,15 +63,14 @@
     <div class="hero-slides owl-carousel">
 
         <!-- Single  Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url('img/bg-img/library.jpg');height: 650px;border-radius: 10px">
+        @if($history->images !== null)
+            @foreach($history->images as $image)
+                <div class="single-hero-slide bg-img" style="background-image: url({{asset($image->path)}});height: 650px;border-radius: 10px">
 
-        </div>
+                </div>
+            @endforeach
+        @endif
 
-        <div class="single-hero-slide bg-img" style="background-image:url('img/bg-img/bg-2.jpg');height: 650px;border-radius: 10px">
-
-        </div>
-
-        <div class="single-hero-slide bg-img" style="background-image:url('img/bg-img/Entery.jpg');height: 650px;border-radius: 10px">
 
         </div>
     </div>
@@ -141,15 +142,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 </body>
 
 </html>

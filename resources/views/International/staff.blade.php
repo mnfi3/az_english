@@ -25,7 +25,7 @@
 <!-- ##### Header Area End ##### -->
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
+<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
     {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
         {{--<h2>Staff</h2>--}}
     {{--</div>--}}
@@ -36,6 +36,7 @@
 <div class="blog-area mt-25 section-padding-100" >
     <div class="container px-5">
         <div class="row">
+            @foreach($staffs as $staff)
             <div class="col-12 col-md-6" >
                 <div class="academy-blog-posts">
                     <div class="row">
@@ -45,17 +46,18 @@
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
                                 <div class="mb-50 d-flex justify-content-center ">
-                                    <img src="{{asset('img/bg-img/salahshor.jpg')}}" alt="" class="w-100" style="border-radius: 10px;max-height: 300px;">
+                                    @if($staff->image != null)
+                                    <img src="{{asset($staff->image->path)}}" alt="" class="w-100" style="border-radius: 10px;max-height: 300px;">
+                                    @endif
                                 </div>
                                 <!-- Post Title -->
-                                <p class="post-title">The Managing Director :</p>
+                                <p class="post-title">{{$staff->type}}</p>
 
-                                    <p class="text-dark ml-3" style="font-size: 1.3rem; font-weight: 700;">  Dr.Farzad Salahshoor </p>
-                                    <p class="text-dark ml-3 w-100" style="font-size: 1.2rem; font-weight: 500;">  Phone Number: +98-4134327539 <br>
-                                        Fax Number:    +98-34327526 <br>
+                                    <p class="text-dark ml-3" style="font-size: 1.3rem; font-weight: 700;"> {{$staff->full_name}} </p>
+                                    <p class="text-dark ml-3 w-100" style="font-size: 1.2rem; font-weight: 500;">  Phone Number: {{$staff->phone}} <br>
+                                        Fax Number:    {{$staff->fax}} <br>
                                         E-mail:
-                                        farzad.salahshoor@gmail.com &
-                                        salahshoor@azaruniv.ac.ir
+                                        {{$staff->email}}
                                     </p>
 
                             </div>
@@ -63,33 +65,7 @@
                     </div>
                 </div>
              </div>
-            <div class="col-12 col-md-6" >
-                <div class="academy-blog-posts">
-                    <div class="row">
-
-                        <!-- Single Blog Start -->
-                        <div class="col-12" >
-                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
-                                <!-- Post Thumb -->
-                                <div class="mb-50 d-flex justify-content-center ">
-                                    <img src="{{asset('img/bg-img/woman-avatar.png')}}" alt="" class="m-auto" style="border-radius: 10px; max-height: 250px;">
-                                </div>
-                                <!-- Post Title -->
-                                <p class="post-title">Assistant :</p>
-
-                                <p class="text-dark ml-3" style="font-size: 1.3rem; font-weight: 700;">  Mahsa Mehrangiz </p>
-                                <p class="text-dark ml-3 w-100" style="font-size: 1.2rem; font-weight: 500;">  Phone Number: +98-4134327503 <br>
-                                    Fax Number:    +98-34327526 <br>
-                                    E-mail:
-                                    mahsa.mehrangiz@yahoo.com &
-                                    m.mehrangiz@azaruniv.ac.ir
-                                </p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
 
         </div>
     </div>
@@ -108,15 +84,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 </body>
 
 </html>
