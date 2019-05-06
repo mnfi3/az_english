@@ -164,9 +164,9 @@
             <td >{{$message->created_at}}</td>
             <td><button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal{{$message->id}}">Observe</button></td>
             @if($message->doc != null)
-            <td><a href="{{$message->doc->path}}"  download>download</a>  </td>
+            <td><a href="{{\Illuminate\Support\Facades\URL::to('/').'/'.$message->doc->path}}"  download>download</a>  </td>
             @else
-            <td><a href=""></a></td>
+            <td><a href="">no file</a></td>
             @endif
         </tr>
         @endforeach
@@ -189,7 +189,9 @@
                 </button>
             </div>
             <div class="modal-body ">
-                <p class="user-messages" style="font-family: 'Times New Roman'; alignment: left"  >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur doloremque et fuga illo inventore ipsam magni minima natus odio officia, omnis quaerat quas, reprehenderit repudiandae tempore unde veritatis! Beatae eum magni modi, quod saepe sit?</p>
+                <p class="user-messages" style="font-family: 'Times New Roman'; alignment: left"  >
+                    {{$message->text}}
+                </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

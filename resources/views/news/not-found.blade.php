@@ -38,12 +38,12 @@
         <div class="row">
             <div class="col-md-8 p-4" id="content">
                 <div class="container-content ">
-                    <h3 class="p-3 align-items-center">
-                        Serach for "  "
+                    <h3 class="p-3 align-items-center text-center">
+                        Serach for "{{$text}}"
                     </h3>
                 </div>
-                <div class="card p-4">
-                    <div class="card-header text-dark bg" style="text-align: left; font-weight: 500 ; border-radius: 10px" >
+                <div class="card p-4 text-center">
+                    <div class="card-header text-dark bg text-center" style="text-align: left; font-weight: 500 ; border-radius: 10px" >
                         <p>
                             Nothing Found
                         </p>
@@ -65,54 +65,21 @@
                     <!-- Latest Blog Posts Area -->
                     <div class="latest-blog-posts mb-30" style="border-radius: 10px">
                         <h5>Latest Posts</h5>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-1.jpg" alt="">
+                        @foreach($posts as $post)
+                            <div class="single-latest-blog-post d-flex mb-30">
+                                <div class="latest-blog-post-thumb">
+                                    @if($post->image != null)
+                                        <img src="{{asset($post->image->path)}}" alt="">
+                                    @endif
+                                </div>
+                                <div class="latest-blog-post-content">
+                                    <a href="{{url('/news-detail', $post->id)}}" class="post-title">
+                                        <h6>{{$post->title}}</h6>
+                                    </a>
+                                    <a href="{{url('/news-detail', $post->id)}}" class="post-date">{{date_format($post->created_at, 'g:ia Y-M-d')}}</a>
+                                </div>
                             </div>
-                            <div class="latest-blog-post-content">
-                                <a href="{{url('/news-detail')}}" class="post-title">
-                                    <h6>New Courses for you</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-2.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="{{url('/news-detail')}}" class="post-title">
-                                    <h6>A great way to start</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-3.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="{{url('/news-detail')}}" class="post-title">
-                                    <h6>New Courses for you</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-4.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="{{url('/news-detail')}}" class="post-title">
-                                    <h6>Start your training</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

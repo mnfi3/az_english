@@ -64,7 +64,7 @@
                                 </div>
                                 <!-- Post Excerpt -->
                                 <p class="" style="font-size: 1.1rem">
-                                    {{$post->content}}
+                                    @php echo $post->content; @endphp
                                 </p>
                                 <!-- Download Docs btn -->
                                 @if($post->docs !== null)

@@ -46,6 +46,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+      return response()->view('not_found', [], 200);
         return parent::render($request, $exception);
     }
 }

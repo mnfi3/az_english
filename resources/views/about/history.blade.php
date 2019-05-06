@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-12 col-md-12 wow fadeInUp" data-wow-delay="400ms">
                 <p class="text-white" style="font-size: 1.1rem; font-weight: 600 ">
-                    {{$history->content}}
+                    @php echo $history->content; @endphp
                 </p>
             </div>
 

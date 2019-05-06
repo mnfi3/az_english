@@ -45,9 +45,9 @@
                         <select name="type" id="" class="form-control">
                             <option value="1"></option>
                             <option value="libraries">libraries</option>
-                            <option value="computer_labs">computer lab</option>
-                            <option value="basic_sciences_labs">basic sciences lab</option>
-                            <option value="technical_and_engineering">Technical and engineering</option>
+                            <option value="computer labs">computer lab</option>
+                            <option value="basic sciences labs">basic sciences lab</option>
+                            <option value="technical and engineering">Technical and engineering</option>
                             <option value="innovation">Innovation</option>
                         </select>
                     </div>
@@ -96,7 +96,7 @@
             <ul class="nav-list d-flex flex-column p-0">
                 @foreach($researches as $research)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$research->type}}</a>
+                    <a href="{{url('research', $research->type)}}" class="text-white mt-2" style="font-size: 1rem">{{$research->type}}</a>
                     <form class="align-self-center" action="{{url('research-remove')}}" method="post">
                         @csrf
                         <input type="hidden" value="{{$research->id}}" name="id">

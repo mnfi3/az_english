@@ -52,9 +52,7 @@
 
                         <h4>{{$course->title}}</h4>
                         <p style="font-size: 0.95rem">
-                            @php
-                            echo $course->content;
-                            @endphp
+                           {{substr(strip_tags($course->content), 0, 130)}}...
                         </p>
                         <a href="{{url('/course-detail', $course->id)}}" class="btn academy-btn btn-sm">See More</a>
                     </div>

@@ -69,7 +69,7 @@
                                 </div>
                                 <!-- Post Excerpt -->
                                 <p class="" style="font-size: 1.1rem">
-                                    {{$project->content}}
+                                    @php echo $project->content; @endphp
                                 </p>
                                 <!-- Download Docs btn -->
                                 @php($i=0)

@@ -10,6 +10,7 @@ use App\Course;
 use App\Faculty;
 use App\Link;
 use App\LLCForm;
+use App\Message;
 use App\Mou;
 use App\Partnership;
 use App\Post;
@@ -19,6 +20,7 @@ use App\Slider;
 use App\Staff;
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SiteController extends Controller
 {
@@ -29,9 +31,28 @@ class SiteController extends Controller
     }
 
     public function posts(){
-      $posts = Post::orderBy('id', 'desc')->paginate(20);
-      return view('news.news',compact('posts'));
+      $text = null;
+      $posts = Post::orderBy('id', 'desc')->paginate(10);
+      $posts2 = Post::orderBy('id', 'desc')->take(4)->get();
+      return view('news.news',compact(['posts', 'posts2', 'text']));
     }
+
+    public function search(Request $request){
+      $text = $request->search;
+      $posts = [];
+      if(strlen($text) > 2) {
+        $posts = Post::where('title', 'like', '%' . $text . '%')->orWhere('content', 'like', '%' . $text . '%')->paginate(10);
+      }
+
+      if(count($posts) > 0){
+        $posts2 = Post::orderBy('id', 'desc')->take(4)->get();
+        return view('news.news',compact(['posts', 'posts2', 'text']));
+      }else{
+        $posts = Post::orderBy('id', 'desc')->take(4)->get();
+        return view('news.not-found', compact(['posts', 'text']));
+      }
+    }
+
 
     public function post($id){
       $post = Post::find($id);
@@ -134,4 +155,32 @@ class SiteController extends Controller
       $posts = Post::orderBy('id', 'desc')->take(4)->get();
       return view('llc.course-detail', compact(['course', 'posts']));
     }
+
+    public function contact(){
+      $is_sent = null;
+      $is_sent = Session::get('is_sent');
+      $contact = Contact::orderBy('id', 'desc')->first();
+      return view('contact-us', compact(['is_sent', 'contact']));
+    }
+
+    public function messageSend(Request $request){
+      $message = Message::create([
+        'full_name' => $request->full_name,
+        'email' => $request->email,
+        'text' => $request->text,
+      ]);
+
+
+      if($request->hasFile('documents')){
+        $files = $request->file('documents');
+        foreach ($files as $file) {
+          Uploader::saveDoc('App\Message', $message->id, $file);
+        }
+      }
+
+      return redirect(url('contact-us'))->with('is_sent', 1);;
+
+    }
+
+
 }

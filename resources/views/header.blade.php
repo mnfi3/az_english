@@ -17,7 +17,8 @@
                 </div>
                 <div class=" h-100  m-auto">
                     <div class="blog-post-search-widget mt-4 ml-4 ">
-                        <form action="#" method="post">
+                        <form action="{{url('search')}}" method="get">
+                            @csrf
                             <input type="search" name="search" id="Search" placeholder="Search">
                             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
@@ -91,9 +92,9 @@
                                         <li><a href="{{url('/research/libraries')}}">Libraries</a></li>
                                         <li><a href="#">Lab</a>
                                             <ul class="dropdown " style="width:300px ;margin-left: 40%">
-                                                <li class="dropdown1"><a href="{{url('/research/computer_labs')}}">Computer Labs</a></li>
-                                                <li class="dropdown1"><a href="{{url('/research/basic_sciences_labs')}}">Basic sciences Labs</a></li>
-                                                <li class="dropdown1"><a href="{{url('/research/technical_and_engineering')}}">Technical and engineering</a></li>
+                                                <li class="dropdown1"><a href="{{url('/research/computer labs')}}">Computer Labs</a></li>
+                                                <li class="dropdown1"><a href="{{url('/research/basic sciences labs')}}">Basic sciences Labs</a></li>
+                                                <li class="dropdown1"><a href="{{url('/research/technical and engineering')}}">Technical and engineering</a></li>
                                             </ul>
                                         </li>
                                         {{--<li><a href="{{url('/conferences')}}">Conferences/Workshops</a></li>--}}

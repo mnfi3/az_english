@@ -27,7 +27,7 @@
 
 <!-- ##### Breadcumb Area Start ##### -->
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
+<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
     {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
         {{--<h2>Contact us</h2>--}}
     {{--</div>--}}
@@ -63,7 +63,7 @@ background: linear-gradient(to right, #f8e131, #f8a51f)">
                                     <div class="contact-icon mr-15">
                                         <i class="icon-placeholder"></i>
                                     </div>
-                                    <p class="text-white" style="font-size: 1.1rem">I.R.Iran,Tabriz,Shahid Madani University</p>
+                                    <p class="text-white" style="font-size: 1.1rem">{{$contact->address}}</p>
                                 </div>
 
                                 <!-- Single Contact Info -->
@@ -71,7 +71,7 @@ background: linear-gradient(to right, #f8e131, #f8a51f)">
                                     <div class="contact-icon mr-15">
                                         <i class="icon-telephone-1"></i>
                                     </div>
-                                    <p class="text-white" style="font-size: 1.1rem">Main: +98-41-34327526  <br> Office: +98-41-34327526 </p>
+                                    <p class="text-white" style="font-size: 1.1rem">Main: {{$contact->phone1}}  <br> Office: {{$contact->phone2}} </p>
                                 </div>
 
                                 <!-- Single Contact Info -->
@@ -79,25 +79,40 @@ background: linear-gradient(to right, #f8e131, #f8a51f)">
                                     <div class="contact-icon mr-15">
                                         <i class="icon-contract"></i>
                                     </div>
-                                    <p class="text-white" style="font-size: 1.1rem"> m.mehrangiz@azaruniv.ac.ir </p>
+                                    <p class="text-white" style="font-size: 1.1rem"> {{$contact->email}} </p>
                                 </div>
                             </div>
                         </div>
                         <!-- Contact Form Area -->
                         <div class="col-12 col-lg-7 ">
                             <div class="contact-form-area  wow fadeInUp" data-wow-delay="500ms">
-                                <form action="#" method="post">
-                                    <input type="text" class="form-control" id="name" placeholder="Name">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+
+                                @if($is_sent == 1)
+                                <br>
+                                <label class="success" style="color: #2cff27">
+                                    <h4 class="success" style="color: #2cff27"><b>your message sent successfully</b></h4>
+                                </label>
+                                <br>
+                                @endif
+
+                                <form action="{{url('message-send')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="text" class="form-control" id="name" placeholder="Name" name="full_name">
+                                    <input type="email" class="form-control" id="email" placeholder="E-mail" name="email">
+                                    <textarea name="text" class="form-control" id="message" cols="30" rows="10" placeholder="Message" maxlength="3000"></textarea>
                                     <div  id="fileInputsContainer">
                                     <div class="d-flex flex-row justify-content-between">
+                                        <label class="btn btn-outline-warning text-dark">
+                                            add document
                                     <input type="file" id="documents"
-                                           class="form-control-file" name="documents[]">
-                                    <button class="btn btn-outline-warning text-dark " onclick="addDocumentInput()">Add New Document</button>
+                                           class=" form-control-file d-none " name="documents[]" size="1MB">
+                                        </label>
+                                    {{--<button class="btn btn-outline-warning text-dark " onclick="addDocumentInput()">Add New Document</button>--}}
                                     </div>
                                     </div>
                                     <button class="btn academy-btn mt-30" type="submit">Send</button>
+
+
 
                                 </form>
                             </div>
@@ -117,18 +132,18 @@ background: linear-gradient(to right, #f8e131, #f8a51f)">
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 <!-- Google Maps -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
-<script src="js/google-map/map-active.js"></script>
+<script src="{{asset('js/google-map/map-active.js')}}"></script>
 <script>
   function addDocumentInput() {
     var referenceNode = document.getElementById('fileInputsContainer').lastChild;

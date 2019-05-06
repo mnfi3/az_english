@@ -56,7 +56,7 @@
 
                                 <!-- Post Excerpt -->
                                 <p class="" style="font-size: 1.1rem">
-                                    {{$campus->content}}
+                                    @php echo $campus->content; @endphp
                                 </p>
                             </div>
                         </div>

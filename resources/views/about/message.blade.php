@@ -65,7 +65,7 @@
 
                                 <!-- Post Excerpt -->
                                 <p class="" style="font-size: 1.1rem">
-                                    {{$message->content}}
+                                    @php echo $message->content; @endphp
                                 </p></div>
                         </div>
                     </div>

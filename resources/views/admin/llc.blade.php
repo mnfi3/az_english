@@ -143,7 +143,7 @@
             <ul class="nav-list d-flex flex-column p-0">
                 @foreach($courses as $course)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$course->title}}</a>
+                    <a href="{{url('course-detail', $course->id)}}" class="text-white mt-2" style="font-size: 1rem">{{$course->title}}</a>
                     <form class="align-self-center" action="{{url('course-remove')}}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{$course->id}}">

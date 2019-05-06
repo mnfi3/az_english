@@ -103,13 +103,6 @@ Route::middleware('auth')->group(function () {
 
 
 
-
-
-
-
-
-
-
 Route::get('/', 'SiteController@index');
 Route::get('/news', 'SiteController@posts');
 Route::get('/news-detail/{id}', 'SiteController@post');
@@ -131,60 +124,7 @@ Route::get('/student/{type}', 'SiteController@student');
 Route::get('/forms', 'SiteController@forms');
 Route::get('/courses', 'SiteController@courses');
 Route::get('/course-detail/{id}', 'SiteController@course');
-
-
-
-
-
-
-
-
-
-
-
-Route::get('/contact-us', function () {
-  return view('contact-us');
-});
-Route::get('/about-us', function () {
-  return view('about-us');
-});
-Route::get('/news-not-found', function () {
-  return view('news.not-found');
-});
-
-//Research
-
-
-
-
-
-
-
-//Internation
-
-
-
-
-
-
-
-
-
-
-//Faculties
-Route::get('/dep', function () {
-  return view('faculties.dep');
-});
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('/contact-us', 'SiteController@contact');
+Route::post('/message-send', 'SiteController@messageSend');
+Route::get('/search', 'SiteController@search');
 

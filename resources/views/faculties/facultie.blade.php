@@ -57,12 +57,14 @@
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
                                 <div class="mb-50 d-flex justify-content-center ">
-                                    <img src="img/bg-img/engineering.jpg" alt="" class="" style="border-radius: 10px; max-height: 450px">
+                                    @if($faculty->image != null)
+                                    <img src="{{asset($faculty->image->path)}}" alt="" class="" style="border-radius: 10px; max-height: 450px">
+                                    @endif
                                 </div>
 
                                 <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem">
-                                    {{$faculty->description}}
+                                <p class="" style="font-size: 1.5rem">
+                                    @php echo $faculty->description; @endphp
                                 </p>
                             </div>
 
@@ -76,9 +78,12 @@
         </div>
         <h2 class="text-white pb-2">{{$faculty->name}} Faculty Department</h2>
         <div id="accordion" role="tablist" class="mt-25">
+
+            @php($i=0)
             @foreach($faculty->departments as $department)
+                @php($i++)
                 <div class="card">
-                <div class="card-header bg-warning" role="tab" id="headingOne"  data-toggle="collapse"   href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div class="card-header bg-warning" role="tab" id="headingOne{{$department->id}}"  data-toggle="collapse"   href="#collapseOne{{$department->id}}" aria-expanded="true" aria-controls="collapseOne{{$department->id}}">
                     <h5 class="mb-0">
                         <a style="font-size: 1.2rem">
                             {{$department->name}}
@@ -86,7 +91,11 @@
                     </h5>
                 </div>
 
-                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                    @if($i == 1)
+                <div id="collapseOne{{$department->id}}" class="collapse show" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
+                    @else
+                <div id="collapseOne{{$department->id}}" class="collapse" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
+                    @endif
                     <div class="table-responsive">
                         <table class="table">
                             <thead>

@@ -68,7 +68,7 @@
             <ul class="nav-list d-flex flex-column p-0">
                 @foreach($faculties as $faculty)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">{{$faculty->name}}</a>
+                    <a href="{{url('faculty', $faculty->id)}}" class="text-white mt-2" style="font-size: 1rem">{{$faculty->name}}</a>
                     <form class="align-self-center" action="{{url('faculty-remove')}}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{$faculty->id}}">

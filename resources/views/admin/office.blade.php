@@ -113,7 +113,7 @@
 
                 @foreach($staffs as $staff)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$staff->full_name}}</a>
+                    <a href="{{url('staff')}}" class="text-white mt-2" style="font-size: 1rem">{{$staff->full_name}}</a>
                     <form class="align-self-center" action="{{url('staff-remove')}}" method="post">
                         @csrf
                         <input type="hidden" name="id"  value="{{$staff->id}}">
@@ -168,7 +168,7 @@
 
                 @foreach($mous as $mou)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$mou->full_name}}</a>
+                    <a href="" class="text-white mt-2" style="font-size: 1rem">{{$mou->full_name}}</a>
                     <form class="align-self-center" action="{{url('mou-remove')}}" method="post">
                         @csrf
                         <input type="submit" class="btn btn-success  " value="Delete">
@@ -203,7 +203,7 @@
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Project Executers :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title"
-                               class="form-control" name="executers" placeholder="set title here">
+                               class="form-control" name="executers" placeholder="set executers here">
 
                     </div>
                 </div>
@@ -254,7 +254,7 @@
             <ul class="nav-list d-flex flex-column p-0">
                 @foreach($projects as $project)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$project->title}}</a>
+                    <a href="{{url('project-detail', $project->id)}}" class="text-white mt-2" style="font-size: 1rem">{{$project->title}}</a>
                     <form class="align-self-center" action="{{url('project-remove')}}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{$project->id}}">
@@ -335,7 +335,7 @@
             <ul class="nav-list d-flex flex-column p-0">
                 @foreach($conferences as $conference)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$conference->title}}</a>
+                    <a href="{{url('conference-detail', $conference->id)}}" class="text-white mt-2" style="font-size: 1rem">{{$conference->title}}</a>
                     <form class="align-self-center" action="{{url('conference-remove')}}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{$conference->id}}">
@@ -412,7 +412,7 @@
             <ul class="nav-list d-flex flex-column p-0">
                 @foreach($partnerships as $partnership)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$partnership->title}}</a>
+                    <a href="{{url('partnerships')}}" class="text-white mt-2" style="font-size: 1rem">{{$partnership->title}}</a>
                     <form class="align-self-center" action="{{url('partnership-remove')}}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{$partnership->id}}">

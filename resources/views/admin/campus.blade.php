@@ -81,7 +81,7 @@
             <ul class="nav-list d-flex flex-column p-0">
                 @foreach($campuses as $campus)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">{{$campus->name}}</a>
+                    <a href="" class="text-white mt-2" style="font-size: 1rem">{{$campus->name}}</a>
                     <form class="align-self-center" action="{{url('campus-remove')}}" method="post">
                         @csrf
                         <input type="submit" class="btn btn-success  " value="Delete">
