@@ -17,8 +17,8 @@
 
 <body style="background-color: #002147; font-family: FontAwesome">
 <div class="container">
-    <h3 class="text-white"><a href="#" class="text-white btn btn-lg btn-outline-warning"
-                              style="font-size: 20px"> <span><div class="fa fa-home"></div></span> Back to ... </a>
+    <h3 class="text-white"><a href="{{url('/')}}" class="text-white btn btn-lg btn-outline-warning"
+                              style="font-size: 20px"> <span><div class="fa fa-home"></div></span> Back to home </a>
     </h3>
     <h2 class=" text-white">Department Section</h2>
 </div>
@@ -188,11 +188,11 @@
                     <form class="align-self-center" action="" method="post">
                         <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
                     </form>
+                    <a href="{{url('/admin-master-edit')}}">
                     <form class="align-self-center" action="" method="post">
-                        <a href="{{url('/admin-master-edit')}}" class="btn btn-success">
-                            Edit
-                        </a>
+                        <input type="submit" class="btn btn-success" value="Edit">
                     </form>
+                    </a>
                 </li>
                 <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
                     <a href="#" class="text-white mt-2" style="font-size: 1rem">Mehdi Norani</a>
