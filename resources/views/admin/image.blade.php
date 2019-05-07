@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <!-- Title -->
     <title>Azarbayjan Shahid Madani University</title>
@@ -63,7 +65,7 @@
                         <div>
                             <input cl type="url" id="copyInput{{$image->id}}"
                                     value="{{\Illuminate\Support\Facades\URL::to('/').'/' . $image->path}}" style="background : transparent; opacity : 0.0001;width: 0px; height: 0px";>
-                            <button class="text-white btn btn-danger"  onclick="copyLink({{$image->id}})"  style="font-size: 1rem; bottom: 50px">Copy Link</button>
+                            <button class="text-white btn btn-danger"  onclick="copyLink({{$image->id}})"  style="font-size: 1rem; bottom: 50px" data-toggle="modal" data-target="#Modal{{$image->id}}">Link</button>
                         </div>
                     </div>
 
@@ -77,6 +79,34 @@
 
 
 </div>
+
+
+<!--MESSAGE MODAL-->
+@foreach($images as $image)
+<div class="modal rtl" id="Modal{{$image->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title ml-auto" id="exampleModalLabel">Link : </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <p class="user-messages" style="font-family: 'Times New Roman'; alignment: left"  >
+                {{\Illuminate\Support\Facades\URL::to('/').'/' . $image->path}}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+<!-- Modal -->
+
 </body>
 <script>
   function addDocumentInput() {
@@ -104,12 +134,12 @@
   }
 
   function copyLink(id) {
-    var copyText = document.getElementById("copyInput"+id);
-    copyText.select();
-    document.execCommand("copy");
-    alert("Copied the text: " + copyText.value);
-    console.log(copyText.value);
-
+  //   var copyText = document.getElementById("copyInput"+id);
+  //   copyText.select();
+  //   document.execCommand("copy");
+  //   alert("Copied the text: " + copyText.value);
+  //   console.log(copyText.value);
+  //
   }
 </script>
 </html>
