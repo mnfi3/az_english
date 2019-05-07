@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <!-- Title -->
     <title>Azarbayjan Shahid Madani University</title>
     <!-- Core Stylesheet -->
@@ -49,19 +50,7 @@
 </div>
 <div class="container-fluid mt-25 bg mb-100" style="">
 
-    <div class="row">
-        <div class="col-12 col-md-3">
-
-                <div class="card1 card">
-                    <div class="card_image1">
-                        <img src="img/bg-img/library.jpg" />
-                    </div>
-                    <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                        <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                        </a>  </div>
-                </div>
-
-        </div>
+    <div class="row mb-50">
         <div class="col-12 col-md-3">
 
             <div class="card1 card">
@@ -69,8 +58,8 @@
                     <img src="img/bg-img/library.jpg" />
                 </div>
                 <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
+                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
+                </div>
             </div>
 
         </div>
@@ -81,8 +70,8 @@
                     <img src="img/bg-img/library.jpg" />
                 </div>
                 <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
+                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
+                </div>
             </div>
 
         </div>
@@ -93,8 +82,20 @@
                     <img src="img/bg-img/library.jpg" />
                 </div>
                 <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
+                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-3">
+
+            <div class="card1 card">
+                <div class="card_image1">
+                    <img src="img/bg-img/library.jpg" />
+                </div>
+                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
+                </div>
             </div>
 
         </div>
@@ -107,8 +108,8 @@
                     <img src="img/bg-img/library.jpg" />
                 </div>
                 <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
+                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
+                </div>
             </div>
 
         </div>
@@ -119,8 +120,8 @@
                     <img src="img/bg-img/library.jpg" />
                 </div>
                 <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
+                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
+                </div>
             </div>
 
         </div>
@@ -131,8 +132,8 @@
                     <img src="img/bg-img/library.jpg" />
                 </div>
                 <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
+                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
+                </div>
             </div>
 
         </div>
@@ -143,15 +144,46 @@
                     <img src="img/bg-img/library.jpg" />
                 </div>
                 <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <a href="" class="btn btn-danger" style="bottom: 40px"> <p class="text-white" style="font-size: 1.4rem">Copy Link</p>
-                    </a>  </div>
+                  <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
+                      </div>
             </div>
 
         </div>
     </div>
 
 </div>
+<!--MESSAGE MODAL-->
+<div class="modal rtl" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title ml-auto" id="exampleModalLabel">Link : </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <p class="user-messages" style="font-family: 'Times New Roman'; alignment: left"  >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur doloremque et fuga illo inventore ipsam magni minima natus odio officia, omnis quaerat quas, reprehenderit repudiandae tempore unde veritatis! Beatae eum magni modi, quod saepe sit?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
 </body>
+<script>
+    function cipyLink(id) {
+        var copyText = document.getElementById("copyInput"+id);
+        copyText.select();
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+
+    }
+</script>
 <script>
   function addDocumentInput() {
     var referenceNode = document.getElementById('fileInputsContainer').lastChild;
