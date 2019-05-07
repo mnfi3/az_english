@@ -53,18 +53,20 @@
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
-                                <div class="mb-50 d-flex justify-content-center ">
-                                    @if($research->image != null)
-                                    <img src="{{asset($research->image->path)}}" alt="" class="" style="border-radius: 10px;max-height: 450px">
-                                    @endif
-                                </div>
-                                <!-- Post Title -->
-                                <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">{{$research->title}}</p>
+                                    @if($research != null)
+                                    <div class="mb-50 d-flex justify-content-center ">
+                                        @if($research->image != null)
+                                            <img src="{{asset($research->image->path)}}" alt="" class="" style="border-radius: 10px;max-height: 450px">
+                                        @endif
+                                    </div>
+                                    <!-- Post Title -->
+                                    <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">{{$research->title}}</p>
 
-                                <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem">
-                                    {{$research->description}}
-                                </p>
+                                    <!-- Post Excerpt -->
+                                    <p class="" style="font-size: 1.1rem">
+                                        {{$research->description}}
+                                    </p>
+                                    @endif
                             </div>
                         </div>
                     </div>

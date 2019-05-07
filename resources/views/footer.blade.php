@@ -69,6 +69,7 @@
                         <div class="widget-title">
                             <h6>Contact</h6>
                         </div>
+                        @if($contact != null)
                         <div class="single-contact d-flex mb-30">
                             <i class="icon-placeholder"></i>
                             <p>{{$contact->address}}</p>
@@ -81,6 +82,7 @@
                             <i class="icon-contract"></i>
                             <p>{{$contact->email}}</p>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -93,7 +95,7 @@
             <div class="row">
                 <div class="col-12">
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved for shahid madani azarbayjan uiniversity | Designed by <a href="https://www.ezitech.ir/" target="_blank">EziTech</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved for Shahid Madani Azarbayjan University | Designed by <a href="http://www.ezitech.ir/" target="_blank">EziTech</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>

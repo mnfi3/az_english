@@ -12,10 +12,10 @@
     <title>Azarbayjan Shahid Madani University</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
 
 </head>
 
@@ -29,7 +29,7 @@
 
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
+<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
     {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
         {{--<h2>Presinden's Message</h2>--}}
     {{--</div>--}}
@@ -57,16 +57,19 @@
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
-                                @if(count($message->images) > 0)
-                                <div class="mb-50 d-flex justify-content-center ">
-                                    <img src="{{asset($message->images()->first()->path)}}" alt="" class="" style="border-radius: 10px;max-height: 350px">
-                                </div>
-                                @endif
+                                @if($message != null)
+                                    @if(count($message->images) > 0)
+                                        <div class="mb-50 d-flex justify-content-center ">
+                                            <img src="{{asset($message->images()->first()->path)}}" alt="" class="" style="border-radius: 10px;max-height: 350px">
+                                        </div>
+                                    @endif
 
-                                <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem">
-                                    @php echo $message->content; @endphp
-                                </p></div>
+                                    <!-- Post Excerpt -->
+                                    <p class="" style="font-size: 1.1rem">
+                                        @php echo $message->content; @endphp
+                                    </p>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>

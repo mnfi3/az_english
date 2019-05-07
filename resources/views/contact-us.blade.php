@@ -63,7 +63,9 @@ background: linear-gradient(to right, #f8e131, #f8a51f)">
                                     <div class="contact-icon mr-15">
                                         <i class="icon-placeholder"></i>
                                     </div>
+                                    @if($contact != null)
                                     <p class="text-white" style="font-size: 1.1rem">{{$contact->address}}</p>
+                                    @endif
                                 </div>
 
                                 <!-- Single Contact Info -->
@@ -71,7 +73,9 @@ background: linear-gradient(to right, #f8e131, #f8a51f)">
                                     <div class="contact-icon mr-15">
                                         <i class="icon-telephone-1"></i>
                                     </div>
+                                    @if($contact != null)
                                     <p class="text-white" style="font-size: 1.1rem">Main: {{$contact->phone1}}  <br> Office: {{$contact->phone2}} </p>
+                                    @endif
                                 </div>
 
                                 <!-- Single Contact Info -->
@@ -79,7 +83,9 @@ background: linear-gradient(to right, #f8e131, #f8a51f)">
                                     <div class="contact-icon mr-15">
                                         <i class="icon-contract"></i>
                                     </div>
+                                    @if($contact != null)
                                     <p class="text-white" style="font-size: 1.1rem"> {{$contact->email}} </p>
+                                    @endif
                                 </div>
                             </div>
                         </div>

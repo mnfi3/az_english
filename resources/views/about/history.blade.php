@@ -31,7 +31,7 @@
 
 
 <!-- ##### About us Title Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
+<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
     {{--<div class="bradcumbContent">--}}
         {{--<h2>About ASMU</h2>--}}
     {{--</div>--}}
@@ -47,7 +47,9 @@
         <div class="row">
             <div class="col-12 col-md-12 wow fadeInUp" data-wow-delay="400ms">
                 <p class="text-white" style="font-size: 1.1rem; font-weight: 600 ">
+                    @if($history != null)
                     @php echo $history->content; @endphp
+                    @endif
                 </p>
             </div>
 
@@ -63,12 +65,14 @@
     <div class="hero-slides owl-carousel">
 
         <!-- Single  Slide -->
-        @if($history->images !== null)
-            @foreach($history->images as $image)
-                <div class="single-hero-slide bg-img" style="background-image: url({{asset($image->path)}});height: 650px;border-radius: 10px">
+        @if($history != null)
+            @if($history->images !== null)
+                @foreach($history->images as $image)
+                    <div class="single-hero-slide bg-img" style="background-image: url({{asset($image->path)}});height: 650px;border-radius: 10px">
 
-                </div>
-            @endforeach
+                    </div>
+                @endforeach
+            @endif
         @endif
 
 
