@@ -94,7 +94,7 @@
                     @if($i == 1)
                 <div id="collapseOne{{$department->id}}" class="collapse show" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
                     @else
-                <div id="collapseOne{{$department->id}}" class="collapse" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
+                <div id="collapseOne{{$department->id}}" class="collapse show" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
                     @endif
                     <div class="table-responsive">
                         <table class="table">

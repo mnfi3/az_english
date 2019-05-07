@@ -93,18 +93,53 @@ class DepartmentController extends Controller
 
 
 
-      public function import(){
-//      return 'hello';
+//  public function import(){
+//    $data = Excel::load('masters.xlsx', 'UTF-8')->get();
+//    if($data->count()){
+//      $data = json_encode($data, JSON_UNESCAPED_UNICODE);
+//      $data = json_decode($data);
+//      foreach ($data as $items) {
+//        foreach ($items as $item){
+//          $name = $item->fullname_en;
+//          $email = $item->email;
+//          $cv_link = $item->link;
+//          $dep = $item->affiliation;
+//          $dep = ltrim($dep, 'Department of ');
+//          $dep = str_replace(',Tabriz,Iran', '', $dep);
+//          $dep = str_replace(',Tabriz', '', $dep);
+//          $dep = str_replace(', Tabriz,Iran', '', $dep);
+//          $dep = str_replace(', Tabriz, Iran', '', $dep);
+//          $dep = str_replace(',Tabriz, Iran', '', $dep);
+//          $dep = str_replace(',Tabriz,Iran ', '', $dep);
+//          $dep = str_replace('_x000D_Tabriz', '', $dep);
+//          $dep = str_replace('_x000D_Iran', '', $dep);
+//          $dep = str_replace(',', '', $dep);
+//          echo $dep . '<br>';
+//
+//          $department = Department::where('name', 'like', $dep)->first();
+//          if($department == null){
+//            $department = Department::create([
+//              'faculty_id' => null,
+//              'name' => $dep,
+//            ]);
+//          }
+//
+//
+//            $master = Master::create([
+//              'department_id' => $department->id,
+//              'name' => $name,
+//              'email' => $email,
+//              'cv_link' => $cv_link,
+//            ]);
+//        }
+//
+//      }
+//    }
+//  }
 
-      $data = Excel::load('masters.xlsx', 'UTF-8')->get();
 
-      if($data->count()){
-        $data = json_encode($data, JSON_UNESCAPED_UNICODE);
-        $data = json_decode($data);
-        foreach ($data as $item) {
-          print_r($item);
-          echo '<br>';
-        }
-      }
-    }
+
+
+
+
 }

@@ -12,10 +12,11 @@ class Uploader {
     date_default_timezone_set('Asia/Tehran');
     $year_dir = date('Y', time());
     $month_dir = date('m', time());
-    $day_dir = date('d', time());
-    $hour_dir = date('H', time());
-    $file_dir = 'uploads/images/' . $year_dir . '/' . $month_dir . '/' . $day_dir;
-    $name = $file->getClientOriginalName();
+//    $day_dir = date('d', time());
+//    $hour_dir = date('H', time());
+    $random = mt_rand(10,100);
+    $file_dir = 'uploads/images/' . $year_dir . '/' . $month_dir;
+    $name = $random . $file->getClientOriginalName();
     $file->move($file_dir, $name);
     $path = $file_dir .'/'. $name;
     $image = Image::create([
@@ -31,10 +32,11 @@ class Uploader {
     date_default_timezone_set('Asia/Tehran');
     $year_dir = date('Y', time());
     $month_dir = date('m', time());
-    $day_dir = date('d', time());
-    $hour_dir = date('H', time());
-    $file_dir = 'uploads/documents/' . $year_dir . '/' . $month_dir . '/' . $day_dir;
-    $name = $file->getClientOriginalName();
+//    $day_dir = date('d', time());
+//    $hour_dir = date('H', time());
+    $random = mt_rand(10,100);
+    $file_dir = 'uploads/documents/' . $year_dir . '/' . $month_dir;
+    $name = $random . $file->getClientOriginalName();
     $file->move($file_dir, $name);
     $path = $file_dir .'/'. $name;
     $doc = Document::create([

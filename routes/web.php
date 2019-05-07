@@ -18,10 +18,10 @@
 
 
 //Auth::routes();
-Route::get('/login', function () {
+Route::get('/asmu-admin-login', function () {
   return view('admin.logIn');
 })->middleware('guest');
-Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('asmu-admin-login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -100,7 +100,10 @@ Route::middleware('auth')->group(function () {
   Route::post('/admin-master-edit', 'DepartmentController@masterEdit');
 
 
-  Route::get('/import-masters', 'DepartmentController@import');
+
+  //import masters from excel file
+//  Route::get('/import-masters', 'DepartmentController@import');
+
 
 });
 
