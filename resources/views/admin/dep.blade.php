@@ -188,11 +188,11 @@
                     <form class="align-self-center" action="" method="post">
                         <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
                     </form>
-                    <a href="{{url('/admin-master-edit')}}">
                     <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success" value="Edit">
+                        <a href="{{url('/admin-master-edit')}}" class="btn btn-success">
+                            Edit
+                        </a>
                     </form>
-                    </a>
                 </li>
                 <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
                     <a href="#" class="text-white mt-2" style="font-size: 1rem">Mehdi Norani</a>
