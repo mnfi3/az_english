@@ -177,6 +177,6 @@ Route::get('/admin-image', function () {
   return view('admin.image');
 });
 Route::get('/admin-master-edit', function () {
-  return view('admin.master-edit');
+  return view('admin.masterEdit');
 });
 
