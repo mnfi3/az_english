@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class LlcController extends Controller
 {
+
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
     public function llcAdd(Request $request){
       $llc = LLCForm::create([
         'name' => $request->name

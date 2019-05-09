@@ -9,6 +9,11 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class DepartmentController extends Controller
 {
+
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
     public function departmentAdd(Request $request){
       $dep = Department::create([
         'faculty_id' => $request->faculty_id,

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
   public function add(Request $request){
     $post = Post::create([
       'title' => $request->title,

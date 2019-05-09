@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class FacultyController extends Controller
 {
+
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
     public function add(Request $request){
       $faculty = Faculty::create([
         'name' => $request->name,

@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
+
+
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
+
     public function add(Request $request){
       $slider = Slider::create([
         'title' => $request->title,

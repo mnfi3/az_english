@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ResearchController extends Controller
 {
+
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
+
     public function add(Request $request){
       $research = Research::create([
         'type' => $request->type,

@@ -33,7 +33,7 @@
                     <span class="text-white " style="font-family: Vazir;font-size: 0.9rem">
                          (توجه : ممکن است لحظاتی طول بکشد)
                     </span>
-                <a href="" class="btn btn-danger btn-sm p-2">دریافت فایل پشتیبان</a>
+                <a href="{{route('admin-backup')}}" class="btn btn-danger btn-sm p-2">دریافت فایل پشتیبان</a>
             </div>
         </div>
     </div>

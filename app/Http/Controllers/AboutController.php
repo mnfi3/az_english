@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function historyAdd(Request $request){
+
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
+  public function historyAdd(Request $request){
       $about = About::create([
         'type' => 'HISTORY',
         'content' => $request->get('content'),
