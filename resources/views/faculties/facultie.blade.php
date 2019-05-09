@@ -67,10 +67,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
         <h2 class="text-white pb-2">This Faculty Department</h2>
         <div id="accordion" role="tablist" class="mt-25">
@@ -82,7 +79,6 @@
                         </a>
                     </h5>
                 </div>
-
                 <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="table-responsive">
                         <table class="table">

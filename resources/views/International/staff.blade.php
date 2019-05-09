@@ -50,13 +50,26 @@
                                 <!-- Post Title -->
                                 <p class="post-title">The Managing Director :</p>
 
-                                    <p class="text-dark ml-3" style="font-size: 1.3rem; font-weight: 700;">  Dr.Farzad Salahshoor </p>
-                                    <p class="text-dark ml-3 w-100" style="font-size: 1.2rem; font-weight: 500;">  Phone Number: +98-4134327539 <br>
-                                        Fax Number:    +98-34327526 <br>
-                                        E-mail:
-                                        farzad.salahshoor@gmail.com &
-                                        salahshoor@azaruniv.ac.ir
+                                    <p class="text-dark ml-3" style="font-size: 1.3rem; font-weight: 700;">  Dr.Farzad Salahshoor</p>
+                                    <p class="text-dark w-100" style="font-size: 1.2rem; font-weight: 500;">  Phone Number: +98-4134327539 <br>
+
+
                                     </p>
+                                <p class="text-dark w-100" style="font-size: 1.2rem; font-weight: 500;">
+                                    Fax Number:    +98-34327526 <br>
+
+                                </p>
+                                <p class="text-dark w-100" style="font-size: 1.2rem; font-weight: 500;">
+                                    E-mail:
+                                </p>
+                                <p class="text-dark w-100 mr-auto" style="font-size: 1.2rem; font-weight: 500;">
+                                    E-mail:
+                                    farzad.salahshoor@gmail.com &
+
+                                </p>
+                                <p class="text-dark w-100" style="font-size: 1.2rem; font-weight: 500;">
+                                    email@gmail.com
+                                </p>
 
                             </div>
                         </div>

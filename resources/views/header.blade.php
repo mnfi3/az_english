@@ -7,7 +7,7 @@
                 <div class="d-none d-md-block h-100 ">
                     <div class="header-content h-100  d-flex align-items-center justify-content-start" >
                         <div >
-                            <a href="{{url('/')}}"><img src="img/bg-img/logo.png" alt="" style="max-height: 101px;" class="py-3"></a>
+                            <a href="{{url('/')}}"><img src="{{asset('img/bg-img/logo.png')}}" alt="" style="max-height: 101px;" class="py-3"></a>
                         </div>
                         <h3 class=" text-white ml-3">Azarbaijan Shahid Madani University</h3>
                         <div class="login-content ">

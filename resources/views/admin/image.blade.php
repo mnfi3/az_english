@@ -52,16 +52,14 @@
 
     <div class="row mb-50">
         <div class="col-12 col-md-3">
-
             <div class="card1 card">
                 <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
+                    <img src="img/bg-img/bg-1.jpg" />
                 </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                <div class="card_title1" style="background-color: rgba(76,46,52,0.7);  margin-top: -40px";>
                     <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
                 </div>
             </div>
-
         </div>
         <div class="col-12 col-md-3">
 

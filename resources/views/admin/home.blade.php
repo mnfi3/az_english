@@ -17,11 +17,24 @@
 </head>
 
 <body style="background-color: #002147; font-family: Vazir; color: #ffffff;">
+    <div class="row mt-50 ml-3">
+        <div class="col-md-12">
+            <div class="d-flex flex-row justify-content-between">
+                <div class="ml-3">
+                    <a href="" class="btn btn-danger btn-sm"><h5 class=" text-white" style="font-family: Vazir">خروج</h5></a>
+                </div>
+                <div class="mr-5">
+                    <span class="text-white " style="font-family: Vazir;font-size: 0.9rem">
+                         (توجه : ممکن است لحظاتی طول بکشد)
+                    </span>
+                    <a href="" class="btn btn-danger btn-sm p-2">دریافت فایل پشتیبان</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <section id="manage">
     <div class="container-fluid" style="border-radius: 2rem">
-        <div class="d-flex flex-row justify-content-start ml-3">
-            <a href="" class="btn btn-danger btn-sm"><h5 class=" text-white">Exit</h5></a>
-        </div>
         <div class="d-flex flex-row justify-content-center mt-50">
             <h2 class=" text-white">  به پنل مدیریت خوش آمدید</h2>
         </div>
