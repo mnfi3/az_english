@@ -64,7 +64,9 @@
 
                                     <!-- Post Excerpt -->
                                     <p class="" style="font-size: 1.1rem">
-                                        {{$research->description}}
+                                        @php
+                                        echo $research->description;
+                                        @endphp
                                     </p>
                                     @endif
                             </div>
