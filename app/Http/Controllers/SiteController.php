@@ -174,7 +174,8 @@ class SiteController extends Controller
       if($request->hasFile('documents')){
         $files = $request->file('documents');
         foreach ($files as $file) {
-          Uploader::saveDoc('App\Message', $message->id, $file);
+          if ((int)(($file->getSize()/1024)/1024) < 6)
+            Uploader::saveDoc('App\Message', $message->id, $file);
         }
       }
 
