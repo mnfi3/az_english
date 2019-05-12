@@ -76,7 +76,7 @@
 
 
         </div>
-        <h2 class="text-white pb-2">{{$faculty->name}} Faculty Department</h2>
+        <h2 class="text-white pb-2">{{$faculty->name}} Faculty Departments</h2>
         <div id="accordion" role="tablist" class="mt-25">
 
             @php($i=0)
@@ -129,7 +129,7 @@
                                 @if($master->doc != null)
                                 <td><a href="{{\Illuminate\Support\Facades\URL::to('/').'/'.$master->doc->path}}" download>Download</a></td>
                                 @else
-                                <td><a href="{{$master->cv_link}}">Link</a></td>
+                                <td><a href="{{$master->cv_link}}" target="_blank">Link</a></td>
                                 @endif
                             </tr>
                             @endforeach
