@@ -110,7 +110,7 @@
                 </div>
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's Speciality :</label>
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's Research Area :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
                                class="form-control" name="speciality">

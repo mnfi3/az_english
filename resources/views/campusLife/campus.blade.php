@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbaijan Shahid Madani University</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
@@ -26,15 +26,6 @@
 </div>
 <!-- ##### Header Area Start ##### -->
 @include('header')
-
-
-<!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
-    {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
-        {{--<h2>Dormitory</h2>--}}
-    {{--</div>--}}
-</div>
-
 <div class="blog-area mt-25 section-padding-100" >
     <div class="container">
         <div class="row">
@@ -48,12 +39,9 @@
                                 <!-- Post Thumb -->
                                 <div class="mb-50 d-flex justify-content-center ">
                                     @if($campus->image != null)
-                                    <img src="{{asset($campus->image->path)}}" alt="" class="" style="border-radius: 10px;max-height: 400px">
+                                        <img src="{{asset($campus->image->path)}}" alt="" class="" style="border-radius: 10px;max-height: 400px">
                                     @endif
                                 </div>
-
-                                <h4>{{$campus->name}}</h4>
-
                                 <!-- Post Excerpt -->
                                 <p class="" style="font-size: 1.1rem">
                                     @php echo $campus->content; @endphp

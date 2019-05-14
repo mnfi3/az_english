@@ -60,24 +60,24 @@
 
                                 </li>
                                 {{--<li><a href="#">ADMINISTRATION</a>--}}
-                                    {{--<ul class="dropdown" style="width:400px">--}}
-                                        {{--<li><a href="{{url('/mou')}}">Vice-rector for research</a></li>--}}
-                                        {{--<li><a href="{{url('/staff')}}">Vice-rector for Culture</a></li>--}}
-                                        {{--<li><a href="{{url('/staff')}}">Vice-rector for Students affairs</a></li>--}}
-                                        {{--<li><a href="{{url('/staff')}}">Vice-rector for Financial</a></li>--}}
-                                        {{--<li><a href="{{url('/staff')}}">Vice-rector for education</a></li>--}}
-                                    {{--</ul>--}}
+                                {{--<ul class="dropdown" style="width:400px">--}}
+                                {{--<li><a href="{{url('/mou')}}">Vice-rector for research</a></li>--}}
+                                {{--<li><a href="{{url('/staff')}}">Vice-rector for Culture</a></li>--}}
+                                {{--<li><a href="{{url('/staff')}}">Vice-rector for Students affairs</a></li>--}}
+                                {{--<li><a href="{{url('/staff')}}">Vice-rector for Financial</a></li>--}}
+                                {{--<li><a href="{{url('/staff')}}">Vice-rector for education</a></li>--}}
+                                {{--</ul>--}}
 
                                 {{--</li>--}}
                                 <li><a href="#">Academics</a>
                                     <ul class="dropdown" style="width:180px">
                                         <li class="edit-list"><a href="#">faculties</a>
                                             @php
-                                            $faculties = \App\Faculty::all();
+                                                $faculties = \App\Faculty::all();
                                             @endphp
                                             <ul class="dropdown" style="width:500px">
                                                 @foreach($faculties as $faculty)
-                                                <li><a href="{{url('/faculty', $faculty->id)}}" style="">{{$faculty->name}}</a></li>
+                                                    <li><a href="{{url('/faculty', $faculty->id)}}" style="">{{$faculty->name}}</a></li>
                                                 @endforeach
 
                                             </ul>
@@ -104,7 +104,7 @@
                                 </li>
 
 
-                                <li><a href="{{url('campus-container')}}">Campus life</a>
+                                <li><a href="#">Campus life</a>
                                     <ul class="dropdown" style="width:250px">
                                         @if(\App\CampusLife::where('name', 'like', 'accommodation')->first() != null)
                                             <li><a href="{{url('/campus-life/accommodation')}}">accomodation</a></li>
@@ -118,9 +118,7 @@
                                         @if(\App\CampusLife::where('name', 'like', 'shopping center')->first() != null)
                                             <li><a href="{{url('/campus-life/shopping center')}}">Shopping Center</a></li>
                                         @endif
-                                        @if(\App\CampusLife::where('name', 'like', 'health center')->first() != null)
-                                            <li><a href="{{url('/campus-life/health center')}}">Health Center</a></li>
-                                        @endif
+
                                         @if(\App\CampusLife::where('name', 'like', 'sports')->first() != null)
                                             <li><a href="{{url('/campus-life/sports')}}">Sports</a></li>
                                         @endif
@@ -132,8 +130,11 @@
                                         @endif
                                         <li><a href="#">Other</a>
                                             <ul class="dropdown" style="width:250px ; margin-left: 28%">
-                                                @if(\App\CampusLife::where('name', 'like', 'kindergarten')->first() != null)
-                                                    <li><a href="{{url('/campus-life/kindergarten')}}">kindergarten</a></li>
+                                                @if(\App\CampusLife::where('name', 'like', 'health center')->first() != null)
+                                                    <li><a href="{{url('/campus-life/health center')}}">Health Center</a></li>
+                                                @endif
+                                                @if(\App\CampusLife::where('name', 'like', 'nursery')->first() != null)
+                                                    <li><a href="{{url('/campus-life/nursery')}}">nursery</a></li>
                                                 @endif
                                                 @if(\App\CampusLife::where('name', 'like', 'mosque')->first() != null)
                                                     <li><a href="{{url('/campus-life/mosque')}}">mosque</a></li>
@@ -141,6 +142,13 @@
                                                 @if(\App\CampusLife::where('name', 'like', 'fruit shop')->first() != null)
                                                     <li><a href="{{url('/campus-life/fruit shop')}}">Fruit shop</a></li>
                                                 @endif
+                                                    @if(\App\CampusLife::where('name', 'like', 'grocery')->first() != null)
+                                                        <li><a href="{{url('/campus-life/grocery')}}">Grocery</a></li>
+                                                    @endif
+
+                                                    @if(\App\CampusLife::where('name', 'like', 'post office')->first() != null)
+                                                        <li><a href="{{url('/campus-life/post office')}}">Post Office</a></li>
+                                                    @endif
                                             </ul>
                                         </li>
                                     </ul>

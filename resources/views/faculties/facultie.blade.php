@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbaijan Shahid Madani University</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
@@ -31,7 +31,7 @@
 <!-- ##### Breadcumb Area Start ##### -->
 <div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
     {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
-        {{--<h2>Facultie of Engineering</h2>--}}
+    {{--<h2>Facultie of Engineering</h2>--}}
     {{--</div>--}}
 </div>
 
@@ -58,7 +58,7 @@
                                 <!-- Post Thumb -->
                                 <div class="mb-50 d-flex justify-content-center ">
                                     @if($faculty->image != null)
-                                    <img src="{{asset($faculty->image->path)}}" alt="" class="" style="border-radius: 10px; max-height: 450px">
+                                        <img src="{{asset($faculty->image->path)}}" alt="" class="" style="border-radius: 10px; max-height: 450px">
                                     @endif
                                 </div>
 
@@ -83,68 +83,68 @@
             @foreach($faculty->departments as $department)
                 @php($i++)
                 <div class="card">
-                <div class="card-header bg-warning" role="tab" id="headingOne{{$department->id}}"  data-toggle="collapse"   href="#collapseOne{{$department->id}}" aria-expanded="true" aria-controls="collapseOne{{$department->id}}">
-                    <h5 class="mb-0">
-                        <a style="font-size: 1.2rem">
-                            {{$department->name}}
-                        </a>
-                    </h5>
-                </div>
-
-                    @if($i == 1)
-                <div id="collapseOne{{$department->id}}" class="collapse show" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
-                    @else
-                <div id="collapseOne{{$department->id}}" class="collapse show" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
-                    @endif
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col">Row</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Specialty</th>
-                                <th scope="col">Academic Rank </th>
-                                <th scope="col">Email </th>
-                                <th scope="col">Picture </th>
-                                <th scope="col">CV </th>
-
-                            </tr>
-                            </thead>
-                            <tbody style="alignment: center" class="">
-                            @php($i=0)
-                            @foreach($department->masters as $master)
-                            <tr>
-                                <th scope="row">{{++$i}}</th>
-                                <td>{{$master->name}}</td>
-                                <td>{{$master->speciality}}</td>
-                                <td>{{$master->rank}}</td>
-                                <td>{{$master->email}}</td>
-                                <td>
-                                    @if($master->image != null)
-                                    <img src="{{asset($master->image->path)}}" class="img-container mt-0" alt="">
-                                    @else
-                                    <img src="" class="img-container mt-0" alt="">
-                                    @endif
-                                </td>
-                                @if($master->doc != null)
-                                <td><a href="{{\Illuminate\Support\Facades\URL::to('/').'/'.$master->doc->path}}" download>Download</a></td>
-                                @else
-                                <td><a href="{{$master->cv_link}}" target="_blank">Link</a></td>
-                                @endif
-                            </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                    <div class="card-header bg-warning" role="tab" id="headingOne{{$department->id}}"  data-toggle="collapse"   href="#collapseOne{{$department->id}}" aria-expanded="true" aria-controls="collapseOne{{$department->id}}">
+                        <h5 class="mb-0">
+                            <a style="font-size: 1.2rem">
+                                {{$department->name}}
+                            </a>
+                        </h5>
                     </div>
 
+                    @if($i == 1)
+                        <div id="collapseOne{{$department->id}}" class="collapse" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
+                            @else
+                                <div id="collapseOne{{$department->id}}" class="collapse" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
+                                    @endif
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Row</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Research Area</th>
+                                                <th scope="col">Academic Rank </th>
+                                                <th scope="col">Email </th>
+                                                <th scope="col">Picture </th>
+                                                <th scope="col">CV </th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody style="alignment: center" class="">
+                                            @php($i=0)
+                                            @foreach($department->masters as $master)
+                                                <tr>
+                                                    <th scope="row">{{++$i}}</th>
+                                                    <td>{{$master->name}}</td>
+                                                    <td>{{$master->speciality}}</td>
+                                                    <td>{{$master->rank}}</td>
+                                                    <td>{{$master->email}}</td>
+                                                    <td>
+                                                        @if($master->image != null)
+                                                            <img src="{{asset($master->image->path)}}" class="img-container mt-0" alt="">
+                                                        @else
+                                                            <img src="" class="img-container mt-0" alt="">
+                                                        @endif
+                                                    </td>
+                                                    @if($master->doc != null)
+                                                        <td><a href="{{\Illuminate\Support\Facades\URL::to('/').'/'.$master->doc->path}}" download>Download</a></td>
+                                                    @else
+                                                        <td><a href="{{$master->cv_link}}" target="_blank">Link</a></td>
+                                                    @endif
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                        </div>
+                        @endforeach
+
+
                 </div>
-            </div>
-            @endforeach
-
-
         </div>
     </div>
-</div>
 </div>
 
 <!-- ##### Blog Area End ##### -->

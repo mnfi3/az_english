@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbaijan Shahid Madani University</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
@@ -40,9 +40,9 @@
                 <a href="{{url('/mou')}}">
                     <div class="card1 card">
                         <div class="card_image1">
-                            <img src="{{asset('img/bg-img/library.jpg')}}" />
+                            <img src="{{asset('img/bg-img/mou.png')}}" />
                         </div>
-                            <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px;">
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px;">
                             <p class="text-white" style="font-size: 1.4rem">MOUs</p>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                 <a href="{{url('/projects')}}">
                     <div class="card1 card ">
                         <div class="card_image1">
-                            <img src="{{asset('img/bg-img/library.jpg')}}" />
+                            <img src="{{asset('img/bg-img/project.jpeg')}}" />
                         </div>
                         <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
                             <p class="text-white" style="font-size: 1.4rem">Join Project</p>
@@ -64,7 +64,7 @@
                 <a href="{{url('/conferences')}}">
                     <div class="card1 card">
                         <div class="card_image1">
-                            <img src="{{asset('img/bg-img/library.jpg')}}" />
+                            <img src="{{asset('img/bg-img/conference.jpg')}}" />
                         </div>
                         <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
                             <p class="text-white" style="font-size: 1.4rem">Conferences</p>
@@ -76,7 +76,7 @@
                 <a href="{{url('/partnerships')}}">
                     <div class="card1 card">
                         <div class="card_image1">
-                            <img src="{{asset('img/bg-img/library.jpg')}}" />
+                            <img src="{{asset('img/bg-img/partnership.jpg')}}" />
                         </div>
                         <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
                             <p class="text-white" style="font-size: 1.4rem">Partnership</p>

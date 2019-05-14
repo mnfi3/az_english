@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="col-12">
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved for Shahid Madani Azarbayjan University | Designed by <a href="http://www.ezitech.ir/" target="_blank">EziTech</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved for Azarbaijan Shahid Madani University | Designed by <a href="http://www.ezitech.ir/" target="_blank">EziTech</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>

@@ -41,9 +41,11 @@
                             <option value="sports">sports</option>
                             <option value="dormitory">dormitory</option>
                             <option value="health center">health center</option>
-							<option value="kindergarten">kindergarten</option>
+							<option value="nursery">nursery</option>
 							<option value="mosque">mosque</option>
 							<option value="fruit shop">fruit shop</option>
+							<option value="grocery">grocery</option>
+							<option value="post office">post office</option>
                         </select>
                     </div>
                 </div>
