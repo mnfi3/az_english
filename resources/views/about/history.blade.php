@@ -25,21 +25,6 @@
 <!-- ##### Header Area Start ##### -->
 @include('header')
 <!-- ##### Header Area End ##### -->
-
-
-
-
-
-<!-- ##### About us Title Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
-    {{--<div class="bradcumbContent">--}}
-        {{--<h2>About ASMU</h2>--}}
-    {{--</div>--}}
-</div>
-<!-- ##### About us Title End ##### -->
-
-
-
 <!-- ##### About Us Area Start ##### -->
 <section class="about-us-area mt-50 section-padding-50">
     <div class="container">

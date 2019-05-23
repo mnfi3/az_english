@@ -47,6 +47,9 @@ Route::get('/conference-detail', function () {
 Route::get('/libraries', function () {
   return view('Research.libraries');
 });
+Route::get('/research-center-details', function () {
+  return view('Research.research-center');
+});
 
 //Internation
 
@@ -109,6 +112,10 @@ Route::get('/history', function () {
 Route::get('/message', function () {
 
   return view('about.message');
+});
+Route::get('/rectors', function () {
+
+  return view('about.vice-rectors');
 });
 
 
@@ -178,5 +185,14 @@ Route::get('/admin-image', function () {
 });
 Route::get('/admin-master-edit', function () {
   return view('admin.masterEdit');
+});
+Route::get('/admin-faculty-edit', function () {
+  return view('admin.facultyEdit');
+});
+Route::get('/admin-campus-edit', function () {
+  return view('admin.campusEdit');
+});
+Route::get('/admin-research-center', function () {
+  return view('admin.researchCenter');
 });
 

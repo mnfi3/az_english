@@ -55,19 +55,18 @@
                                     <ul class="dropdown" style="width:250px">
                                         <li><a href="{{url('/history')}}">History</a></li>
                                         <li><a href="{{url('/message')}}">Presiden's Message</a></li>
+                                        <li><a href="#">Administration</a>
+                                            <ul class="dropdown " style="width:420px ;margin-left: 28%;">
+                                                <li class="dropdown2"><a href="{{url('/rectors')}}">the Rector</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors')}}">Vice-Rector for Research & Technology</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors')}}">Vice-Rector for Education</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors')}}">Vice-Rector for Cultural Affairs</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors')}}">Vice-Rector for Student Affairs</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors')}}">Vice-Rector for Finance & Administrative Affairs</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
-
                                 </li>
-                                {{--<li><a href="#">ADMINISTRATION</a>--}}
-                                    {{--<ul class="dropdown" style="width:400px">--}}
-                                        {{--<li><a href="{{url('/mou')}}">Vice-rector for research</a></li>--}}
-                                        {{--<li><a href="{{url('/staff')}}">Vice-rector for Culture</a></li>--}}
-                                        {{--<li><a href="{{url('/staff')}}">Vice-rector for Students affairs</a></li>--}}
-                                        {{--<li><a href="{{url('/staff')}}">Vice-rector for Financial</a></li>--}}
-                                        {{--<li><a href="{{url('/staff')}}">Vice-rector for education</a></li>--}}
-                                    {{--</ul>--}}
-
-                                {{--</li>--}}
                                 <li><a href="#">Academics</a>
                                     <ul class="dropdown" style="width:180px">
                                         <li class="edit-list"><a href="#">faculties</a>
@@ -95,10 +94,39 @@
                                                 <li class="dropdown1"><a href="{{url('/libraries')}}">Computer Labs</a></li>
                                                 <li class="dropdown1"><a href="{{url('/libraries')}}">Basic sciences Labs</a></li>
                                                 <li class="dropdown1"><a href="{{url('/libraries')}}">Technical and engineering</a></li>
+                                                <li class="dropdown1"><a href="{{url('/libraries')}}">Agriculture Lab</a></li>
+                                                <li class="dropdown1"><a href="{{url('/libraries')}}">Research Laboratories</a>
+                                                    <ul class="dropdown " style="width:300px ;margin-left: 40%">
+                                                        <li class="dropdown1"><a href="{{url('/libraries')}}">A</a></li>
+                                                        <li class="dropdown1"><a href="{{url('/libraries')}}">B</a></li>
+
+
+                                                        </li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                         {{--<li><a href="{{url('/conferences')}}">Conferences/Workshops</a></li>--}}
-                                        <li><a href="about-us.html">Innovation</a></li>
+                                        <li><a href="about-us.html">Innovation Center</a></li>
+                                        <li><a href="#">Research Centers</a>
+                                            <ul class="dropdown " style="width:300px ;margin-left: 40%">
+                                                <li class="dropdown1"><a href="#">Institutes</a>
+                                                    <ul class="dropdown " style="width:300px ;margin-left: 40%">
+                                                        <li class="dropdown1"><a href="{{url('/research-center-details')}}">A</a>
+                                                        </li>
+                                                        <li class="dropdown1"><a href="{{url('/research-center-details')}}">B</a></li>
+                                                        <li class="dropdown1"><a href="{{url('/research-center-details')}}">C</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown1"><a href="#">Research Groups</a>
+                                                    <ul class="dropdown " style="width:300px ;margin-left: 40%">
+                                                        <li class="dropdown1"><a href="{{url('/research-center-details')}}">A</a>
+                                                        </li>
+                                                        <li class="dropdown1"><a href="{{url('/research-center-details')}}">B</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                     {{--{{route('home')}}--}}
                                 </li>

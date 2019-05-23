@@ -27,20 +27,6 @@
 <!-- ##### Header Area Start ##### -->
 @include('header')
 
-
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
-
-</div>
-<!-- ##### Header Area End ##### -->
-
-<!-- ##### Breadcumb Area Start ##### -->
-<!--<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">-->
-<!--<div class="bradcumbContent" style="border-radius: 5px">-->
-<!--<h2>The News and Info</h2>-->
-<!--</div>-->
-<!--</div>-->
-<!-- ##### Breadcumb Area End ##### -->
-
 <!-- ##### Blog Area Start ##### -->
 <div class="blog-area mt-25 section-padding-100" >
     <div class="container">
@@ -53,8 +39,19 @@
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
-                                <div class="mb-50 d-flex justify-content-center ">
-                                    <img src="{{asset('img/blog-img/1.jpg')}}" alt="" class="" style="border-radius: 10px;max-height: 450px">
+                                <div class="mb-50 mt-25 d-flex justify-content-center ">
+                                    <!-- ##### Slider Start ##### -->
+                                    <section class="hero-area" style="width: 70%;">
+                                        <div class="hero-slides owl-carousel" style="">
+
+                                            <!-- Single  Slide -->
+                                            <div class="single-hero-slide bg-img  " style="background-image: url({{asset('img/bg-img/library.jpg')}}); height: 500px">
+
+                                            </div>
+
+                                        </div>
+                                    </section>
+                                    <!-- ##### Slider End ##### -->
                                 </div>
                                 <!-- Post Title -->
                                 <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">Shahid Madani University Centeral Library</p>

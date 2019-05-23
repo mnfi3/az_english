@@ -25,51 +25,50 @@
 
 <!-- ##### Slider Start ##### -->
 <section class="hero-area">
-    <div class="hero-slides owl-carousel">
+    <div class="hero-slides owl-carousel" style="">
 
         <!-- Single  Slide -->
-        <div class="single-hero-slide bg-img " style="background-image: url({{asset('img/bg-img/library.jpg')}});">
+        <div class="single-hero-slide bg-img " style="background-image: url({{asset('img/bg-img/library.jpg')}}) ;">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
-                        <div class="hero-slides-content">
-                            <h4 data-animation="fadeInUp" data-delay="100ms">All thing you need</h4>
-                            <h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br> University</h2>
+                        <div class="hero-slides-content ">
+                            <h4 data-animation="fadeInUp " data-delay="100ms">All thing you need</h4>
+                            <h2 data-animation="fadeInUp " data-delay="400ms" class="p-3" style="">Wellcome to our <br> University</h2>
                             <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        {{--<!-- Single  Slide -->--}}
+        {{--<div class="single-hero-slide bg-img " style="background-image: url({{asset('img/bg-img/boss.jpg')}});">--}}
+            {{--<div class="container h-100">--}}
+                {{--<div class="row h-100 align-items-center">--}}
+                    {{--<div class="col-12">--}}
+                        {{--<div class="hero-slides-content">--}}
+                            {{--<h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>--}}
+                            {{--<h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br> University</h2>--}}
+                            {{--<a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
-        <!-- Single  Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url({{asset('img/bg-img/bg-2.jpg')}});">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <div class="hero-slides-content">
-                            <h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>
-                            <h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br> University</h2>
-                            <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="single-hero-slide bg-img" style="background-image: url({{asset('img/bg-img/Entery.jpg')}});">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <div class="hero-slides-content">
-                            <h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>
-                            <h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br> University</h2>
-                            <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="single-hero-slide bg-img" style="background-image: url({{asset('img/bg-img/Entery.jpg')}});">--}}
+            {{--<div class="container h-100">--}}
+                {{--<div class="row h-100 align-items-center">--}}
+                    {{--<div class="col-12">--}}
+                        {{--<div class="hero-slides-content">--}}
+                            {{--<h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>--}}
+                            {{--<h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br> University</h2>--}}
+                            {{--<a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 </section>
 <!-- ##### Slider End ##### -->

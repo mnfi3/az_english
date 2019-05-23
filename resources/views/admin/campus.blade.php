@@ -55,15 +55,18 @@
                         </script>
                     </div>
                 </div>
-                <div class="form-group row py-4">
-                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Image :</label>
+                <div class="form-group row pt-4">
+                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Image for Facultie :</label>
                     <div class="col-md-8 mr-auto">
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
                                        class="form-control-file" name="documents[]">
+                                <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Image</button>
+
                             </div>
-                        </div> </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
@@ -72,20 +75,30 @@
         </div>
         <div class="col-12 col-md-4">
             <div class="d-flex justify-content-end">
-                <h2 class="text-white">All Campus parts</h2>
+                <h2 class="text-white">All Campus Parts</h2>
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
-                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">Bank</a>
+                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
+                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Shop</a>
                     <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Delete">
+                        <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
+                    </form>
+                    <form class="align-self-center" action="" method="post">
+                        <a href="{{url('/admin-campus-edit')}}" class="btn btn-success">
+                            Edit
+                        </a>
                     </form>
                 </li>
-                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">transport</a>
+                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
+                    <a href="#" class="text-white mt-2" style="font-size: 1rem">bank</a>
                     <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Delete">
+                        <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
+                    </form>
+                    <form class="align-self-center" action="" method="post">
+                        <a href="{{url('/admin-campus-edit')}}" class="btn btn-success">
+                            Edit
+                        </a>
                     </form>
                 </li>
             </ul>

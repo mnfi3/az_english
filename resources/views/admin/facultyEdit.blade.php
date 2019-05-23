@@ -15,31 +15,35 @@
 
 </head>
 
-<body style="background-color: #002147; font-family: FontAwesome" >
-    <div class="container">
-        <h3 class="text-white"><a href="{{url('/admin-home')}}" class="text-white btn btn-lg btn-outline-warning" style="font-size: 20px"> <span><div class="fa fa-home"></div></span>  Back to home </a></h3>
-        <h2 class=" text-white">Facultie Section</h2>
-    </div>
+<body style="background-color: #002147; font-family: FontAwesome">
+<div class="container">
+    <h2 class=" text-white">Edit Faculties Info</h2>
+</div>
 <div class="container bg" style=" ">
     <div class="row mt-50 ">
+
         <div class="col-12 col-md-8 ">
             <form action="" method="post" enctype="multipart/form-data">
+
                 <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
-                    <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="name" placeholder="Enter Name Here">
-                    </div>
-                </div>
-                <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean :</label>
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
                                class="form-control" name="name">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Description text :</label>
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean :</label>
+                    <div class="col-md-8 mr-auto">
+                        <input type="text" id="title" required=""
+                               class="form-control" name="name">
+                    </div>
+                </div>
+                <div class="form-group row pt-4">
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Description :</label>
                     <div class="col-md-8 mr-auto">
                             <textarea type="text" id="editor1" required=""
                                       class="form-control" name="editor1" placeholder="set content here">
@@ -63,40 +67,9 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
-                    <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
-                    {{--<button class="btn btn-danger " type="submit">Remove</button>--}}
+                    <button class="btn btn-success btn-lg mx-3" type="submit">Save</button>
                 </div>
             </form>
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="d-flex justify-content-end">
-                <h2 class="text-white">All Faculties</h2>
-            </div>
-            <div class="divider-red"></div>
-            <ul class="nav-list d-flex flex-column p-0">
-                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Physics</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
-                    </form>
-                    <form class="align-self-center" action="" method="post">
-                        <a href="{{url('/admin-faculty-edit')}}" class="btn btn-success">
-                            Edit
-                        </a>
-                    </form>
-                </li>
-                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Engineeribg</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
-                    </form>
-                    <form class="align-self-center" action="" method="post">
-                        <a href="{{url('/admin-faculty-edit')}}" class="btn btn-success">
-                            Edit
-                        </a>
-                    </form>
-                </li>
-            </ul>
         </div>
     </div>
     <br>

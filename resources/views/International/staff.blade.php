@@ -42,7 +42,7 @@
 
                         <!-- Single Blog Start -->
                         <div class="col-12" >
-                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
+                            <div class="single-blog-post mb-50 wow fadeInUp p-4" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
                                 <div class="mb-50 d-flex justify-content-center ">
                                     <img src="{{asset('img/bg-img/salahshor.jpg')}}" alt="" class="w-100" style="border-radius: 10px;max-height: 300px;">
@@ -55,22 +55,15 @@
 
 
                                     </p>
-                                <p class="text-dark w-100" style="font-size: 1.2rem; font-weight: 500;">
+                                <p class="text-dark " style="font-size: 1.2rem; font-weight: 500;">
                                     Fax Number:    +98-34327526 <br>
 
                                 </p>
-                                <p class="text-dark w-100" style="font-size: 1.2rem; font-weight: 500;">
+                                <p class="text-dark  mr-auto" style="font-size: 1.2rem; font-weight: 500;">
                                     E-mail:
-                                </p>
-                                <p class="text-dark w-100 mr-auto" style="font-size: 1.2rem; font-weight: 500;">
-                                    E-mail:
-                                    farzad.salahshoor@gmail.com &
-
-                                </p>
-                                <p class="text-dark w-100" style="font-size: 1.2rem; font-weight: 500;">
+                                    farzad. salahshoor@gmail.com &
                                     email@gmail.com
                                 </p>
-
                             </div>
                         </div>
                     </div>

@@ -26,25 +26,6 @@
 </div>
 <!-- ##### Header Area Start ##### -->
 @include('header')
-
-
-<!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
-    {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
-        {{--<h2>Facultie of Engineering</h2>--}}
-    {{--</div>--}}
-</div>
-
-<!-- ##### Header Area End ##### -->
-
-<!-- ##### Breadcumb Area Start ##### -->
-<!--<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">-->
-<!--<div class="bradcumbContent" style="border-radius: 5px">-->
-<!--<h2>The News and Info</h2>-->
-<!--</div>-->
-<!--</div>-->
-<!-- ##### Breadcumb Area End ##### -->
-
 <!-- ##### Blog Area Start ##### -->
 <div class="blog-area mt-25 section-padding-100" >
     <div class="container">
@@ -56,12 +37,27 @@
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
-                                <div class="mb-50 d-flex justify-content-center ">
-                                    <img src="img/bg-img/engineering.jpg" alt="" class="" style="border-radius: 10px; max-height: 450px">
+                                <div class="mb-50 mt-25 d-flex justify-content-center ">
+                                    <!-- ##### Slider Start ##### -->
+                                    <section class="hero-area" style="width: 70%;">
+                                        <div class="hero-slides owl-carousel" style="">
+
+                                            <!-- Single  Slide -->
+                                            <div class="single-hero-slide1 bg-img  " style="background-image: url({{asset('img/bg-img/library.jpg')}}); height: 500px">
+
+                                            </div>
+
+                                        </div>
+                                    </section>
+                                    <!-- ##### Slider End ##### -->
                                 </div>
 
                                 <!-- Post Excerpt -->
                                 <p class="" style="font-size: 1.1rem"> The Faculty of Technology and Engineering started its academic activities in 1994, admitting undergraduate students in Civil Engineering and a year later in Electrical (Power) Engineering. Currently, undergraduate and postgraduate courses are offered in Mechanical Engineering, Civil Engineering, Electrical Engineering, Metallurgy & Materials Engineering, and Chemical Engineering.</p>
+                                <h3 style="font-size: 1.1rem" > Faculty Dean : </h3>
+                                <p class="ml-3" style="font-size: 1.1rem"> Dr. Ali Ajami <br>
+                                phone number: 041-33421669<br>
+                                Email : facultyDean@gmail.com</p>
                             </div>
 
                         </div>
@@ -72,14 +68,21 @@
         <h2 class="text-white pb-2">This Faculty Department</h2>
         <div id="accordion" role="tablist" class="mt-25">
             <div class="card">
-                <div class="card-header bg-warning" role="tab" id="headingOne"  data-toggle="collapse"   href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h5 class="mb-0">
+                <div class="card-header bg-warning tooltip1" role="tab" id="headingOne"  data-toggle="collapse"   href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h5 class="mb-0 hover ">
                         <a style="font-size: 1.2rem">
-                            Department Of Biology
+                            Department Of Biology123
+
                         </a>
-                    </h5>
+                    </h5><span class=" tooltiptext "> Click For More Details </span>
                 </div>
-                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="collapseOne" class="collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div style="width: 100%">
+                        <h6 class="text-dark p-3 ml-3" style="font-size: 1.1rem; ">
+                            Head of Departments :
+                        <span class="ml-2" style="font-size: 1rem">DR.Esmaile Nourani </span>
+                        </h6>
+                    </div>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -135,14 +138,16 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header" style="background-color: #002147" role="tab" id="headingOne"  data-toggle="collapse"   href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <h5 class="mb-0 text-white">
-                        <a class="collapsed text-white" style="font-size: 1.2rem" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Department of Chemistry
+                <div class="card-header bg-warning tooltip1" style="background-color: #002147" role="tab" id="headingOne"  data-toggle="collapse"   href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <h5 class="mb-0 hover ">
+                        <a style="font-size: 1.2rem">
+                            Department Of Biology123
+
                         </a>
-                    </h5>
+                    </h5><span class=" tooltiptext "> Click For More Details </span>
                 </div>
                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -193,12 +198,13 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header bg-warning" role="tab" id="headingThree"  data-toggle="collapse"   href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                    <h5 class="mb-0">
+                <div class="card-header bg-warning tooltip1" role="tab" id="headingThree"  data-toggle="collapse"   href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <h5 class="mb-0 hover ">
                         <a style="font-size: 1.2rem">
-                            Department Of Biology
+                            Department Of Biology123
+
                         </a>
-                    </h5>
+                    </h5><span class=" tooltiptext "> Click For More Details </span>
                 </div>
 
                 <div id="collapseThree" class="collapse " role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
@@ -253,12 +259,13 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header" style="background-color: #002147" role="tab" id="headingFour"  data-toggle="collapse"   href="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
-                    <h5 class="mb-0 text-white">
-                        <a class="collapsed text-white" style="font-size: 1.2rem" data-toggle="collapse" href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                            Department of Chemistry
+                <div class="card-header bg-warning tooltip1" style="background-color: #002147" role="tab" id="headingFour"  data-toggle="collapse"   href="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
+                    <h5 class="mb-0 hover ">
+                        <a style="font-size: 1.2rem">
+                            Department Of Biology123
+
                         </a>
-                    </h5>
+                    </h5><span class=" tooltiptext "> Click For More Details </span>
                 </div>
                 <div id="collapsefour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
                     <div class="table-responsive">
@@ -311,12 +318,13 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header bg-warning" role="tab" id="headingFive"  data-toggle="collapse"   href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                    <h5 class="mb-0">
+                <div class="card-header bg-warning tooltip1" role="tab" id="headingFive"  data-toggle="collapse"   href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                    <h5 class="mb-0 hover ">
                         <a style="font-size: 1.2rem">
-                            Department Of Biology
+                            Department Of Biology123
+
                         </a>
-                    </h5>
+                    </h5><span class=" tooltiptext "> Click For More Details </span>
                 </div>
 
                 <div id="collapseFive" class="collapse " role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
@@ -371,12 +379,13 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header" style="background-color: #002147" role="tab" id="headingSix"  data-toggle="collapse"   href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                    <h5 class="mb-0 text-white">
-                        <a class="collapsed text-white" style="font-size: 1.2rem" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseTwo">
-                            Department of Chemistry
+                <div class="card-header bg-warning tooltip1" style="background-color: #002147" role="tab" id="headingSix"  data-toggle="collapse"   href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                    <h5 class="mb-0 hover ">
+                        <a style="font-size: 1.2rem">
+                            Department Of Biology123
+
                         </a>
-                    </h5>
+                    </h5><span class=" tooltiptext "> Click For More Details </span>
                 </div>
                 <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#accordion">
                     <div class="table-responsive">

@@ -177,6 +177,19 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-50 mx-2">
+            <div class="col-12 col-md-3 py-3">
+                <div class="card text-center bg-three text-white">
+                    <div class="card-body">
+                        <h3 class="pb-3">Research Center</h3>
+                        <h2 class="display-3">
+                            <i class="fa fa-search"></i>
+                        </h2>
+                    </div>
+                    <a href="{{url('/admin-research-center')}}" class="card-footer">Enter</a>
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
