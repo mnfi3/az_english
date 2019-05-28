@@ -56,6 +56,16 @@
                                     <ul class="dropdown" style="width:250px">
                                         <li><a href="{{url('/history')}}">History</a></li>
                                         <li><a href="{{url('/message')}}">Presiden's Message</a></li>
+                                        <li><a href="#">Administration</a>
+                                            <ul class="dropdown " style="width:420px ;margin-left: 28%;">
+                                                <li class="dropdown2"><a href="{{url('/rectors/the Rector')}}">the Rector</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors/Vice-Rector for Research & Technology')}}">Vice-Rector for Research & Technology</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors/Vice-Rector for Education')}}">Vice-Rector for Education</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors/Vice-Rector for Cultural Affairs')}}">Vice-Rector for Cultural Affairs</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors/Vice-Rector for Student Affairs')}}">Vice-Rector for Student Affairs</a></li>
+                                                <li class="dropdown2"><a href="{{url('/rectors/Vice-Rector for Finance & Administrative Affairs')}}">Vice-Rector for Finance & Administrative Affairs</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
 
                                 </li>
@@ -95,10 +105,11 @@
                                                 <li class="dropdown1"><a href="{{url('/research/computer labs')}}">Computer Labs</a></li>
                                                 <li class="dropdown1"><a href="{{url('/research/basic sciences labs')}}">Basic sciences Labs</a></li>
                                                 <li class="dropdown1"><a href="{{url('/research/technical and engineering')}}">Technical and engineering</a></li>
+                                                <li class="dropdown1"><a href="{{url('/research/Agriculture Lab')}}">Agriculture Lab</a></li>
                                             </ul>
                                         </li>
                                         {{--<li><a href="{{url('/conferences')}}">Conferences/Workshops</a></li>--}}
-                                        <li><a href="{{url('/research/innovation')}}">Innovation</a></li>
+                                        <li><a href="{{url('/research/innovation')}}">Innovation center</a></li>
                                     </ul>
                                     {{--{{route('home')}}--}}
                                 </li>

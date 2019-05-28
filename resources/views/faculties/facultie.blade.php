@@ -28,22 +28,7 @@
 @include('header')
 
 
-<!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
-    {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
-    {{--<h2>Facultie of Engineering</h2>--}}
-    {{--</div>--}}
-</div>
 
-<!-- ##### Header Area End ##### -->
-
-<!-- ##### Breadcumb Area Start ##### -->
-<!--<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">-->
-<!--<div class="bradcumbContent" style="border-radius: 5px">-->
-<!--<h2>The News and Info</h2>-->
-<!--</div>-->
-<!--</div>-->
-<!-- ##### Breadcumb Area End ##### -->
 
 <!-- ##### Blog Area Start ##### -->
 <div class="blog-area mt-25 section-padding-100" >

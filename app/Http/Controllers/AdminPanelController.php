@@ -50,7 +50,9 @@ class AdminPanelController extends Controller
       if(About::orderBy('id', 'desc')->where('type', '=', 'PRESIDENT_MESSAGE')->first() != null){
         $message = About::orderBy('id', 'desc')->where('type', '=', 'PRESIDENT_MESSAGE')->first()->content;
       }
-      return view('admin.about', compact(['history', 'message']));
+      $rectors = About::orderBy('id', 'desc')->where('type', '!=', 'PRESIDENT_MESSAGE')
+        ->where('type', '!=', 'HISTORY')->get();
+      return view('admin.about', compact(['history', 'message', 'rectors']));
     }
 
     public function academic(){

@@ -65,6 +65,11 @@ class SiteController extends Controller
       return view('about.history',compact('history'));
     }
 
+  public function rectors($type){
+    $rector = About::orderBy('id', 'desc')->where('type', 'like', $type)->first();
+    return view('about.vice-rector',compact('rector'));
+  }
+
     public function message(){
       $message = About::orderBy('id', 'desc')->where('type', 'like', 'PRESIDENT_MESSAGE')->first();
       return view('about.message', compact('message'));

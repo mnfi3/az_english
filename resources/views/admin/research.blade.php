@@ -48,6 +48,7 @@
                             <option value="computer labs">computer lab</option>
                             <option value="basic sciences labs">basic sciences lab</option>
                             <option value="technical and engineering">Technical and engineering</option>
+                            <option value="Agriculture Lab">Agriculture Lab</option>
                             <option value="innovation">Innovation</option>
                         </select>
                     </div>

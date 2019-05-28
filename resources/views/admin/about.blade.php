@@ -110,6 +110,88 @@
     <br>
     <br>
 </div>
+
+
+
+
+<div class="container">
+    <div class="d-flex flex-row justify-content-between mt-50">
+    </div>
+    {{--<h3 class="text-white"><a href="{{url('/admin-home')}}" class="text-white btn btn-lg btn-outline-warning" style="font-size: 20px"> <span><div class="fa fa-home"></div></span>  Back to home </a></h3>--}}
+    <h2 class=" text-white">Administration Section</h2>
+</div>
+
+
+<div class="container bg" style="">
+    <div class="row mt-50 ">
+
+        <div class="col-12 col-md-8 ">
+            <form action="{{url('rector-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group row pt-4">
+                    <label class="col-md-3 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Type :</label>
+                    <div class="col-md-8 mr-auto">
+                        <select name="type" id="" class="form-control">
+                            <option value="1"></option>
+                            <option value="the Rector">the Rector</option>
+                            <option value="Vice-Rector for Research & Technology">Vice-Rector for Research & Technology</option>
+                            <option value="Vice-Rector for Education">Vice-Rector for Education</option>
+                            <option value="Vice-Rector for Cultural Affairs">Vice-Rector for Cultural Affairs</option>
+                            <option value="Vice-Rector for Student Affairs">Vice-Rector for Student Affairs</option>
+                            <option value="Vice-Rector for Finance & Administrative Affairs">Vice-Rector for Finance & Administrative Affairs</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row py-4">
+                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">description text :</label>
+                    <div class="col-md-8 mr-auto">
+                             <textarea type="text" id="editor3" required=""
+                                       class="form-control" name="content" placeholder="set content here">
+                            </textarea>
+                        <script>
+                          CKEDITOR.replace( 'editor3' );
+                        </script>
+                    </div>
+                </div>
+                <div class="form-group row py-4">
+                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Image :</label>
+                    <div class="col-md-8 mr-auto">
+                        <div  id="fileInputsContainer">
+                            <div class="d-flex flex-row justify-content-between">
+                                <input type="file" id="documents"
+                                       class="form-control-file" name="image">
+                                {{--<button class="btn btn-outline-success text-dark " onclick="">Add New Image</button>--}}
+                            </div>
+                        </div> </div>
+                </div>
+                <div class="d-flex justify-content-center mb-3">
+                    <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="d-flex justify-content-end">
+                <h3 class="text-white">All Administration </h3>
+            </div>
+            <div class="divider-red"></div>
+            <ul class="nav-list d-flex flex-column p-0">
+                @foreach($rectors as $rector)
+                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
+                    <a href="" class="text-white mt-2" style="font-size: 1rem">{{$rector->type}}</a>
+                    <a type="submit" class="btn btn-success " href="{{url('rector-remove',$rector->id)}}">Delete</a>
+                </li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+
+
+
+
 </body>
 <script>
   function addDocumentInput() {

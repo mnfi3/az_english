@@ -26,20 +26,6 @@
 </div>
 <!-- ##### Header Area Start ##### -->
 @include('header')
-
-
-
-</div>
-<!-- ##### Header Area End ##### -->
-
-<!-- ##### Breadcumb Area Start ##### -->
-<!--<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">-->
-<!--<div class="bradcumbContent" style="border-radius: 5px">-->
-<!--<h2>The News and Info</h2>-->
-<!--</div>-->
-<!--</div>-->
-<!-- ##### Breadcumb Area End ##### -->
-
 <!-- ##### Blog Area Start ##### -->
 <div class="blog-area mt-25 section-padding-100" >
     <div class="container">
@@ -49,27 +35,29 @@
                     <div class="row">
 
                         <!-- Single Blog Start -->
+                        @if($rector !== null)
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
-                                    @if($research != null)
-                                    <div class="mb-50 d-flex justify-content-center ">
-                                        @if($research->image != null)
-                                            <img src="{{asset($research->image->path)}}" alt="" class="" style="border-radius: 10px;max-height: 450px">
-                                        @endif
-                                    </div>
-                                    <!-- Post Title -->
-                                    <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">{{$research->title}}</p>
 
-                                    <!-- Post Excerpt -->
-                                    <p class="" style="font-size: 1.1rem">
-                                        @php
-                                        echo $research->description;
-                                        @endphp
-                                    </p>
+                                <div class="mb-50 d-flex justify-content-center ">
+                                    @if(count($rector->images) > 0)
+                                    <img src="{{asset($rector->images()->first()->path)}}" alt="" class="" style="border-radius: 10px;max-height: 350px">
                                     @endif
+                                </div>
+
+                                <!-- Post Excerpt -->
+                                <p class="" style="font-size: 1.1rem">
+                                    @php
+                                    echo $rector->content;
+                                    @endphp
+                                </p>
+
                             </div>
+
                         </div>
+
+                        @endif
                     </div>
                 </div>
             </div>
