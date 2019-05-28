@@ -31,7 +31,7 @@
 
 
 <!-- ##### About us Title Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
+{{--<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">--}}
     {{--<div class="bradcumbContent">--}}
         {{--<h2>About ASMU</h2>--}}
     {{--</div>--}}

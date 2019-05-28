@@ -29,7 +29,7 @@
 <!-- ##### Header Area End ##### -->
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
+{{--<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">--}}
     {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
         {{--<h2>Application form</h2>--}}
     {{--</div>--}}

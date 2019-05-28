@@ -28,7 +28,7 @@
 @include('header')
 
 
-<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
+{{--<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">--}}
 
 </div>
 <!-- ##### Header Area End ##### -->
