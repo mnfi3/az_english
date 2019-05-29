@@ -84,6 +84,8 @@ Route::get('/contact-remove', 'ContactController@contactRemove');
 Route::post('/link-add', 'ContactController@linkAdd');
 Route::post('/link-remove', 'ContactController@linkRemove');
 Route::post('/department-add', 'DepartmentController@departmentAdd');
+Route::get('/department-edit-page/{id}', 'DepartmentController@editPage');
+Route::post('/department-edit', 'DepartmentController@departmentEdit');
 Route::post('/department-remove', 'DepartmentController@departmentRemove');
 Route::post('/master-add', 'DepartmentController@masterAdd');
 Route::post('/master-remove', 'DepartmentController@masterRemove');
