@@ -41,8 +41,8 @@
                 <a href="{{url('/campus-life',$campus->name)}}">
                     <div class="card1 card">
                         <div class="card_image1">
-                            @if($campus->image != null)
-                                <img src="{{asset($campus->image->path)}}" />
+                            @if(count($campus->images) > 0)
+                                <img src="{{asset($campus->images()->first()->path)}}" />
                             @endif
                         </div>
                         <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>

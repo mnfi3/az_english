@@ -12,8 +12,8 @@ class CampusLife extends Model
     protected $fillable = ['name', 'content'];
 
 
-  public function image(){
-    return $this->morphOne('App\Image', 'imageable');
+  public function images(){
+    return $this->morphMany('App\Image', 'imageable');
   }
 
 

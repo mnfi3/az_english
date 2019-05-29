@@ -1009,11 +1009,13 @@ img {
 .main-footer-area .footer-widget .footer-social-info a:hover, .main-footer-area .footer-widget .footer-social-info a:focus {
   color: #ffffff; }
 .main-footer-area .footer-widget .useful-links li a {
+  font-family: "Times New Roman";
   display: block;
   color: rgba(180, 180, 180, 0.93);
   margin-bottom: 15px;
   font-size: 17px;
-  font-weight: 600; }
+  font-weight: 600;
+}
 .main-footer-area .footer-widget .useful-links li a:hover, .main-footer-area .footer-widget .useful-links li a:focus {
   color: #0e5ab1; }
 .main-footer-area .footer-widget .gallery-list a {
@@ -1045,8 +1047,9 @@ img {
   margin-right: 15px;
   padding-top: 7px; }
 .main-footer-area .footer-widget .single-contact p {
+  font-family: "Times New Roman";
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   color: #cccccc;
 }

@@ -11,8 +11,8 @@ class Research extends Model
 
     protected $fillable = ['type', 'title', 'description'];
 
-  public function image(){
-    return $this->morphOne('App\Image', 'imageable');
+  public function images(){
+    return $this->morphMany('App\Image', 'imageable');
   }
 
 }

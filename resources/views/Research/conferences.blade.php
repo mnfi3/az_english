@@ -44,11 +44,22 @@
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
-                                <div class="mb-50 ">
-                                    @if($conference->image != null)
-                                    <img src="{{asset($conference->image->path)}}" alt="" style="border-radius: 10px">
-                                    @endif
+                                <div class="mb-50 mt-25 d-flex justify-content-center ">
+                                    <!-- ##### Slider Start ##### -->
+                                    <section class="hero-area" style="width: 70%;">
+                                        <div class="hero-slides owl-carousel" style="">
+
+                                            <!-- Single  Slide -->
+                                            @foreach($research->images as $image)
+                                                <div class="single-hero-slide bg-img  " style="background-image: url({{asset($image->path)}}); height: 500px">
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+                                    </section>
+                                    <!-- ##### Slider End ##### -->
                                 </div>
+
                                 <!-- Post Title -->
                                 <a href="{{url('conference-detail', $conference->id)}}" class="post-title">
                                    {{$conference->title}}

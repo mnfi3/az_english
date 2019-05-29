@@ -37,11 +37,25 @@
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
-                                <div class="mb-50 d-flex justify-content-center ">
-                                    @if($campus->image != null)
-                                        <img src="{{asset($campus->image->path)}}" alt="" class="" style="border-radius: 10px;max-height: 400px">
-                                    @endif
+
+
+                                <div class="mb-50 mt-25 d-flex justify-content-center ">
+                                    <!-- ##### Slider Start ##### -->
+                                    <section class="hero-area" style="width: 70%;">
+                                        <div class="hero-slides owl-carousel" style="">
+
+                                            <!-- Single  Slide -->
+                                            @foreach($campus->images as $image)
+                                                <div class="single-hero-slide bg-img  " style="background-image: url({{asset($image->path)}}); height: 500px">
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+                                    </section>
+                                    <!-- ##### Slider End ##### -->
                                 </div>
+
+
                                 <!-- Post Excerpt -->
                                 <p class="" style="font-size: 1.1rem">
                                     @php echo $campus->content; @endphp

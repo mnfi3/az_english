@@ -18,6 +18,7 @@ class DepartmentController extends Controller
       $dep = Department::create([
         'faculty_id' => $request->faculty_id,
         'name' => $request->name,
+        'head' => $request->head,
       ]);
 
       return back();

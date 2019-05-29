@@ -57,6 +57,8 @@ Route::post('/president-message-add', 'AboutController@presidentMessageAdd');
 Route::get('/president-message-remove', 'AboutController@presidentMessageRemove');
 Route::post('/faculty-add', 'FacultyController@add');
 Route::post('/faculty-remove', 'FacultyController@remove');
+Route::get('/faculty-edit-page/{id}', 'FacultyController@editPage');
+Route::post('/faculty-edit', 'FacultyController@edit');
 Route::post('/research-add', 'ResearchController@add');
 Route::post('/research-remove', 'ResearchController@remove');
 Route::post('/campus-add', 'CampusController@add');

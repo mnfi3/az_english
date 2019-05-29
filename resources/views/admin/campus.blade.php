@@ -65,8 +65,9 @@
                     <div class="col-md-8 mr-auto">
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
-                                <input type="file" id="documents"
+                                <input type="file" id="images"
                                        class="form-control-file" name="images[]">
+                                <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Image</button>
                             </div>
                         </div> </div>
                 </div>
@@ -108,7 +109,7 @@
     var newNode = document.createElement("DIV");
     newNode.className += 'mt-1'
     newNode.innerHTML = '<input type="file"  required=""\n' +
-      '                       class="form-control-file" name="documents[]">'
+      '                       class="form-control-file" name="images[]">'
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }
 </script>

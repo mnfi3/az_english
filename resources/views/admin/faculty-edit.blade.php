@@ -15,52 +15,59 @@
 
 </head>
 
-<body style="background-color: #002147; font-family: FontAwesome" >
-    <div class="container">
-        <h3 class="text-white"><a href="{{url('/admin-home')}}" class="text-white btn btn-lg btn-outline-warning" style="font-size: 20px"> <span><div class="fa fa-home"></div></span>  Back to home </a></h3>
-        <h2 class=" text-white">Facultie Section</h2>
-    </div>
+<body style="background-color: #002147; font-family: FontAwesome">
+<div class="container">
+    <h2 class=" text-white">Edit Faculties Info</h2>
+</div>
 <div class="container bg" style=" ">
     <div class="row mt-50 ">
+
         <div class="col-12 col-md-8 ">
-            <form action="{{url('faculty-add')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('faculty-edit')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
-                    <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="name" placeholder="Enter Name Here">
-                    </div>
-                </div>
+                <input type="hidden" name="id" value="{{$faculty->id}}">
 
                 <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Name :</label>
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="dean" placeholder="Enter Dean Name">
+                               class="form-control" name="name" value="{{$faculty->name}}">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Email :</label>
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Name :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="dean_email" placeholder="Enter Dean Email">
+                               class="form-control" name="dean" value="{{$faculty->dean}}">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Phone :</label>
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Email :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="dean_phone" placeholder="Enter Dean Phone">
+                               class="form-control" name="dean_email" value="{{$faculty->dean_email}}">
                     </div>
                 </div>
-
-
                 <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Description text :</label>
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Phone :</label>
+                    <div class="col-md-8 mr-auto">
+                        <input type="text" id="title" required=""
+                               class="form-control" name="dean_phone" value="{{$faculty->dean_phone}}">
+                    </div>
+                </div>
+                <div class="form-group row pt-4">
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Description :</label>
                     <div class="col-md-8 mr-auto">
                             <textarea type="text" id="editor1" required=""
                                       class="form-control" name="description" placeholder="set content here">
+                                @php
+                                echo $faculty->description;
+                                @endphp
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor1' );
@@ -75,34 +82,15 @@
                                 <input type="file" id="images"
                                        class="form-control-file" name="images[]">
                                 <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Image</button>
+
                             </div>
-                        </div> </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
-                    <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
-                    {{--<button class="btn btn-danger " type="submit">Remove</button>--}}
+                    <button class="btn btn-success btn-lg mx-3" type="submit">Save</button>
                 </div>
             </form>
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="d-flex justify-content-end">
-                <h2 class="text-white"> All Faculties</h2>
-            </div>
-            <div class="divider-red"></div>
-            <ul class="nav-list d-flex flex-column p-0">
-                @foreach($faculties as $faculty)
-                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="{{url('faculty-edit-page', $faculty->id)}}" class=" btn btn-success  right"  style="text-align: right">edit</a>
-                    <a href="{{url('faculty', $faculty->id)}}" class="text-white mt-2" style="font-size: 1rem">{{$faculty->name}}</a>
-                    <form class="align-self-center" action="{{url('faculty-remove')}}" method="post">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$faculty->id}}">
-                        <input type="submit" class="btn btn-success  " value="Delete">
-                    </form>
-
-                </li>
-               @endforeach
-            </ul>
         </div>
     </div>
     <br>

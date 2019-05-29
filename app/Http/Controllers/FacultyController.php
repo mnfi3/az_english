@@ -15,6 +15,9 @@ class FacultyController extends Controller
     public function add(Request $request){
       $faculty = Faculty::create([
         'name' => $request->name,
+        'dean' => $request->dean,
+        'dean_email' => $request->dean_email,
+        'dean_phone' => $request->dean_phone,
         'description' => $request->description,
       ]);
 
@@ -32,5 +35,31 @@ class FacultyController extends Controller
       $faculty = Faculty::find($request->id);
       $faculty->delete();
       return back();
+  }
+
+
+  public function editPage($id){
+    $faculty = Faculty::find($id);
+    return view('admin.faculty-edit', compact('faculty'));
+  }
+
+
+  public function edit(Request $request){
+    $faculty = Faculty::find($request->id);
+    $faculty->name = $request->name;
+    $faculty->dean = $request->dean;
+    $faculty->dean_email = $request->dean_email;
+    $faculty->dean_phone = $request->dean_phone;
+    $faculty->description = $request->description;
+    $faculty->save();
+
+    if($request->hasFile('images')){
+      $files = $request->file('images');
+      foreach ($files as $file) {
+        Uploader::saveImage('App\Faculty', $faculty->id, $file);
+      }
+    }
+
+    return redirect(url('admin-academic'));
   }
 }

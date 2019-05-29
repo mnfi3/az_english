@@ -41,7 +41,7 @@
 
 
 <!-- ##### About Us Area Start ##### -->
-<section class="about-us-area mt-50 section-padding-100">
+<section class="about-us-area mt-25 section-padding-100">
     <div class="container">
         <!--<div class="row">-->
         <!--<div class="col-12">-->

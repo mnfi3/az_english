@@ -9,10 +9,10 @@ class Faculty extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'dean', 'dean_email', 'dean_phone', 'description'];
 
-  public function image(){
-    return $this->morphOne('App\Image', 'imageable');
+  public function images(){
+    return $this->morphMany('App\Image', 'imageable');
   }
 
   public function departments(){
