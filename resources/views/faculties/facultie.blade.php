@@ -39,11 +39,7 @@
                     <div class="row">
                         <!-- Single Blog Start -->
                         <div class="col-12" >
-                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
-                                <!-- Post Thumb -->
-
-
-
+                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px;background-color: #002147;">
                                 @if(count($faculty->images) > 0)
                                     <div class="mb-50 mt-25 d-flex justify-content-center ">
                                         <!-- ##### Slider Start ##### -->
@@ -65,15 +61,17 @@
 
 
                             <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.5rem">
+                                <p class="text-white" style="font-size: 1.5rem">
                                     @php echo $faculty->description; @endphp
                                 </p>
 
-                                <h3 style="font-size: 1.1rem" > Faculty Dean : </h3>
+                                <h3 style="font-size: 1.1rem" class="text-white" > Faculty Dean : </h3>
                                 {{--<p class="ml-3" style="font-size: 1.1rem"> {{$faculty->dean}} <br>--}}
-                                name : {{$faculty->dean}}<br>
-                                phone number : {{$faculty->dean_phone}}<br>
-                                Email : {{$faculty->dean_email}}</p>
+                               <div class="text-white">
+                                   name : {{$faculty->dean}}<br>
+                                   phone number : {{$faculty->dean_phone}}<br>
+                                   Email : {{$faculty->dean_email}}</p>
+                               </div>
                             </div>
 
                         </div>

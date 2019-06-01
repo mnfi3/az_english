@@ -35,7 +35,7 @@
 
                         <!-- Single Blog Start -->
                         <div class="col-12" >
-                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
+                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px;background-color: #002147;">
                                 <!-- Post Thumb -->
 
 
@@ -57,7 +57,7 @@
 
 
                                 <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem">
+                                <p class="text-white" style="font-size: 1.1rem">
                                     @php echo $campus->content; @endphp
                                 </p>
                             </div>

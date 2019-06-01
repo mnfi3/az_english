@@ -33,7 +33,7 @@
         <div class="classy-nav-container breakpoint-off">
             <div class="container">
                 <!-- Menu -->
-                <nav class="classy-navbar justify-content-between " id="academyNav" style="border-radius: 10px">
+                <nav class="classy-navbar justify-content-between " id="academyNav" style="border-radius: 5px">
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler" >

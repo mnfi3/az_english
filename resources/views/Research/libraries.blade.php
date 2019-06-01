@@ -50,7 +50,7 @@
 
                         <!-- Single Blog Start -->
                         <div class="col-12" >
-                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
+                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px;background-color: #002147;">
                                 <!-- Post Thumb -->
                                     @if($research != null)
                                     <div class="mb-50 mt-25 d-flex justify-content-center ">
@@ -70,10 +70,10 @@
                                     </div>
 
                                     <!-- Post Title -->
-                                    <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">{{$research->title}}</p>
+                                    <p class="text-white " style="font-weight: 500; font-size: 1.5rem">{{$research->title}}</p>
 
                                     <!-- Post Excerpt -->
-                                    <p class="" style="font-size: 1.1rem">
+                                    <p class="text-white" style="font-size: 1.1rem">
                                         @php
                                         echo $research->description;
                                         @endphp

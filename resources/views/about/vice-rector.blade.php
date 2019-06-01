@@ -37,7 +37,7 @@
                         <!-- Single Blog Start -->
                         @if($rector !== null)
                         <div class="col-12" >
-                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
+                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px;background-color: #002147;">
                                 <!-- Post Thumb -->
 
                                 <div class="mb-50 d-flex justify-content-center ">
@@ -47,7 +47,7 @@
                                 </div>
 
                                 <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem">
+                                <p class="text-white" style="font-size: 1.1rem">
                                     @php
                                     echo $rector->content;
                                     @endphp
