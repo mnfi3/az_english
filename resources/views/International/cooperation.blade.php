@@ -9,13 +9,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbaijan Shahid Madani University</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
 
 </head>
 <body style="background-color: #002147;">
@@ -27,7 +27,7 @@
 @include('header')
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
+{{--<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">--}}
     {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
     {{--<h2>Facultie of Engineering</h2>--}}
     {{--</div>--}}
@@ -40,9 +40,9 @@
                 <a href="{{url('/mou')}}">
                     <div class="card1 card">
                         <div class="card_image1">
-                            <img src="img/bg-img/library.jpg" />
+                            <img src="{{asset('img/bg-img/mou.png')}}" />
                         </div>
-                            <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px;">
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px;">
                             <p class="text-white" style="font-size: 1.4rem">MOUs</p>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                 <a href="{{url('/projects')}}">
                     <div class="card1 card ">
                         <div class="card_image1">
-                            <img src="img/bg-img/library.jpg" />
+                            <img src="{{asset('img/bg-img/project.jpeg')}}" />
                         </div>
                         <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
                             <p class="text-white" style="font-size: 1.4rem">Join Project</p>
@@ -64,7 +64,7 @@
                 <a href="{{url('/conferences')}}">
                     <div class="card1 card">
                         <div class="card_image1">
-                            <img src="img/bg-img/library.jpg" />
+                            <img src="{{asset('img/bg-img/conference.jpg')}}" />
                         </div>
                         <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
                             <p class="text-white" style="font-size: 1.4rem">Conferences</p>
@@ -73,10 +73,10 @@
                 </a>
             </div>
             <div class="col-12 col-md-3">
-                <a href="{{url('/Partnership')}}">
+                <a href="{{url('/partnerships')}}">
                     <div class="card1 card">
                         <div class="card_image1">
-                            <img src="img/bg-img/library.jpg" />
+                            <img src="{{asset('img/bg-img/partnership.jpg')}}" />
                         </div>
                         <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
                             <p class="text-white" style="font-size: 1.4rem">Partnership</p>
@@ -97,15 +97,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 </body>
 
 </html>

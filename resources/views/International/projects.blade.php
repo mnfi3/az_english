@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbaijan Shahid Madani University</title>
     <!-- Core Stylesheet -->
     @include('includeCss')
 
@@ -25,7 +25,7 @@
 <!-- ##### Header Area End ##### -->
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
+{{--<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">--}}
     {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
         {{--<h2>Ongoing Project</h2>--}}
     {{--</div>--}}
@@ -41,33 +41,45 @@
                     <div class="row">
 
                         <!-- Single Blog Start -->
+                        @foreach($projects as $project)
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
                                 <div class="mb-50 ">
-                                    <img src="{{asset('img/blog-img/1.jpg')}}" alt="" style="border-radius: 10px">
+                                    @if($project->image != null)
+                                    <img src="{{asset($project->image->path)}}" alt="" style="border-radius: 10px">
+                                     @endif
                                 </div>
                                 <!-- Post Title -->
-                                <a href="{{url('/news-detail')}}" class="post-title">Latest Research on Effect of Alcohol</a>
+                                <a href="{{url('/news-detail')}}" class="post-title">{{$project->title}}</a>
                                 <!-- Post Meta -->
                                 <div class="post-meta">
-                                    <p>By <a href="#">Prof Ali Rezaei</a> | <a href="#">March 18, 2018</a></p>
+                                    <p>
+                                        @if($project->executers != null)
+                                            By <a href="{{url('project-detail', $project->id)}}">{{$project->executers}}</a> |
+                                        @endif
+                                        <a href="{{url('project-detail', $project->id)}}">{{date_format($project->created_at, 'g:ia Y-M-d')}}</a>
+                                    </p>
                                 </div>
                                 <!-- Post Excerpt -->
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.</p>
+                                <p>
+                                    {{substr(strip_tags($project->content), 0, 130)}}...
+                                </p>
                                 <!-- Read More btn -->
-                                <a href="{{url('/project-detail')}}" class="btn academy-btn btn-sm mt-15">Read More</a>
+                                <a href="{{url('project-detail', $project->id)}}" class="btn academy-btn btn-sm mt-15">Read More</a>
                             </div>
                         </div>
+                            @endforeach
                     </div>
                 </div>
                 <!-- Pagination Area Start -->
                 <div class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms" >
                     <nav>
                         <ul class="pagination">
-                            <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                            <li class="page-item"><a class="page-link" href="#">02</a></li>
-                            <li class="page-item"><a class="page-link" href="#">03</a></li>
+                            {{--<li class="page-item active"><a class="page-link" href="#">01</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link" href="#">02</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link" href="#">03</a></li>--}}
+                            {{$projects->links()}}
                         </ul>
                     </nav>
                 </div>
@@ -86,53 +98,22 @@
                     <div class="latest-blog-posts mb-30" style="border-radius: 10px">
                         <h5>Latest Posts</h5>
                         <!-- Single Latest Blog Post -->
+                        @foreach($posts as $post)
                         <div class="single-latest-blog-post d-flex mb-30">
                             <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-1.jpg" alt="">
+                                @if($post->image != null)
+                                <img src="{{asset($post->image->path)}}" alt="">
+                                 @endif
                             </div>
                             <div class="latest-blog-post-content">
-                                <a href="{{url('/news-detail')}}" class="post-title">
-                                    <h6>New Courses for you</h6>
+                                <a href="{{url('/news-detail', $post->id)}}" class="post-title">
+                                    <h6>{{$post->title}}</h6>
                                 </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
+                                <a href="{{url('/news-detail', $post->id)}}" class="post-date">{{date_format($post->created_at, 'g:ia Y-M-d')}}</a>
                             </div>
                         </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-2.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="{{url('/news-detail')}}" class="post-title">
-                                    <h6>A great way to start</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-3.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="{{url('/news-detail')}}" class="post-title">
-                                    <h6>New Courses for you</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-4.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="{{url('/news-detail')}}" class="post-title">
-                                    <h6>Start your training</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
+                         @endforeach
+
                     </div>
                 </div>
             </div>
@@ -153,15 +134,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 </body>
 
 </html>

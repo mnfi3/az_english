@@ -25,22 +25,27 @@
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('campus-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row pt-4">
                     <label class="col-md-3 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Name :</label>
                     <div class="col-md-8 mr-auto">
-                        <select name="fac-id" id="" class="form-control">
+                        <select name="name" id="" class="form-control">
                             <option value="1"></option>
-                            <option value="2">transport</option>
-                            <option value="3">resturant</option>
-                            <option value="4">bank</option>
-                            <option value="5">sport</option>
-                            <option value="5">dormitory</option>
-                            <option value="5">health center</option>
-							<option value="5">Kindergarten</option>
-							<option value="5">masque</option>
-							<option value="5">fruit shop</option>
+                            <option value="accommodation">accommodation</option>
+                            <option value="transport">transport</option>
+                            <option value="restaurants">restaurants</option>
+                            <option value="shopping center">Shopping Center</option>
+                            <option value="banks">banks</option>
+                            <option value="sports">sports</option>
+                            <option value="dormitory">dormitory</option>
+                            <option value="health center">health center</option>
+							<option value="nursery">nursery</option>
+							<option value="mosque">mosque</option>
+							<option value="fruit shop">fruit shop</option>
+							<option value="grocery">grocery</option>
+							<option value="post office">post office</option>
                         </select>
                     </div>
                 </div>
@@ -48,25 +53,23 @@
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title"> text :</label>
                     <div class="col-md-8 mr-auto">
                            <textarea type="text" id="editor1" required=""
-                                     class="form-control" name="editor1" placeholder="set content here">
+                                     class="form-control" name="content" placeholder="set content here">
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor1' );
                         </script>
                     </div>
                 </div>
-                <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Image for Facultie :</label>
+                <div class="form-group row py-4">
+                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Image :</label>
                     <div class="col-md-8 mr-auto">
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
-                                <input type="file" id="documents"
-                                       class="form-control-file" name="documents[]">
+                                <input type="file" id="images"
+                                       class="form-control-file" name="images[]">
                                 <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Image</button>
-
                             </div>
-                        </div>
-                    </div>
+                        </div> </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
@@ -75,32 +78,21 @@
         </div>
         <div class="col-12 col-md-4">
             <div class="d-flex justify-content-end">
-                <h2 class="text-white">All Campus Parts</h2>
+                <h2 class="text-white">All Campus parts</h2>
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
-                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Shop</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
-                    </form>
-                    <form class="align-self-center" action="" method="post">
-                        <a href="{{url('/admin-campus-edit')}}" class="btn btn-success">
-                            Edit
-                        </a>
+                @foreach($campuses as $campus)
+                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
+                    <a href="" class="text-white mt-2" style="font-size: 1rem">{{$campus->name}}</a>
+                    <form class="align-self-center" action="{{url('campus-remove')}}" method="post">
+                        @csrf
+                        <input type="submit" class="btn btn-success  " value="Delete">
+                        <input type="hidden" name="id"  value="{{$campus->id}}">
                     </form>
                 </li>
-                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">bank</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
-                    </form>
-                    <form class="align-self-center" action="" method="post">
-                        <a href="{{url('/admin-campus-edit')}}" class="btn btn-success">
-                            Edit
-                        </a>
-                    </form>
-                </li>
+                @endforeach
+
             </ul>
         </div>
     </div>
@@ -117,7 +109,7 @@
     var newNode = document.createElement("DIV");
     newNode.className += 'mt-1'
     newNode.innerHTML = '<input type="file"  required=""\n' +
-      '                       class="form-control-file" name="documents[]">'
+      '                       class="form-control-file" name="images[]">'
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }
 </script>

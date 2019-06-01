@@ -9,13 +9,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbaijan Shahid Madani University</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
 
 </head>
 
@@ -26,27 +26,42 @@
 </div>
 <!-- ##### Header Area Start ##### -->
 @include('header')
+
+<!-- ##### Header Area End ##### -->
+
+<!-- ##### Breadcumb Area Start ##### -->
+<!--<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">-->
+<!--<div class="bradcumbContent" style="border-radius: 5px">-->
+<!--<h2>The News and Info</h2>-->
+<!--</div>-->
+<!--</div>-->
+<!-- ##### Breadcumb Area End ##### -->
+
 <!-- ##### Blog Area Start ##### -->
 <div class="blog-area mt-25 section-padding-100" >
-    <div class="container ">
-        <div class="row " >
+    <div class="container">
+        <div class="row">
             <div class="col-12" >
                 <div class="academy-blog-posts">
                     <div class="row">
 
                         <!-- Single Blog Start -->
-                        <div class="col-12 " >
-                            <div class="single-blog-post mb-50  wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px; background-color: #002147;">
+                        <div class="col-12" >
+                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
-                                <div class="mb-50 d-flex justify-content-center ">
-                                    <img src="img/bg-img/message.jpg" alt="" class="" style="border-radius: 10px;max-height: 350px">
-                                </div>
+                                @if($message != null)
+                                    @if(count($message->images) > 0)
+                                        <div class="mb-50 d-flex justify-content-center ">
+                                            <img src="{{asset($message->images()->first()->path)}}" alt="" class="" style="border-radius: 10px;max-height: 350px">
+                                        </div>
+                                    @endif
 
                                 <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem ; color: #ffffff;"> Universities have an important and challenging mission in fostering the academic, cultural, and economic wellbeing of communities at regional, national and, international spheres. Azarbaijan Shahid Madani University, as one of the leading universities in the northwest region of Iran, has embraced this challenge by offering quality education programmes and excellent research facilities, and also by making partnership with academic institutions and industries operating within and beyond national borders.
-                                    To this end, we ensure that our students receive the highest possible quality education and research skills within the capacity of our university. We are quite certain that the quality education and research facilities, together with a peaceful campus environment offered by Azarbaijan Shahid Madani University will guarantee the paths of success and prosperity to our new national and international students.
-                                    As the Rector of Azarbaijan Shahid Madani University, I welcome you to browse this prospectus to find more about our university and the opportunities it offers.
-                                </p></div>
+                                    <p class="" style="font-size: 1.1rem">
+                                        @php echo $message->content; @endphp
+                                    </p>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,15 +79,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 </body>
 
 </html>

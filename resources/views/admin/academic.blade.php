@@ -23,7 +23,8 @@
 <div class="container bg" style=" ">
     <div class="row mt-50 ">
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('faculty-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
                     <div class="col-md-8 mr-auto">
@@ -31,18 +32,35 @@
                                class="form-control" name="name" placeholder="Enter Name Here">
                     </div>
                 </div>
+
                 <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean :</label>
+                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Name :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                               class="form-control" name="dean" placeholder="Enter Dean Name">
                     </div>
                 </div>
+                <div class="form-group row pt-4">
+                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Email :</label>
+                    <div class="col-md-8 mr-auto">
+                        <input type="text" id="title" required=""
+                               class="form-control" name="dean_email" placeholder="Enter Dean Email">
+                    </div>
+                </div>
+                <div class="form-group row pt-4">
+                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Phone :</label>
+                    <div class="col-md-8 mr-auto">
+                        <input type="text" id="title" required=""
+                               class="form-control" name="dean_phone" placeholder="Enter Dean Phone">
+                    </div>
+                </div>
+
+
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Description text :</label>
                     <div class="col-md-8 mr-auto">
                             <textarea type="text" id="editor1" required=""
-                                      class="form-control" name="editor1" placeholder="set content here">
+                                      class="form-control" name="description" placeholder="set content here">
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor1' );
@@ -54,13 +72,11 @@
                     <div class="col-md-8 mr-auto">
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
-                                <input type="file" id="documents"
-                                       class="form-control-file" name="documents[]">
+                                <input type="file" id="images"
+                                       class="form-control-file" name="images[]">
                                 <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Image</button>
-
                             </div>
-                        </div>
-                    </div>
+                        </div> </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
@@ -70,32 +86,22 @@
         </div>
         <div class="col-12 col-md-4">
             <div class="d-flex justify-content-end">
-                <h2 class="text-white">All Faculties</h2>
+                <h2 class="text-white"> All Faculties</h2>
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
-                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Physics salkfna askjda sc,ajsd </a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
+                @foreach($faculties as $faculty)
+                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
+                    <a href="{{url('faculty-edit-page', $faculty->id)}}" class=" btn btn-success  right"  style="text-align: right">edit</a>
+                    <a href="{{url('faculty', $faculty->id)}}" class="text-white mt-2" style="font-size: 1rem">{{$faculty->name}}</a>
+                    <form class="align-self-center" action="{{url('faculty-remove')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$faculty->id}}">
+                        <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
 
-                        <a href="{{url('/admin-faculty-edit')}} " class="btn btn-success ml-1">
-                            Edit
-                        </a>
-
                 </li>
-                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Enging</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success" style="margin-right: -60px" value="Delete">
-                    </form>
-                    <form class="align-self-center" action="" method="post">
-                        <a href="{{url('/admin-faculty-edit')}}" class="btn btn-success">
-                            Edit
-                        </a>
-                    </form>
-                </li>
+               @endforeach
             </ul>
         </div>
     </div>
@@ -111,7 +117,7 @@
     var newNode = document.createElement("DIV");
     newNode.className += 'mt-1'
     newNode.innerHTML = '<input type="file"  required=""\n' +
-      '                       class="form-control-file" name="documents[]">'
+      '                       class="form-control-file" name="images[]">'
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }
 </script>

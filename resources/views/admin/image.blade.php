@@ -9,6 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <!-- Title -->
     <title>Azarbayjan Shahid Madani University</title>
     <!-- Core Stylesheet -->
@@ -24,14 +25,15 @@
 <div class="container bg" style="border-radius: 15px;">
     <div class="row mt-50 ">
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('image-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Select Image :</label>
                     <div class="col-md-8 mr-auto">
                         <div  id="">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id=""
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="images[]">
                             </div>
                         </div> </div>
                 </div>
@@ -50,108 +52,38 @@
 </div>
 <div class="container-fluid mt-25 bg mb-100" style="">
 
-    <div class="row mb-50">
-        <div class="col-12 col-md-3">
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/bg-1.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7);  margin-top: -40px";>
-                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
     <div class="row">
+        @foreach($images as $image)
         <div class="col-12 col-md-3">
 
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
+                <div class="card1 card">
+                    <div class="card_image1">
+                        <img src="{{$image->path}}" />
+                    </div>
+
+                    <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                        <div>
+                            <input cl type="url" id="copyInput{{$image->id}}"
+                                    value="{{\Illuminate\Support\Facades\URL::to('/').'/' . $image->path}}" style="background : transparent; opacity : 0.0001;width: 0px; height: 0px";>
+                            <button class="text-white btn btn-danger"  onclick="copyLink({{$image->id}})"  style="font-size: 1rem; bottom: 50px" data-toggle="modal" data-target="#Modal{{$image->id}}">Link</button>
+                        </div>
+                    </div>
+
+
                 </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
-                </div>
-            </div>
 
         </div>
-        <div class="col-12 col-md-3">
+        @endforeach
 
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                    <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-3">
-
-            <div class="card1 card">
-                <div class="card_image1">
-                    <img src="img/bg-img/library.jpg" />
-                </div>
-                <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                  <button class="text-white bg-danger p-3" style="font-size: 1.4rem ; border-radius: 5px" type="button"  data-toggle="modal" data-target="#Modal">Copy Link</button>
-                      </div>
-            </div>
-
-        </div>
     </div>
+
 
 </div>
+
+
 <!--MESSAGE MODAL-->
-<div class="modal rtl" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@foreach($images as $image)
+<div class="modal rtl" id="Modal{{$image->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
@@ -161,7 +93,9 @@
                 </button>
             </div>
             <div class="modal-body ">
-                <p class="user-messages" style="font-family: 'Times New Roman'; alignment: left"  >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur doloremque et fuga illo inventore ipsam magni minima natus odio officia, omnis quaerat quas, reprehenderit repudiandae tempore unde veritatis! Beatae eum magni modi, quod saepe sit?</p>
+                <p class="user-messages" style="font-family: 'Times New Roman'; alignment: left"  >
+                {{\Illuminate\Support\Facades\URL::to('/').'/' . $image->path}}
+                </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -170,18 +104,10 @@
         </div>
     </div>
 </div>
+@endforeach
 <!-- Modal -->
 
 </body>
-<script>
-    function cipyLink(id) {
-        var copyText = document.getElementById("copyInput"+id);
-        copyText.select();
-        document.execCommand("copy");
-        alert("Copied the text: " + copyText.value);
-
-    }
-</script>
 <script>
   function addDocumentInput() {
     var referenceNode = document.getElementById('fileInputsContainer').lastChild;
@@ -190,6 +116,30 @@
     newNode.innerHTML = '<input type="file"  required=""\n' +
       '                       class="form-control-file" name="documents[]">'
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+
+  function copyFunction(id) {
+    /* Get the text field */
+    var copyText = document.getElementById("myInput" + id);
+    console.log(copyText);
+
+    /* Select the text field */
+    copyText.select();
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
+  }
+
+  function copyLink(id) {
+  //   var copyText = document.getElementById("copyInput"+id);
+  //   copyText.select();
+  //   document.execCommand("copy");
+  //   alert("Copied the text: " + copyText.value);
+  //   console.log(copyText.value);
+  //
   }
 </script>
 </html>

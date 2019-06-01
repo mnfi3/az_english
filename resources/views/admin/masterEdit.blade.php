@@ -17,24 +17,25 @@
 
 <body style="background-color: #002147; font-family: FontAwesome">
 <div class="container">
+    <h3 class="text-white"><a href="{{url('/admin-home')}}" class="text-white btn btn-lg btn-outline-warning" style="font-size: 20px"> <span><div class="fa fa-home"></div></span>  Back to home </a></h3>
     <h2 class=" text-white">Edite Master's Info</h2>
 </div>
 <div class="container bg" style=" ">
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
-
+            <form action="{{url('admin-master-edit')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="id" value="{{$master->id}}">
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Dempartment Name :</label>
                     <div class="col-md-8 mr-auto">
-                        <select name="fac-id" id="" class="form-control">
-                            <option value="1"></option>
-                            <option value="2">Engineering</option>
-                            <option value="3">power</option>
-                            <option value="4">It</option>
-                            <option value="5">Chemistry</option>
+                        <select name="department_id" id="" class="form-control">
+                            <option value="0"></option>
+                            @foreach($departments as $department)
+                            <option value="{{$department->id}}" @if($master->department_id == $department->id) selected @endif >{{$department->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -42,7 +43,7 @@
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Master's Name :</label>
                     <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
+                        <input type="text" id="title" required="" value="{{$master->name}}"
                                class="form-control" name="name">
                     </div>
                 </div>
@@ -50,32 +51,32 @@
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's Specialty :</label>
                     <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                        <input type="text" id="title" required="" value="{{$master->speciality}}"
+                               class="form-control" name="speciality">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's Academic Rank :</label>
                     <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                        <input type="text" id="title" required="" value="{{$master->rank}}"
+                               class="form-control" name="rank">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's Email :</label>
                     <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                        <input type="text" id="title" required="" value="{{$master->email}}"
+                               class="form-control" name="email">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Master's CV Link (if exist) :</label>
                     <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="name">
+                        <input type="text" id="title" value="{{$master->cv_link}}"
+                               class="form-control" name="cv_link">
                     </div>
                 </div>
                 <div class="form-group row py-4">
@@ -85,7 +86,7 @@
                         <div id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="images[]">
                             </div>
                         </div>
                     </div>

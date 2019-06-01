@@ -28,7 +28,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body mt-3">
-                        <form method="POST" >
+                        <form method="POST" action="{{route('login')}}">
+                            @csrf
                             <div class="form-group row">
                                 <div class="col-md-6 offset-md-3">
                                     <input id="email" type="email"

@@ -9,13 +9,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbaijan Shahid Madani University</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
 
 </head>
 
@@ -51,15 +51,42 @@
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
                                 <!-- Post Thumb -->
-                                <div class="mb-50 ">
-                                    <img src="img/blog-img/1.jpg" alt="" style="border-radius: 10px">
+                                {{--<div class="mb-50 ">--}}
+                                    {{--@if(count($conference->images) > 0)--}}
+                                    {{--<img src="{{asset($conference->images->path)}}" alt="" style="border-radius: 10px">--}}
+                                     {{--@endif--}}
+                                {{--</div>--}}
+
+
+                                <div class="mb-50 mt-25 d-flex justify-content-center ">
+                                    <!-- ##### Slider Start ##### -->
+                                    <section class="hero-area" style="width: 70%;">
+                                        <div class="hero-slides owl-carousel" style="">
+
+                                            <!-- Single  Slide -->
+                                            @foreach($research->images as $image)
+                                                <div class="single-hero-slide bg-img  " style="background-image: url({{asset($image->path)}}); height: 500px">
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+                                    </section>
+                                    <!-- ##### Slider End ##### -->
                                 </div>
+
                                 <!-- Post Title -->
-                                <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">How to apply in shahid madani university?</p>
+                                <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">{{$conference->title}}</p>
                                 <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p class="" style="font-size: 1.1rem">
+                                    @php
+                                    echo $conference->content;
+                                    @endphp
+                                </p>
                                 <!-- Download Docs btn -->
-                                <a href="#" class="btn academy-btn btn-sm mt-15">Get Documents</a>
+                                @php($i=0)
+                                @foreach($conference->docs as $doc)
+                                <a href="{{\Illuminate\Support\Facades\URL::to('/').'/'.$doc->path}}" download class="btn academy-btn btn-sm mt-15">Get Document{{++$i}}</a><br>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -71,54 +98,22 @@
                     <!-- Latest Blog Posts Area -->
                     <div class="latest-blog-posts mb-30" style="border-radius: 10px">
                         <h5>Latest Posts</h5>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-1.jpg" alt="">
+                        @foreach($posts as $post)
+                            <div class="single-latest-blog-post d-flex mb-30">
+                                <div class="latest-blog-post-thumb">
+                                    @if($post->image != null)
+                                        <img src="{{asset($post->image->path)}}" alt="">
+                                    @endif
+                                </div>
+                                <div class="latest-blog-post-content">
+                                    <a href="{{url('/news-detail', $post->id)}}" class="post-title">
+                                        <h6>{{$post->title}}</h6>
+                                    </a>
+                                    <a href="{{url('/news-detail', $post->id)}}" class="post-date">{{date_format($post->created_at, 'g:ia Y-M-d')}}</a>
+                                </div>
                             </div>
-                            <div class="latest-blog-post-content">
-                                <a href="#" class="post-title">
-                                    <h6>New Courses for you</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-2.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="#" class="post-title">
-                                    <h6>A great way to start</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex mb-30">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-3.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="#" class="post-title">
-                                    <h6>New Courses for you</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
-                        <!-- Single Latest Blog Post -->
-                        <div class="single-latest-blog-post d-flex">
-                            <div class="latest-blog-post-thumb">
-                                <img src="img/blog-img/lb-4.jpg" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="#" class="post-title">
-                                    <h6>Start your training</h6>
-                                </a>
-                                <a href="#" class="post-date">March 18, 2018</a>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
@@ -133,15 +128,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 </body>
 
 </html>

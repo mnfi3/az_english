@@ -13,7 +13,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbaijan Shahid Madani University</title>
     <!-- Core Stylesheet -->
     @include('includeCss')
 
@@ -28,7 +28,15 @@
 @include('header')
 <!-- ##### Header Area End ##### -->
 
-<div class="container  bg-light mt-100 mb-50" style="border-radius: 10px;">
+<!-- ##### Breadcumb Area Start ##### -->
+{{--<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">--}}
+    {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
+        {{--<h2>Application form</h2>--}}
+    {{--</div>--}}
+</div>
+<!-- ##### Breadcumb Area End ##### -->
+
+<div class="container  bg-light mt-100 mb-50" style="border-radius: 10px">
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -39,24 +47,20 @@
             </tr>
             </thead>
             <tbody style="alignment: center" class="">
+            @php($i=0)
+            @foreach($forms as $form)
             <tr>
-                <th scope="row">1</th>
-                <td>Personal Information</td>
-                <td><a href="#" style="color: #007bff"> Download </a></td>
+                <th scope="row">{{++$i}}</th>
+                <td>{{$form->name}}</td>
+                @if($form->doc->path != null)
+                <td><a href="{{\Illuminate\Support\Facades\URL::to('/').'/'.$form->doc->path}}" download style="color: #007bff"> Download </a></td>
+                @else
+                <td><a href="" download style="color: #007bff"> No File </a></td>
+                @endif
 
             </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Educational Information</td>
-                <td><a href="#" style="color: #007bff"> Download </a></td>
+            @endforeach
 
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Form type C</td>
-                <td><a href="#" style="color: #007bff"> Download </a></td>
-
-            </tr>
             </tbody>
         </table>
     </div>
@@ -68,30 +72,31 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 <script>
-  (function () {
-    'use strict'
 
-    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-      var msViewportStyle = document.createElement('style')
-      msViewportStyle.appendChild(
-        document.createTextNode(
-          '@-ms-viewport{width:auto!important}'
-        )
-      )
-      document.head.appendChild(msViewportStyle)
-    }
-
-  }())
+  // (function wa(){
+  //   'use strict'
+  //
+  //   if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+  //     var msViewportStyle = document.createElement('style')
+  //     msViewportStyle.appendChild(
+  //       document.createTextNode(
+  //         '@-ms-viewport{width:auto!important}'
+  //       )
+  //     )
+  //     document.head.appendChild(msViewportStyle)
+  //   }
+  //
+  // }())
 </script>
 </body>
 

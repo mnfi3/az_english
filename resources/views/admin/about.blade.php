@@ -25,12 +25,14 @@
         <div class="row mt-50 ">
 
             <div class="col-12 ">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{url('history-add')}}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group row py-4">
                         <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">history text :</label>
                         <div class="col-md-8 mr-auto">
                              <textarea type="text" id="editor1" required=""
-                                       class="form-control" name="editor1" placeholder="set content here">
+                                       class="form-control" name="content" placeholder="set content here">
+                                 {{$history}}
                             </textarea>
                             <script>
                               CKEDITOR.replace( 'editor1' );
@@ -43,14 +45,14 @@
                             <div  id="fileInputsContainer">
                                 <div class="d-flex flex-row justify-content-between">
                                     <input type="file" id="documents"
-                                           class="form-control-file" name="documents[]">
+                                           class="form-control-file" name="images[]">
                                     <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Image</button>
                                 </div>
                             </div> </div>
                     </div>
                     <div class="d-flex justify-content-center mb-3">
                         <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
-                        <button class="btn btn-danger mt-30" type="submit">Remove</button>
+                        <a  href="{{url('history-remove')}}" class="btn btn-danger mt-30" type="submit">Remove</a>
                     </div>
                 </form>
             </div>
@@ -73,12 +75,14 @@
     <div class="row mt-50 ">
 
         <div class="col-12 ">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('president-message-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Mesaage text :</label>
                     <div class="col-md-8 mr-auto">
                               <textarea type="text" id="editor2" required=""
-                                        class="form-control" name="editor2" placeholder="set content here">
+                                        class="form-control" name="content" placeholder="set content here">
+                                  {{$message}}
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor2' );
@@ -91,14 +95,14 @@
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="image">
                                 {{--<button class="btn btn-outline-success text-dark " onclick="">Add New Image</button>--}}
                             </div>
                         </div> </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
-                    <button class="btn btn-danger mt-30" type="submit">Remove</button>
+                    <a href="{{url('president-message-remove')}}" class="btn btn-danger mt-30" type="submit">Remove</a>
                 </div>
             </form>
         </div>
@@ -106,6 +110,9 @@
     <br>
     <br>
 </div>
+
+
+
 
 <div class="container">
     <div class="d-flex flex-row justify-content-between mt-50">
@@ -119,27 +126,28 @@
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8 ">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{url('rector-add')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group row pt-4">
                     <label class="col-md-3 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Type :</label>
                     <div class="col-md-8 mr-auto">
-                        <select name="fac-id" id="" class="form-control">
+                        <select name="type" id="" class="form-control">
                             <option value="1"></option>
-                            <option value="2">the Rector</option>
-                            <option value="3">Vice-Rector for Research & Technology</option>
-                            <option value="4">Vice-Rector for Education</option>
-                            <option value="5">Vice-Rector for Cultural Affairs</option>
-                            <option value="5">Vice-Rector for Student Affairs</option>
-                            <option value="5">Vice-Rector for Finance & Administrative Affairs</option>
+                            <option value="the Rector">the Rector</option>
+                            <option value="Vice-Rector for Research & Technology">Vice-Rector for Research & Technology</option>
+                            <option value="Vice-Rector for Education">Vice-Rector for Education</option>
+                            <option value="Vice-Rector for Cultural Affairs">Vice-Rector for Cultural Affairs</option>
+                            <option value="Vice-Rector for Student Affairs">Vice-Rector for Student Affairs</option>
+                            <option value="Vice-Rector for Finance & Administrative Affairs">Vice-Rector for Finance & Administrative Affairs</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">description text :</label>
                     <div class="col-md-8 mr-auto">
-                             <textarea type="text" id="editor2" required=""
-                                       class="form-control" name="editor3" placeholder="set content here">
+                             <textarea type="text" id="editor3" required=""
+                                       class="form-control" name="content" placeholder="set content here">
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor3' );
@@ -152,7 +160,7 @@
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
-                                       class="form-control-file" name="documents[]">
+                                       class="form-control-file" name="image">
                                 {{--<button class="btn btn-outline-success text-dark " onclick="">Add New Image</button>--}}
                             </div>
                         </div> </div>
@@ -168,18 +176,21 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
+                @foreach($rectors as $rector)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">Library</a>
-                    <form class="align-self-center" action="" method="post">
-                        <input type="submit" class="btn btn-success  " value="Delete">
-                    </form>
+                    <a href="" class="text-white mt-2" style="font-size: 1rem">{{$rector->type}}</a>
+                    <a type="submit" class="btn btn-success " href="{{url('rector-remove',$rector->id)}}">Delete</a>
                 </li>
+                @endforeach
             </ul>
         </div>
     </div>
     <br>
     <br>
 </div>
+
+
+
 
 </body>
 <script>
