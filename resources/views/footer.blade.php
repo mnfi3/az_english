@@ -21,19 +21,6 @@
                 <!--</div>-->
                 <!--</div>-->
                 <!-- Footer Widget Area -->
-
-                @php
-                use App\About;
-                use App\Contact;
-                use App\Link;
-                $images = null;
-                $history = About::orderBy('id', 'desc')->where('type', '=', 'HISTORY')->first();
-                if($history != null) {
-                  $images = $history->images()->orderBy('id', 'desc')->take(9)->get();
-                }
-                $links = Link::all();
-                $contact = Contact::orderBy('id', 'desc')->first();
-                @endphp
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="footer-widget mb-100">
                         <div class="widget-title">
@@ -41,9 +28,10 @@
                         </div>
                         <nav>
                             <ul class="useful-links">
-                                @foreach($links as $link)
-                                    <li><a href="{{$link->link}}">{{$link->title}}</a></li>
-                                @endforeach
+                                <li><a href="#">Home</a></li>
+                                <li><a href="http://www.ui.ac.ir/index.php">University of Isfahan</a></li>
+                                <li><a href="http://www.tabrizu.ac.ir/en">University of Tabriz</a></li>
+                                <li><a href="http://search.aol.com/aol/webhome">AOL Search</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -55,34 +43,33 @@
                             <h6>Gallery</h6>
                         </div>
                         <div class="gallery-list d-flex justify-content-between flex-wrap">
-                            @if($images != null)
-                            @foreach($images as $image)
-                                <a href="{{asset($image->path)}}" class="gallery-img" title="Gallery Image 1"><img src="{{asset($image->path)}}" alt=""></a>
-                            @endforeach
-                            @endif
+                            <a href="img/bg-img/uni.jpg" class="gallery-img" title="Gallery Image 1"><img src="img/bg-img/uni.jpg" alt=""></a>
+                            <a href="img/bg-img/uni2.jpg" class="gallery-img" title="Gallery Image 2"><img src="img/bg-img/uni2.jpg" alt=""></a>
+                            <a href="img/bg-img/uni3.jpg" class="gallery-img" title="Gallery Image 3"><img src="img/bg-img/uni3.jpg" alt=""></a>
+                            <a href="img/bg-img/library.jpg" class="gallery-img" title="Gallery Image 4"><img src="img/bg-img/library.jpg" alt=""></a>
+                            <a href="img/bg-img/gallery1.jpg" class="gallery-img" title="Gallery Image 5"><img src="img/bg-img/gallery1.jpg" alt=""></a>
+                            <a href="img/bg-img/pc-2.jpg" class="gallery-img" title="Gallery Image 6"><img src="img/bg-img/pc-2.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
                 <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-4" style="">
                     <div class="footer-widget mb-100">
                         <div class="widget-title">
                             <h6>Contact</h6>
                         </div>
-                        @if($contact != null)
                         <div class="single-contact d-flex mb-30">
                             <i class="icon-placeholder"></i>
-                            <p>{{$contact->address}}</p>
+                            <p>I.R.Iran,Tabriz,Shahid Madani University</p>
                         </div>
                         <div class="single-contact d-flex mb-30">
                             <i class="icon-telephone-1"></i>
-                            <p>Main:  {{$contact->phone1}} <br>Office: {{$contact->phone2}}</p>
+                            <p>Main:  +98-41-34327526 <br>Office: +98-41-34327526</p>
                         </div>
                         <div class="single-contact d-flex">
                             <i class="icon-contract"></i>
-                            <p>{{$contact->email}}</p>
+                            <p>office@azaruniv.com</p>
                         </div>
-                        @endif
                     </div>
                 </div>
             </div>
@@ -95,7 +82,7 @@
             <div class="row">
                 <div class="col-12">
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved for Azarbaijan Shahid Madani University | Designed by <a href="http://www.ezitech.ir/" target="_blank">EziTech</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved for Azarbayian Shahid Madani  Uiniversity | Designed by <a href="https://www.ezitech.ir/" target="_blank">EziTech</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>

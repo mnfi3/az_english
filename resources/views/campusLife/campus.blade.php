@@ -9,13 +9,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbaijan Shahid Madani University</title>
+    <title>Azarbayjan Shahid Madani University</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
+    <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="{{asset('style.css')}}">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -26,6 +26,7 @@
 </div>
 <!-- ##### Header Area Start ##### -->
 @include('header')
+
 <div class="blog-area mt-25 section-padding-100" >
     <div class="container">
         <div class="row">
@@ -35,32 +36,31 @@
 
                         <!-- Single Blog Start -->
                         <div class="col-12" >
-                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
+                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px;background-color: #002147;">
                                 <!-- Post Thumb -->
-
-
                                 <div class="mb-50 mt-25 d-flex justify-content-center ">
                                     <!-- ##### Slider Start ##### -->
                                     <section class="hero-area" style="width: 70%;">
                                         <div class="hero-slides owl-carousel" style="">
 
                                             <!-- Single  Slide -->
-                                            @foreach($campus->images as $image)
-                                                <div class="single-hero-slide bg-img  " style="background-image: url({{asset($image->path)}}); height: 500px">
-                                                </div>
-                                            @endforeach
+                                            <div class="single-hero-slide bg-img  " style="background-image: url({{asset('img/bg-img/library.jpg')}}); height: 500px">
+
+                                            </div>
+                                            <div class="single-hero-slide bg-img  " style="background-image: url({{asset('img/bg-img/bg-1.jpg')}}); height: 500px">
+
+                                            </div>
 
                                         </div>
                                     </section>
                                     <!-- ##### Slider End ##### -->
                                 </div>
 
-
                                 <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem">
-                                    @php echo $campus->content; @endphp
-                                </p>
-                            </div>
+                                <p class="text-white" style="font-size: 1.1rem"> 	Dormitory is part of the welfare facilities of the university where students can spend their free and relaxing time according to the relevant general regulations and make use of its cultural, educational, and sporting facilities by observing other students’ rights while he is residing. The university and students both are considered as pivots of the country’s scientific, cultural, social development, and dormitories as the students’ second home are of vital importance in reinforcing spiritual joy, psychological peace and quiet, mental development, personality development, and educational improvement in term of quality.
+
+
+                                </p></div>
                         </div>
                     </div>
                 </div>
@@ -78,15 +78,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
-<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
+<script src="js/bootstrap/popper.min.js"></script>
 <!-- Bootstrap js -->
-<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
 <!-- All Plugins js -->
-<script src="{{asset('js/plugins/plugins.js')}}"></script>
+<script src="js/plugins/plugins.js"></script>
 <!-- Active js -->
-<script src="{{asset('js/active.js')}}"></script>
+<script src="js/active.js"></script>
 </body>
 
 </html>

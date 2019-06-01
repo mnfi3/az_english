@@ -28,34 +28,43 @@
 @include('header')
 <!-- ##### Blog Area Start ##### -->
 <div class="blog-area mt-25 section-padding-100" >
-    <div class="container ">
-        <div class="row " >
+    <div class="container">
+        <div class="row">
             <div class="col-12" >
                 <div class="academy-blog-posts">
                     <div class="row">
-
                         <!-- Single Blog Start -->
-                        <div class="col-12 " >
-                            <div class="single-blog-post mb-50  wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px; background-color: #002147;">
+                        <div class="col-12" >
+                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px;background-color: #002147;">
                                 <!-- Post Thumb -->
-                                <div class="mb-50 d-flex justify-content-center ">
-                                    <img src="img/bg-img/message.jpg" alt="" class="" style="border-radius: 10px;max-height: 350px">
+                                <div class="mb-50 mt-25 d-flex justify-content-center ">
+                                    <!-- ##### Slider Start ##### -->
+                                    <section class="hero-area" style="width: 70%;">
+                                        <div class="hero-slides owl-carousel" style="">
+
+                                            <!-- Single  Slide -->
+                                            <div class="single-hero-slide1 bg-img  " style="background-image: url({{asset('img/bg-img/library.jpg')}}); height: 500px">
+
+                                            </div>
+
+                                        </div>
+                                    </section>
+                                    <!-- ##### Slider End ##### -->
                                 </div>
 
                                 <!-- Post Excerpt -->
-                                <p class="" style="font-size: 1.1rem ; color: #ffffff;"> Universities have an important and challenging mission in fostering the academic, cultural, and economic wellbeing of communities at regional, national and, international spheres. Azarbaijan Shahid Madani University, as one of the leading universities in the northwest region of Iran, has embraced this challenge by offering quality education programmes and excellent research facilities, and also by making partnership with academic institutions and industries operating within and beyond national borders.
-                                    To this end, we ensure that our students receive the highest possible quality education and research skills within the capacity of our university. We are quite certain that the quality education and research facilities, together with a peaceful campus environment offered by Azarbaijan Shahid Madani University will guarantee the paths of success and prosperity to our new national and international students.
-                                    As the Rector of Azarbaijan Shahid Madani University, I welcome you to browse this prospectus to find more about our university and the opportunities it offers.
-                                </p></div>
+                                <p class="text-white" style="font-size: 1.1rem"> The Faculty of Technology and Engineering started its academic activities in 1994, admitting undergraduate students in Civil Engineering and a year later in Electrical (Power) Engineering. Currently, undergraduate and postgraduate courses are offered in Mechanical Engineering, Civil Engineering, Electrical Engineering, Metallurgy & Materials Engineering, and Chemical Engineering.</p>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
+
 <!-- ##### Blog Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->

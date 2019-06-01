@@ -27,8 +27,7 @@
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8 ">
-            <form action="{{url('llc-add')}}" method="post" enctype="multipart/form-data">
-                @csrf
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Form Name :</label>
@@ -41,7 +40,7 @@
                     <label class="col-md-3 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Choose Form :</label>
                     <div class="col-md-8 mr-auto">
-                        <div id="fileInputsContainer1">
+                        <div id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id="documents"
                                        class="form-control-file" name="documents[]">
@@ -60,17 +59,18 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
-                @foreach($forms as $form)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
-                    <a href="#" class="text-white mt-2" style="font-size: 1rem">{{$form->name}}</a>
-                    <form class="align-self-center" action="{{url('llc-remove')}}" method="post">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$form->id}}">
+                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Form A</a>
+                    <form class="align-self-center" action="" method="post">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
-                    @endforeach
-
+                <li class="d-flex flex-row justify-content-between bg-danger mt-1 p-1 " style="border-radius: 10px">
+                    <a href="#" class="text-white mt-2" style="font-size: 1rem">Form B</a>
+                    <form class="align-self-center" action="" method="post">
+                        <input type="submit" class="btn btn-success  " value="Delete">
+                    </form>
+                </li>
             </ul>
         </div>
     </div>
@@ -79,6 +79,7 @@
 </div>
 <br>
 
+<body style="background-color: #002147; font-family: FontAwesome">
 <div class="container">
     <h2 class=" text-white">Courses Section</h2>
 </div>
@@ -86,13 +87,12 @@
 <div class="container bg" style="border-radius: 15px;">
     <div class="row mt-50 ">
         <div class="col-12 col-md-8 ">
-            <form action="{{url('course-add')}}" method="post" enctype="multipart/form-data">
-                @csrf
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Course Title :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="title" placeholder="set title here">
+                               class="form-control" name="name" placeholder="set title here">
 
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Course Content:</label>
                     <div class="col-md-8 mr-auto">
                             <textarea type="text" id="editor1" required=""
-                                      class="form-control" name="content" placeholder="set content here">
+                                      class="form-control" name="editor1" placeholder="set content here">
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor1' );
@@ -114,7 +114,7 @@
                         <div  id="">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id=""
-                                       class="form-control-file" name="images[]">
+                                       class="form-control-file" name="documents[]">
                             </div>
                         </div> </div>
                 </div>
@@ -141,16 +141,12 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
-                @foreach($courses as $course)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="{{url('course-detail', $course->id)}}" class="text-white mt-2" style="font-size: 1rem">{{$course->title}}</a>
-                    <form class="align-self-center" action="{{url('course-remove')}}" method="post">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$course->id}}">
+                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">Latest News in ASMU</a>
+                    <form class="align-self-center" action="" method="post">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
-                    @endforeach
             </ul>
         </div>
     </div>

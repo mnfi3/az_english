@@ -23,40 +23,22 @@
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8 ">
-            <form action="{{url('faculty-edit')}}" method="post" enctype="multipart/form-data">
-                @csrf
-                <input type="hidden" name="id" value="{{$faculty->id}}">
+            <form action="" method="post" enctype="multipart/form-data">
 
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name" value="{{$faculty->name}}">
+                               class="form-control" name="name">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Name :</label>
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="dean" value="{{$faculty->dean}}">
-                    </div>
-                </div>
-                <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Email :</label>
-                    <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="dean_email" value="{{$faculty->dean_email}}">
-                    </div>
-                </div>
-                <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Phone :</label>
-                    <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="dean_phone" value="{{$faculty->dean_phone}}">
+                               class="form-control" name="name">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -64,10 +46,7 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Description :</label>
                     <div class="col-md-8 mr-auto">
                             <textarea type="text" id="editor1" required=""
-                                      class="form-control" name="description" placeholder="set content here">
-                                @php
-                                echo $faculty->description;
-                                @endphp
+                                      class="form-control" name="editor1" placeholder="set content here">
                             </textarea>
                         <script>
                           CKEDITOR.replace( 'editor1' );
@@ -79,8 +58,8 @@
                     <div class="col-md-8 mr-auto">
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
-                                <input type="file" id="images"
-                                       class="form-control-file" name="images[]">
+                                <input type="file" id="documents"
+                                       class="form-control-file" name="documents[]">
                                 <button class="btn btn-outline-success text-dark " onclick="addDocumentInput()">Add New Image</button>
 
                             </div>
@@ -105,7 +84,7 @@
     var newNode = document.createElement("DIV");
     newNode.className += 'mt-1'
     newNode.innerHTML = '<input type="file"  required=""\n' +
-      '                       class="form-control-file" name="images[]">'
+      '                       class="form-control-file" name="documents[]">'
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }
 </script>

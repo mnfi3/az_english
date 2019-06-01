@@ -9,13 +9,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbaijan Shahid Madani University</title>
+    <title>Azarbayjan Shahid Madani University</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
+    <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="{{asset('style.css')}}">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -27,19 +27,6 @@
 <!-- ##### Header Area Start ##### -->
 @include('header')
 
-
-
-</div>
-<!-- ##### Header Area End ##### -->
-
-<!-- ##### Breadcumb Area Start ##### -->
-<!--<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">-->
-<!--<div class="bradcumbContent" style="border-radius: 5px">-->
-<!--<h2>The News and Info</h2>-->
-<!--</div>-->
-<!--</div>-->
-<!-- ##### Breadcumb Area End ##### -->
-
 <!-- ##### Blog Area Start ##### -->
 <div class="blog-area mt-25 section-padding-100" >
     <div class="container">
@@ -50,35 +37,27 @@
 
                         <!-- Single Blog Start -->
                         <div class="col-12" >
-                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px">
+                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px;background-color: #002147;">
                                 <!-- Post Thumb -->
-                                    @if($research != null)
-                                    <div class="mb-50 mt-25 d-flex justify-content-center ">
-                                        <!-- ##### Slider Start ##### -->
-                                        <section class="hero-area" style="width: 70%;">
-                                            <div class="hero-slides owl-carousel" style="">
+                                <div class="mb-50 mt-25 d-flex justify-content-center ">
+                                    <!-- ##### Slider Start ##### -->
+                                    <section class="hero-area" style="width: 70%;">
+                                        <div class="hero-slides owl-carousel" style="">
 
-                                                <!-- Single  Slide -->
-                                                @foreach($research->images as $image)
-                                                    <div class="single-hero-slide bg-img  " style="background-image: url({{asset($image->path)}}); height: 500px">
-                                                    </div>
-                                                @endforeach
+                                            <!-- Single  Slide -->
+                                            <div class="single-hero-slide bg-img  " style="background-image: url({{asset('img/bg-img/library.jpg')}}); height: 500px">
 
                                             </div>
-                                        </section>
-                                        <!-- ##### Slider End ##### -->
-                                    </div>
 
-                                    <!-- Post Title -->
-                                    <p class="text-dark " style="font-weight: 500; font-size: 1.5rem">{{$research->title}}</p>
+                                        </div>
+                                    </section>
+                                    <!-- ##### Slider End ##### -->
+                                </div>
+                                <!-- Post Title -->
+                                <p class="text-white " style="font-weight: 500; font-size: 1.5rem">Shahid Madani University Centeral Library</p>
 
-                                    <!-- Post Excerpt -->
-                                    <p class="" style="font-size: 1.1rem">
-                                        @php
-                                        echo $research->description;
-                                        @endphp
-                                    </p>
-                                    @endif
+                                <!-- Post Excerpt -->
+                                <p class="text-white " style="font-size: 1.1rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ex itaque labore numquam officia perferendis quaerat quisquam recusandae sequi voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                         </div>
                     </div>
@@ -97,15 +76,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
-<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
+<script src="js/bootstrap/popper.min.js"></script>
 <!-- Bootstrap js -->
-<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
 <!-- All Plugins js -->
-<script src="{{asset('js/plugins/plugins.js')}}"></script>
+<script src="js/plugins/plugins.js"></script>
 <!-- Active js -->
-<script src="{{asset('js/active.js')}}"></script>
+<script src="js/active.js"></script>
 </body>
 
 </html>

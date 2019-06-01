@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbaijan Shahid Madani University</title>
+    <title>Azarbayjan Shahid Madani University</title>
 
     <!-- Core Stylesheet -->
     @include('includeCss')
@@ -27,60 +27,15 @@
 <!-- ##### Header Area End ##### -->
 
 
-
-
-
-<!-- ##### About us Title Area Start ##### -->
-{{--<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">--}}
-    {{--<div class="bradcumbContent">--}}
-        {{--<h2>About ASMU</h2>--}}
-    {{--</div>--}}
-</div>
-<!-- ##### About us Title End ##### -->
-
-
-
 <!-- ##### About Us Area Start ##### -->
 <section class="about-us-area mt-25 section-padding-100">
     <div class="container">
-        <!--<div class="row">-->
-        <!--<div class="col-12">-->
-        <!--<div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">-->
-        <!--<span>The Best</span>-->
-        <!--<h3>We are the Academy</h3>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
+
         <div class="row">
             <div class="col-12 col-md-12 wow fadeInUp" data-wow-delay="400ms">
                 <p class="text-white" style="font-size: 1.1rem; font-weight: 600 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem earum expedita ipsam ipsum omnis porro quis, ratione recusandae sit unde! Ad, alias atque autem corporis, cum delectus deleniti dicta ducimus enim est eveniet explicabo impedit, iusto labore laboriosam libero minus omnis provident quasi quidem quo repudiandae sit sunt totam ullam vitae voluptatem voluptates. Ad, aperiam deleniti facere fugit illo inventore itaque laboriosam, maiores molestias neque odit quis similique sit voluptates!</p>
             </div>
-            <!--<div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="500ms">-->
-            <!--<p>Vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod. Morbi vel arcu gravida, iaculis lacus vel, posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit amet maximus nisl sagittis. Ut in iaculis enim, et pulvinar mauris. Etiam tristique magna eget velit consectetur, a tincidunt velit dictum. Cras vulputate metus id felis ornare hendrerit. Maecenas sodales suscipit ipsum.</p>-->
-            <!--</div>-->
         </div>
-        <!--<div class="row">-->
-        <!--<div class="col-12">-->
-        <!--&lt;!&ndash;<div class="about-slides owl-carousel mt-100 wow fadeInUp" data-wow-delay="600ms">&ndash;&gt;-->
-        <!--&lt;!&ndash;<img src="img/bg-img/uni.jpg" alt="">&ndash;&gt;-->
-        <!--&lt;!&ndash;<img src="img/bg-img/bg-2.jpg" alt="">&ndash;&gt;-->
-        <!--&lt;!&ndash;<img src="img/bg-img/uni3.jpg" alt="">&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--<div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">-->
-        <!--<div class="container h-100">-->
-        <!--<div class="row h-100 align-items-center">-->
-        <!--<div class="col-12">-->
-        <!--<div class="hero-slides-content">-->
-        <!--<h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>-->
-        <!--<h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br> University</h2>-->
-        <!--<a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms" style="border-radius: 8px">Read More</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
     </div>
 </section>
 <!-- ##### About Us Area End ##### -->

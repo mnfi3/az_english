@@ -13,7 +13,7 @@
         <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
         <!-- Title -->
-        <title>Azarbaijan Shahid Madani University</title>
+        <title>Azarbayjan Shahid Madani University</title>
         <!-- Core Stylesheet -->
         @include('includeCss')
 
@@ -29,6 +29,7 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
         {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
             {{--<h2>Departments</h2>--}}
         {{--</div>--}}
@@ -414,20 +415,20 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
     <script>
-      // (function wa() {
-      //   'use strict'
-      //
-      //   if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-      //     var msViewportStyle = document.createElement('style')
-      //     msViewportStyle.appendChild(
-      //       document.createTextNode(
-      //         '@-ms-viewport{width:auto!important}'
-      //       )
-      //     )
-      //     document.head.appendChild(msViewportStyle)
-      //   }
-      //
-      // }())
+      (function () wa{
+        'use strict'
+
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+          var msViewportStyle = document.createElement('style')
+          msViewportStyle.appendChild(
+            document.createTextNode(
+              '@-ms-viewport{width:auto!important}'
+            )
+          )
+          document.head.appendChild(msViewportStyle)
+        }
+
+      }())
     </script>
     </body>
 

@@ -23,13 +23,12 @@
 <div class="container bg" style="border-radius: 15px;">
     <div class="row mt-50 ">
         <div class="col-12 col-md-8">
-            <form action="{{url('slider-add')}}" method="post" enctype="multipart/form-data">
-                @csrf
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group row py-4">
                     <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Title :</label>
                     <div class="col-md-8 mr-auto">
                             <input type="text" id="title" required=""
-                                      class="form-control" name="title" placeholder="Slider Title">
+                                      class="form-control" name="name" placeholder="Slider Title">
                     </div>
                 </div>
                 <div class="form-group row py-4">
@@ -38,15 +37,15 @@
                         <div  id="">
                             <div class="d-flex flex-row justify-content-between">
                                 <input type="file" id=""
-                                       class="form-control-file" name="images[]">
+                                       class="form-control-file" name="documents[]">
                             </div>
                         </div> </div>
                 </div>
                 <div class="form-group row py-4">
-                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Slider Link (if exist) :</label>
+                    <label class="col-md-3 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">News Link (if exist) :</label>
                     <div class="col-md-8 mr-auto">
-                        <input type="text" id="title"
-                               class="form-control" name="link" placeholder="Slider Title">
+                        <input type="text" id="title" required=""
+                               class="form-control" name="name" placeholder="Slider Title">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
@@ -60,17 +59,24 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
-                @foreach($sliders as $slider)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="{{$slider->link}}" class="text-white mt-2" style="font-size: 1rem">{{$slider->title}}</a>
-                    <form class="align-self-center" action="{{url('slider-remove')}}" method="post">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$slider->id}}">
+                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">First Slider</a>
+                    <form class="align-self-center" action="" method="post">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
-                    @endforeach
-
+                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
+                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">Second Slider</a>
+                    <form class="align-self-center" action="" method="post">
+                        <input type="submit" class="btn btn-success  " value="Delete">
+                    </form>
+                </li>
+                <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
+                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">Third Slider</a>
+                    <form class="align-self-center" action="" method="post">
+                        <input type="submit" class="btn btn-success  " value="Delete">
+                    </form>
+                </li>
             </ul>
         </div>
     </div>

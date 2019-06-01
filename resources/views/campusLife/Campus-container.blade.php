@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbaijan Shahid Madani University</title>
+    <title>Azarbayjan Shahid Madani University</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -27,7 +27,7 @@
 @include('header')
 
 <!-- ##### Breadcumb Area Start ##### -->
-{{--<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">--}}
+<div class="breadcumb-area bg-img" style="background-image: url('img/bg-img/breadcumb.jpg');">
     {{--<div class="bradcumbContent" style="border-radius: 5px">--}}
     {{--<h2>Facultie of Engineering</h2>--}}
     {{--</div>--}}
@@ -36,24 +36,131 @@
 <section id="main">
     <div class="container-fluid mb-100 mt-100" style="">
         <div class="row">
-            @foreach($campuses as $campus)
             <div class="col-12 col-md-3">
-                <a href="{{url('/campus-life',$campus->name)}}">
+                <a href="{{url('/campus')}}">
                     <div class="card1 card">
                         <div class="card_image1">
-                            @if(count($campus->images) > 0)
-                                <img src="{{asset($campus->images()->first()->path)}}" />
-                            @endif
+                            <img src="img/bg-img/library.jpg" />
                         </div>
                         <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
-                            <p class="text-white" style="font-size: 1.4rem">{{$campus->name}}</p>
+                            <p class="text-white" style="font-size: 1.4rem">Accomodation</p>
                         </div>
                     </div>
                 </a>
             </div>
-            @endforeach
+            <div class="col-12 col-md-3">
+                <a href="{{url('/campus')}}">
+                    <div class="card1 card">
+                        <div class="card_image1">
+                            <img src="img/bg-img/library.jpg" />
+                        </div>
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                            <p class="text-white" style="font-size: 1.4rem">Transportation</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="{{url('/campus')}}">
+                    <div class="card1 card">
+                        <div class="card_image1">
+                            <img src="img/bg-img/library.jpg" />
+                        </div>
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                            <p class="text-white" style="font-size: 1.4rem">Restaurants</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="{{url('/campus')}}">
+                    <div class="card1 card">
+                        <div class="card_image1">
+                            <img src="img/bg-img/library.jpg" />
+                        </div>
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                            <p class="text-white" style="font-size: 1.4rem">Shopping Center</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
-
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <a href="{{url('/campus')}}">
+                    <div class="card1 card">
+                        <div class="card_image1">
+                            <img src="img/bg-img/library.jpg" />
+                        </div>
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                            <p class="text-white" style="font-size: 1.4rem">Health Center</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="{{url('/campus')}}">
+                    <div class="card1 card">
+                        <div class="card_image1">
+                            <img src="img/bg-img/library.jpg" />
+                        </div>
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                            <p class="text-white" style="font-size: 1.4rem">Sports</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="{{url('/campus')}}">
+                    <div class="card1 card">
+                        <div class="card_image1">
+                            <img src="img/bg-img/library.jpg" />
+                        </div>
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                            <p class="text-white" style="font-size: 1.4rem">Banks</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="{{url('/campus')}}">
+                    <div class="card1 card">
+                        <div class="card_image1">
+                            <img src="img/bg-img/library.jpg" />
+                        </div>
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                            <p class="text-white" style="font-size: 1.4rem">kindergarten</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <a href="{{url('/campus')}}">
+                    <div class="card1 card">
+                        <div class="card_image1">
+                            <img src="img/bg-img/library.jpg" />
+                        </div>
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                            <p class="text-white" style="font-size: 1.4rem">mosque</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="{{url('/campus')}}">
+                    <div class="card1 card">
+                        <div class="card_image1">
+                            <img src="img/bg-img/library.jpg" />
+                        </div>
+                        <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                            <p class="text-white" style="font-size: 1.4rem">Fruit shop</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
 
     </div>
 
@@ -67,15 +174,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
-<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
+<script src="js/bootstrap/popper.min.js"></script>
 <!-- Bootstrap js -->
-<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
 <!-- All Plugins js -->
-<script src="{{asset('js/plugins/plugins.js')}}"></script>
+<script src="js/plugins/plugins.js"></script>
 <!-- Active js -->
-<script src="{{asset('js/active.js')}}"></script>
+<script src="js/active.js"></script>
 </body>
 
 </html>

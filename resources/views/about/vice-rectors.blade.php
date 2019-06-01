@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbayian Shahid Madani University</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -28,8 +28,8 @@
 @include('header')
 <!-- ##### Blog Area Start ##### -->
 <div class="blog-area mt-25 section-padding-100" >
-    <div class="container ">
-        <div class="row " >
+    <div class="container">
+        <div class="row">
             <div class="col-12" >
                 <div class="academy-blog-posts">
                     <div class="row">

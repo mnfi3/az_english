@@ -29,15 +29,13 @@
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8 ">
-            <form action="{{url('contact-add')}}" method="post" enctype="multipart/form-data">
-                @csrf
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Address :</label>
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Location :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="address"
-                        @if($contact != null) value="{{$contact->address}}" @endif>
+                               class="form-control" name="name">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -45,8 +43,7 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Phone Number 1 :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="phone1"
-                               @if($contact != null) value="{{$contact->phone1}}" @endif>
+                               class="form-control" name="name">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -54,8 +51,7 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Phone Number 2 :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="phone2"
-                               @if($contact != null) value="{{$contact->phone2}}" @endif>
+                               class="form-control" name="name">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -63,13 +59,12 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Email :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="email"
-                               @if($contact != null) value="{{$contact->email}}" @endif>
+                               class="form-control" name="name">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success btn-lg mx-3" type="submit">Save</button>
-                    <a href="{{url('contact-remove')}}" class="btn btn-danger btn-lg mx-3" type="submit">Remove All</a>
+                    <button class="btn btn-danger btn-lg mx-3" type="submit">Remove All</button>
                 </div>
             </form>
         </div>
@@ -87,14 +82,13 @@
 <div class="container bg" >
     <div class="row mt-50 ">
         <div class="col-12 col-md-8 ">
-            <form action="{{url('link-add')}}" method="post" enctype="multipart/form-data">
-                @csrf
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Title :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="title" placeholder="Enter Link Here">
+                               class="form-control" name="name" placeholder="Enter Link Here">
                     </div>
                 </div>
                 <div class="form-group row pt-4">
@@ -102,7 +96,7 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title" >Link :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="link" placeholder="Enter Link Here">
+                               class="form-control" name="name" placeholder="Enter Link Here">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">
@@ -116,17 +110,12 @@
             </div>
             <div class="divider-red"></div>
             <ul class="nav-list d-flex flex-column p-0">
-                @foreach($links as $link)
                 <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                    <a href="{{$link->link}}" class="text-white mt-2" style="font-size: 1rem">{{$link->title}}</a>
-                    <form class="align-self-center" action="{{url('link-remove')}}" method="post">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$link->id}}">
+                    <a href="http://pcms.azaruniv.ac.ir/post/9" class="text-white mt-2" style="font-size: 1rem">TabrizUni.com</a>
+                    <form class="align-self-center" action="" method="post">
                         <input type="submit" class="btn btn-success  " value="Delete">
                     </form>
                 </li>
-                    @endforeach
-
             </ul>
         </div>
 
@@ -155,22 +144,32 @@
         </tr>
         </thead>
         <tbody >
-        @php($i = 0)
-        @foreach($messages as $message)
         <tr>
-            <th scope="row">{{++$i}}</th>
-            <td>{{$message->full_name}}</td>
-            <td>{{$message->email}}</td>
-            <td >{{$message->created_at}}</td>
-            <td><button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal{{$message->id}}">Observe</button></td>
-            @if($message->doc != null)
-            <td><a href="{{\Illuminate\Support\Facades\URL::to('/').'/'.$message->doc->path}}"  download>download</a>  </td>
-            @else
-            <td><a href="">no file</a></td>
-            @endif
+            <th scope="row">1</th>
+            <td>Bahram Nouraie</td>
+            <td>aliarabgary@gmail.com</td>
+            <td >1397/01/29</td>
+            <td><button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal">Observe</button></td>
+            <td><a href="">download</a>  </td>
         </tr>
-        @endforeach
+        <tr>
+            <th scope="row">2</th>
+            <td>farzade hassani</td>
+            <td>farjamiiii@gmail.com</td>
+            <td >1396/11/09</td>
+            <td><button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal">Observe</button></td>
+            <td><a href="">download</a>  </td>
 
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Ali noori</td>
+            <td>m.molaee@gmail.com</td>
+            <td >1395/08/13</td>
+             <td><button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal">Observe</button></td>
+            <td><a href="">download</a> </td>
+
+        </tr>
         </tbody>
     </table>
     <br>
@@ -178,8 +177,7 @@
 </div>
 
 <!--MESSAGE MODAL-->
-@foreach($messages as $message)
-<div class="modal rtl" id="Modal{{$message->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal rtl" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
@@ -189,9 +187,7 @@
                 </button>
             </div>
             <div class="modal-body ">
-                <p class="user-messages" style="font-family: 'Times New Roman'; alignment: left"  >
-                    {{$message->text}}
-                </p>
+                <p class="user-messages" style="font-family: 'Times New Roman'; alignment: left"  >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur doloremque et fuga illo inventore ipsam magni minima natus odio officia, omnis quaerat quas, reprehenderit repudiandae tempore unde veritatis! Beatae eum magni modi, quod saepe sit?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -200,32 +196,7 @@
         </div>
     </div>
 </div>
-@endforeach
-<!-- Modal -->
 
-{{--<div class="container">--}}
-    {{--<h2>Large Modal</h2>--}}
-    {{--<!-- Trigger the modal with a button -->--}}
-    {{--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>--}}
-
-    {{--<!-- Modal -->--}}
-    {{--<div class="modal " id="myModal" role="dialog">--}}
-        {{--<div class="modal-dialog modal-lg">--}}
-            {{--<div class="modal-content">--}}
-                {{--<div class="modal-header">--}}
-                    {{--<button type="button" class="close" data-dismiss="modal">&times;</button>--}}
-                    {{--<h4 class="modal-title">Modal Header</h4>--}}
-                {{--</div>--}}
-                {{--<div class="modal-body">--}}
-                    {{--<p>This is a large modal.</p>--}}
-                {{--</div>--}}
-                {{--<div class="modal-footer">--}}
-                    {{--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
 
 </body>
 </html>

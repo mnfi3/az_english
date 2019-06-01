@@ -9,13 +9,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbaijan Shahid Madani University</title>
+    <title>Azarbayjan Shahid Madani University</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
+    <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="{{asset('style.css')}}">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -30,7 +30,7 @@
 <!-- ##### Header Area End ##### -->
 
 <!-- ##### Breadcumb Area Start ##### -->
-{{--<div class="breadcumb-area bg-img" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">--}}
+<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
     {{--<div class="bradcumbContent">--}}
         {{--<h2>Courses</h2>--}}
     {{--</div>--}}
@@ -42,37 +42,55 @@
     <div class="container">
         <div class="row">
             <!-- Single Top Popular Course -->
-            @foreach($courses as $course)
             <div class="col-12 col-lg-6">
                 <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
                     <div class="popular-course-content">
-                        @if($course->image != null)
-                        <div class="popular-course-thumb bg-img " style="background-image: url({{asset($course->image->path)}});"></div>
-                        @endif
+                        <div class="popular-course-thumb bg-img " style="background-image: url({{asset('img/bg-img/pc-4.jpg')}});"></div>
 
-                        <h4>{{$course->title}}</h4>
-                        <p style="font-size: 0.95rem">
-                           {{substr(strip_tags($course->content), 0, 130)}}...
-                        </p>
-                        <a href="{{url('/course-detail', $course->id)}}" class="btn academy-btn btn-sm">See More</a>
+                        <h4>learning Persian In 6 Month</h4>
+                        <p style="font-size: 0.95rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dolorem eaque modi, numquam optio quo totam!</p>
+                        <a href="{{url('/course-detail')}}" class="btn academy-btn btn-sm">See More</a>
                     </div>
                 </div>
             </div>
-            @endforeach
 
+            <!-- Single Top Popular Course -->
+            <div class="col-12 col-lg-6">
+                <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
+                    <div class="popular-course-content">
+                        <div class="popular-course-thumb bg-img " style="background-image: url({{asset('img/bg-img/pc-3.jpg')}});"></div>
 
+                        <h4>learning Persian In 6 Month</h4>
+                        <p style="font-size: 0.95rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dolorem eaque modi, numquam optio quo totam!</p>
+                        <a href="{{url('/course-detail')}}" class="btn academy-btn btn-sm">See More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
+                    <div class="popular-course-content">
+                        <div class="popular-course-thumb bg-img " style="background-image: url({{asset('img/bg-img/pc-2.jpg')}});"></div>
 
-        </div>
-        <div class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms" >
-            <nav>
-                <ul class="pagination">
-                    {{$courses->links()}}
-                </ul>
-            </nav>
+                        <h4>learning Persian In 6 Month</h4>
+                        <p style="font-size: 0.95rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dolorem eaque modi, numquam optio quo totam!</p>
+                        <a href="{{url('/course-detail')}}" class="btn academy-btn btn-sm">See More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
+                    <div class="popular-course-content">
+                        <div class="popular-course-thumb bg-img " style="background-image: url({{asset('img/bg-img/pc-2.jpg')}});"></div>
+
+                        <h4>learning Persian In 6 Month</h4>
+                        <p style="font-size: 0.95rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dolorem eaque modi, numquam optio quo totam!</p>
+                        <a href="{{url('/course-detail')}}" class="btn academy-btn btn-sm">See More</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-
-
 </div>
 
 <!-- ##### Footer Area Start ##### -->
@@ -81,15 +99,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
-<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
+<script src="js/bootstrap/popper.min.js"></script>
 <!-- Bootstrap js -->
-<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
 <!-- All Plugins js -->
-<script src="{{asset('js/plugins/plugins.js')}}"></script>
+<script src="js/plugins/plugins.js"></script>
 <!-- Active js -->
-<script src="{{asset('js/active.js')}}"></script>
+<script src="js/active.js"></script>
 </body>
 
 </html>
