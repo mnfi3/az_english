@@ -12,6 +12,12 @@ class CampusController extends Controller
     $this->middleware('auth');
   }
     public function add(Request $request){
+    //remove campuses with this name
+    $campuses = CampusLife::where('name', '=', $request->name)->get();
+    foreach ($campuses as $campus){
+      $campus->delete();
+    }
+
       $campus = CampusLife::create([
         'name' => $request->name,
         'content' => $request->get('content'),

@@ -91,6 +91,43 @@
                     <button class="btn btn-success btn-lg mx-3" type="submit">Save</button>
                 </div>
             </form>
+
+
+
+            <div class="form-group row pt-4">
+                <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">All Images :</label>
+                <div class="row">
+                    @foreach($faculty->images as $image)
+                    <div class="col-12 col-md-4">
+
+                        <div class="card1 card">
+                            <div class="card_image1">
+                                <img src={{asset($image->path)}} />
+                            </div>
+
+                            <div class="card_title1" style="background-color: rgba(76,46,52,0.7); margin-top: -40px";>
+                                <div>
+                                   <form action="{{url('admin-remove-image')}}" method="post">
+                                       @csrf
+                                       <input type="hidden" name="id" value="{{$image->id}}">
+                                    <button class="text-white btn btn-danger" type="submit" onclick=""  style="font-size: 1rem; bottom: 50px" >remove</button>
+                                   </form>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    @endforeach
+
+                </div>
+            </div>
+
+
+            <div class="form-group row pt-4"></div>
         </div>
     </div>
     <br>

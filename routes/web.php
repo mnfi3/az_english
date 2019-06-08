@@ -94,6 +94,8 @@ Route::post('/slider-remove', 'SliderController@remove');
 Route::post('/image-add', 'SliderController@imageAdd');
 Route::get('/admin-master-edit/{id}', 'DepartmentController@masterEditPage');
 Route::post('/admin-master-edit', 'DepartmentController@masterEdit');
+Route::post('/admin-remove-image', 'ImageController@remove');
+Route::post('/admin-remove-image', 'ImageController@remove');
 
 
 //import masters from excel file
