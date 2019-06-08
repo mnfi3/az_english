@@ -46,7 +46,7 @@
 
                                             <!-- Single  Slide -->
                                             @foreach($campus->images as $image)
-                                                <div class="single-hero-slide bg-img  " style="background-image: url({{asset($image->path)}}); height: 500px">
+                                                <div class="single-hero-slide bg-img  " style="background-image: url('{{asset($image->path)}}'); height: 500px">
                                                 </div>
                                             @endforeach
 
