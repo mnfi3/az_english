@@ -60,8 +60,12 @@ Route::post('/faculty-remove', 'FacultyController@remove');
 Route::get('/faculty-edit-page/{id}', 'FacultyController@editPage');
 Route::post('/faculty-edit', 'FacultyController@edit');
 Route::post('/research-add', 'ResearchController@add');
+Route::get('/research-edit-page/{id}', 'ResearchController@editPage');
+Route::post('/research-edit', 'ResearchController@edit');
 Route::post('/research-remove', 'ResearchController@remove');
 Route::post('/campus-add', 'CampusController@add');
+Route::post('/campus-edit', 'CampusController@edit');
+Route::get('/campus-edit-page/{id}', 'CampusController@editPage');
 Route::post('/campus-remove', 'CampusController@remove');
 Route::post('/student-add', 'StudentController@add');
 Route::post('/student-remove', 'StudentController@remove');
@@ -97,6 +101,9 @@ Route::post('/admin-master-edit', 'DepartmentController@masterEdit');
 Route::post('/admin-remove-image', 'ImageController@remove');
 Route::post('/admin-remove-image', 'ImageController@remove');
 
+Route::get('/admin-optional-pages', 'OptionalPageController@show');
+Route::post('/admin-optional-page-add', 'OptionalPageController@add');
+Route::get('/admin-optional-page-remove/{id}', 'OptionalPageController@remove');
 
 //import masters from excel file
 //  Route::get('/import-masters', 'DepartmentController@import');
@@ -135,4 +142,5 @@ Route::get('/course-detail/{id}', 'SiteController@course');
 Route::get('/contact-us', 'SiteController@contact');
 Route::post('/message-send', 'SiteController@messageSend');
 Route::get('/search', 'SiteController@search');
+Route::get('/preview/{id}', 'SiteController@preview');
 

@@ -12,6 +12,7 @@ use App\Link;
 use App\LLCForm;
 use App\Message;
 use App\Mou;
+use App\OptionalPage;
 use App\Partnership;
 use App\Post;
 use App\Project;
@@ -186,6 +187,12 @@ class SiteController extends Controller
 
       return redirect(url('contact-us'))->with('is_sent', 1);;
 
+    }
+
+
+    public function preview($id){
+      $page = OptionalPage::find($id);
+      return view('preview', compact(['page']));
     }
 
 

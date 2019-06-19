@@ -61,7 +61,7 @@ class AdminPanelController extends Controller
     }
 
     public function researches(){
-      $researches = Research::all();
+      $researches = Research::orderBy('id', 'desc')->get();
       return view('admin.research', compact('researches'));
     }
 

@@ -100,7 +100,7 @@
                                     <ul class="dropdown" style="width:300px">
 
                                         <li><a href="{{url('/research/libraries')}}">Libraries</a></li>
-                                        <li><a href="#">Lab</a>
+                                        <li><a href="#">Faculty Lab</a>
                                             <ul class="dropdown " style="width:300px ;margin-left: 40%">
                                                 <li class="dropdown1"><a href="{{url('/research/computer labs')}}">Computer Labs</a></li>
                                                 <li class="dropdown1"><a href="{{url('/research/basic sciences labs')}}">Basic sciences Labs</a></li>
@@ -108,8 +108,32 @@
                                                 <li class="dropdown1"><a href="{{url('/research/Agriculture Lab')}}">Agriculture Lab</a></li>
                                             </ul>
                                         </li>
+                                        <li><a href="#">Research Lab</a>
+                                            <ul class="dropdown " style="width:370px ;margin-left: 40%">
+                                                <li class="dropdown1"><a href="{{url('/research/computer labs')}}">Smart Distribution Network Research Lab</a></li>
+                                                <li class="dropdown1"><a href="http://msl.azaruniv.ac.ir">Molecular Simulation Lab</a></li>
+                                            </ul>
+                                        </li>
                                         {{--<li><a href="{{url('/conferences')}}">Conferences/Workshops</a></li>--}}
                                         <li><a href="{{url('/research/innovation')}}">Innovation center</a></li>
+                                        <li><a href="">Research center</a>
+                                            <ul class="dropdown " style="width:250px ;margin-left: 40%">
+                                                <li class="dropdown1"><a href="">Institutes</a>
+                                                    <ul class="dropdown " style="width:330px ;margin-left: 28%">
+                                                        <li><a href="{{url('/research/Social and Mental Health')}}">Social and Mental Health</a></li>
+                                                        <li><a href="{{url('/research/Cognitive Sciences and Technology')}}">Cognitive Sciences and Technology</a></li>
+                                                        <li><a href="{{url('/research/Applied Power System')}}">Applied Power System</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown1"><a href="">Research Groups</a>
+                                                    <ul class="dropdown " style="width:250px ;margin-left: 28%">
+                                                        <li><a href="{{url('/research/Halophyte Biotechnology')}}">Halophyte Biotechnology</a></li>
+                                                        <li><a href="{{url('/research/Communication Process')}}">Communication Process</a></li>
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </li>
                                     </ul>
                                     {{--{{route('home')}}--}}
                                 </li>

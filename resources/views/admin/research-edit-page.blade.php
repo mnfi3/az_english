@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Azarbayjan Shahid Madani University</title>
+    <title>Azarbaijan Shahid Madani University</title>
     <!-- Core Stylesheet -->
     @include('includeCss')
 
@@ -17,56 +17,42 @@
 
 <body style="background-color: #002147; font-family: FontAwesome">
 <div class="container">
-    <h2 class=" text-white">Edit Faculties Info</h2>
+    <h2 class=" text-white">Edit Research Info</h2>
 </div>
 <div class="container bg" style=" ">
     <div class="row mt-50 ">
 
         <div class="col-12 col-md-8 ">
-            <form action="{{url('faculty-edit')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('research-edit')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="id" value="{{$faculty->id}}">
+                <input type="hidden" name="id" value="{{$research->id}}">
 
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Name :</label>
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Research Type :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="name" value="{{$faculty->name}}">
+                               class="form-control " name="type" value="{{$research->type}}" disabled>
                     </div>
                 </div>
+
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Name :</label>
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Research Title :</label>
                     <div class="col-md-8 mr-auto">
                         <input type="text" id="title" required=""
-                               class="form-control" name="dean" value="{{$faculty->dean}}">
+                               class="form-control " name="title" value="{{$research->title}}">
                     </div>
                 </div>
+
                 <div class="form-group row pt-4">
                     <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Email :</label>
-                    <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="dean_email" value="{{$faculty->dean_email}}">
-                    </div>
-                </div>
-                <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Dean Phone :</label>
-                    <div class="col-md-8 mr-auto">
-                        <input type="text" id="title" required=""
-                               class="form-control" name="dean_phone" value="{{$faculty->dean_phone}}">
-                    </div>
-                </div>
-                <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label "
-                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Faculty Description :</label>
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Research Description :</label>
                     <div class="col-md-8 mr-auto">
                             <textarea type="text" id="editor1" required=""
                                       class="form-control" name="description" placeholder="set content here">
                                 @php
-                                    echo $faculty->description;
+                                    echo $research->description;
                                 @endphp
                             </textarea>
                         <script>
@@ -75,7 +61,7 @@
                     </div>
                 </div>
                 <div class="form-group row pt-4">
-                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Image for Facultie :</label>
+                    <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Image for Reserch :</label>
                     <div class="col-md-8 mr-auto">
                         <div  id="fileInputsContainer">
                             <div class="d-flex flex-row justify-content-between">
@@ -97,7 +83,7 @@
             <div class="form-group row pt-4">
                 <label class="col-md-4 col-form-label " style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">All Images :</label>
                 <div class="row">
-                    @foreach($faculty->images as $image)
+                    @foreach($research->images as $image)
                         <div class="col-12 col-md-4">
 
                             <div class="card1 card">
@@ -125,6 +111,7 @@
 
                 </div>
             </div>
+
 
 
             <div class="form-group row pt-4"></div>

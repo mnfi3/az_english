@@ -26,21 +26,6 @@
 </div>
 <!-- ##### Header Area Start ##### -->
 @include('header')
-
-
-
-</div>
-<!-- ##### Header Area End ##### -->
-
-<!-- ##### Breadcumb Area Start ##### -->
-<!--<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">-->
-<!--<div class="bradcumbContent" style="border-radius: 5px">-->
-<!--<h2>The News and Info</h2>-->
-<!--</div>-->
-<!--</div>-->
-<!-- ##### Breadcumb Area End ##### -->
-
-<!-- ##### Blog Area Start ##### -->
 <div class="blog-area mt-25 section-padding-100" >
     <div class="container">
         <div class="row">
@@ -52,33 +37,39 @@
                         <div class="col-12" >
                             <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="border-radius: 10px;background-color: #002147;">
                                 <!-- Post Thumb -->
-                                    @if($research != null)
-                                    <div class="mb-50 mt-25 d-flex justify-content-center ">
-                                        <!-- ##### Slider Start ##### -->
-                                        <section class="hero-area" style="width: 70%;">
-                                            <div class="hero-slides owl-carousel" style="">
 
-                                                <!-- Single  Slide -->
-                                                @foreach($research->images as $image)
-                                                    <div class="single-hero-slide bg-img  " style="background-image: url('{{asset($image->path)}}'); height: 500px">
-                                                    </div>
-                                                @endforeach
 
-                                            </div>
-                                        </section>
-                                        <!-- ##### Slider End ##### -->
-                                    </div>
+                                @if(count($page->images) > 0)
 
-                                    <!-- Post Title -->
-                                    <p class="text-white " style="font-weight: 500; font-size: 1.5rem">{{$research->title}}</p>
+                                <div class="mb-50 mt-25 d-flex justify-content-center ">
+                                    <!-- ##### Slider Start ##### -->
+                                    <section class="hero-area" style="width: 70%;">
+                                        <div class="hero-slides owl-carousel" style="">
 
-                                    <!-- Post Excerpt -->
-                                    <p class="text-white" style="font-size: 1.1rem">
-                                        @php
-                                        echo $research->description;
-                                        @endphp
-                                    </p>
-                                    @endif
+                                            <!-- Single  Slide -->
+                                            @foreach($page->images as $image)
+                                                <div class="single-hero-slide bg-img  " style="background-image: url('{{asset($image->path)}}'); height: 500px">
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+                                    </section>
+                                    <!-- ##### Slider End ##### -->
+                                </div>
+
+                                @endif
+
+
+                                <!-- Post Excerpt -->
+                                <p class="text-white" style="font-size: 1.1rem">
+                                    @php
+                                    echo $page->content;
+                                    @endphp
+                                </p>
+                                @php($i=0)
+                                @foreach($page->docs as $doc)
+                                    <a href="{{\Illuminate\Support\Facades\URL::to('/').'/'. $doc->path}}" download class="btn academy-btn btn-sm mt-15">Get Document{{++$i}}</a><br>
+                                @endforeach
                             </div>
                         </div>
                     </div>

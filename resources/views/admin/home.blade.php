@@ -182,6 +182,17 @@
                     <a href="{{url('/admin-image')}}" class="card-footer">Enter</a>
                 </div>
             </div>
+            <div class="col-12 col-md-3 py-3">
+                <div class="card text-center bg-three text-white">
+                    <div class="card-body">
+                        <h3 class="pb-3">Optional Pages</h3>
+                        <h2 class="display-3">
+                            <i class="fa fa-th-list"></i>
+                        </h2>
+                    </div>
+                    <a href="{{url('/admin-optional-pages')}}" class="card-footer">Enter</a>
+                </div>
+            </div>
         </div>
 
     </div>

@@ -53,11 +53,11 @@
 
 
 <!-- ##### Top Feature Area Start ##### -->
-<div class="top-features-area wow fadeInUp" data-wow-delay="300ms">
-    <div class="container">
+<div class="top-features-area wow fadeInUp " data-wow-delay="300ms" >
+    <div class="container" >
         <div class="row">
-            <div class="col-12">
-                <div class="features-content">
+            <div class="col-12" >
+                <div class="features-content " style="max-height: 100px">
                     <div class="row no-gutters">
                         <!-- Single Top Features -->
                         <div class="col-12 col-md-3">
