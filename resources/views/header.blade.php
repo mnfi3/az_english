@@ -110,7 +110,7 @@
                                         </li>
                                         <li><a href="#">Research Lab</a>
                                             <ul class="dropdown " style="width:370px ;margin-left: 40%">
-                                                <li class="dropdown1"><a href="{{url('/research/computer labs')}}">Smart Distribution Network Research Lab</a></li>
+                                                <li class="dropdown1"><a href="{{url('/research/Smart Distribution Network Research Lab')}}">Smart Distribution Network Research Lab</a></li>
                                                 <li class="dropdown1"><a href="http://msl.azaruniv.ac.ir">Molecular Simulation Lab</a></li>
                                             </ul>
                                         </li>
