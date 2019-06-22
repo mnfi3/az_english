@@ -106,7 +106,7 @@
                     <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
                         <a href="{{url('research-edit-page', $research->id)}}" class=" btn btn-success  right"  style="text-align: right">edit</a>
                         <a href="{{url('research', $research->id)}}" class="text-white mt-2" style="font-size: 1rem">{{$research->type}}</a>
-                        <form class="align-self-center" action="{{url('faculty-remove')}}" method="post">
+                        <form class="align-self-center" action="{{url('research-remove')}}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{$research->id}}">
                             <input type="submit" class="btn btn-success  " value="Delete">
