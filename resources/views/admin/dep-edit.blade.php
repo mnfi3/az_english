@@ -58,6 +58,17 @@
                                class="form-control" name="head" value="{{$department->head}}">
                     </div>
                 </div>
+                <div class="form-group row py-4">
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Department Description
+                        :</label>
+                    <div class="col-md-8 mr-auto">
+                        <textarea type="text" id="description" required=""
+                               class="form-control text-dark" name="head">
+                            description
+                        </textarea>
+                    </div>
+                </div>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
                 </div>
@@ -102,7 +113,7 @@
     <div class="d-flex flex-row justify-content-between mt-50">
     </div>
     {{--<h3 class="text-white"><a href="{{url('/admin-home')}}" class="text-white btn btn-lg btn-outline-warning" style="font-size: 20px"> <span><div class="fa fa-home"></div></span>  Back to home </a></h3>--}}
-    <h2 class=" text-white">Add Member For Departments</h2>
+    <h2 class=" text-white">Add Member For This Department</h2>
 </div>
 <div class="container bg" style=" ">
     <div class="row mt-50 ">

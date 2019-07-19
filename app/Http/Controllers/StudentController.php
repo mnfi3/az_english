@@ -43,4 +43,19 @@ class StudentController extends Controller
       $student->delete();
       return back();
     }
+
+
+  public function edit(Request $request){
+    $student = Student::find($request->id);
+    $student->title = $request->title;
+    $student->description = $request->description;
+    $student->save();
+    return redirect(url('admin-student'));
+  }
+
+
+  public function editPage($id){
+    $student = Student::find($id);
+    return view('admin.student-edit', compact(['student']));
+  }
 }

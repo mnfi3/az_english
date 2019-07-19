@@ -53,7 +53,7 @@
                                 <!-- Post Excerpt -->
                                         <ul class="dropdown" style="width:100%">
                                             @foreach($mous as $mou)
-                                            <li style="font-size: 1.2rem; font-weight: 500; color: #000;" class=" py-3">- {{$mou->full_name}}</li>
+                                            <li style="font-size: 1.2rem; font-weight: 500; color: #000;" class=" py-1">- {{$mou->full_name}}</li>
                                             @endforeach
 
                                         </ul>

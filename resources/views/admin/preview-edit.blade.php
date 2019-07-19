@@ -85,8 +85,9 @@
 
                 @foreach($pages as $page)
                     <li class="d-flex flex-row justify-content-between bg-danger mt-4 p-1 " style="border-radius: 10px">
-                        <a href="{{url('admin-optional-page-remove', $page->id)}}" class=" btn btn-success  right"  style="text-align: right">delete</a>
-                        <a href="#" class="text-white mt-2" style="font-size: 1rem">Preview Title</a>
+                        <a href="{{url('previewEdit', $page->id)}}" class=" btn btn-success mr-2  right"  style="text-align: right">edit</a>
+                        <a href="{{url('admin-optional-page-remove', $page->id)}}" class=" btn btn-success mr-2  right"  style="text-align: right">delete</a>
+                        <a href="#" class="text-white mt-2" style="font-size: 0.8rem">{{$page->title}}</a>
                         {{--<button  class="btn btn-success" data-toggle="modal" data-target="#Modal1"> Copy </button>--}}
                         <button class="text-white btn btn-success"   style="font-size: 1rem; bottom: 50px" data-toggle="modal" data-target="#Modal{{$page->id}}">Link</button>
 

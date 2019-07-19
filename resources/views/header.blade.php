@@ -31,7 +31,7 @@
     <!-- Navbar Area -->
     <div class="academy-main-menu ">
         <div class="classy-nav-container breakpoint-off">
-            <div class="container">
+            <div class="container-fluid">
                 <!-- Menu -->
                 <nav class="classy-navbar justify-content-between " id="academyNav" style="border-radius: 5px">
 
@@ -51,14 +51,14 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul class="text-white">
-                                <li><a href="{{url('/')}}">home</a></li>
-                                <li><a href="#">About</a>
+                                <li><a href="{{url('/')}}" style="text-transform: uppercase">home</a></li>
+                                <li><a href="#" style="text-transform: uppercase">About Us</a>
                                     <ul class="dropdown" style="width:250px">
                                         <li><a href="{{url('/history')}}">History</a></li>
                                         <li><a href="{{url('/message')}}">Presiden's Message</a></li>
                                         <li><a href="#">Administration</a>
-                                            <ul class="dropdown " style="width:420px ;margin-left: 28%;">
-                                                <li class="dropdown2"><a href="{{url('/rectors/the Rector')}}">the Rector</a></li>
+                                            <ul class="dropdown " style="width:430px ;margin-left: 28%;">
+                                                <li class="dropdown2"><a href="{{url('/rectors/the Rector')}}" class="capitalize">the Rector</a></li>
                                                 <li class="dropdown2"><a href="{{url('/rectors/Vice-Rector for Research & Technology')}}">Vice-Rector for Research & Technology</a></li>
                                                 <li class="dropdown2"><a href="{{url('/rectors/Vice-Rector for Education')}}">Vice-Rector for Education</a></li>
                                                 <li class="dropdown2"><a href="{{url('/rectors/Vice-Rector for Cultural Affairs')}}">Vice-Rector for Cultural Affairs</a></li>
@@ -70,7 +70,7 @@
 
                                 </li>
                                 {{--<li><a href="#">ADMINISTRATION</a>--}}
-                                {{--<ul class="dropdown" style="width:400px">--}}
+                                {{--<ul class="dropdown" style="width:405px">--}}
                                 {{--<li><a href="{{url('/mou')}}">Vice-rector for research</a></li>--}}
                                 {{--<li><a href="{{url('/staff')}}">Vice-rector for Culture</a></li>--}}
                                 {{--<li><a href="{{url('/staff')}}">Vice-rector for Students affairs</a></li>--}}
@@ -79,7 +79,7 @@
                                 {{--</ul>--}}
 
                                 {{--</li>--}}
-                                <li><a href="#">Academics</a>
+                                <li><a href="#" style="text-transform: uppercase">Academics</a>
                                     <ul class="dropdown" style="width:180px">
                                         <li class="edit-list"><a href="#">faculties</a>
                                             @php
@@ -96,31 +96,31 @@
 
                                 </li>
 
-                                <li><a href="#">Research</a>
+                                <li><a href="#" style="text-transform: uppercase">Research</a>
                                     <ul class="dropdown" style="width:300px">
 
-                                        <li><a href="{{url('/research/libraries')}}">Libraries</a></li>
-                                        <li><a href="#">Faculty Lab</a>
+                                        <li><a href="{{url('/research/libraries')}}" class="uppercase" >Libraries</a></li>
+                                        <li><a href="#" >Faculty Labs</a>
                                             <ul class="dropdown " style="width:300px ;margin-left: 40%">
                                                 <li class="dropdown1"><a href="{{url('/research/computer labs')}}">Computer Labs</a></li>
                                                 <li class="dropdown1"><a href="{{url('/research/basic sciences labs')}}">Basic sciences Labs</a></li>
                                                 <li class="dropdown1"><a href="{{url('/research/technical and engineering')}}">Technical and engineering</a></li>
-                                                <li class="dropdown1"><a href="{{url('/research/Agriculture Lab')}}">Agriculture Lab</a></li>
+                                                <li class="dropdown1"><a href="{{url('/research/Agriculture Lab')}}">Agriculture Labs</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Research Lab</a>
-                                            <ul class="dropdown " style="width:370px ;margin-left: 40%">
+                                        <li><a href="#">Research Labs</a>
+                                            <ul class="dropdown " style="width:390px ;margin-left: 40%">
                                                 <li class="dropdown1"><a href="{{url('/research/Smart Distribution Network Research Lab')}}">Smart Distribution Network Research Lab</a></li>
                                                 <li class="dropdown1"><a href="http://msl.azaruniv.ac.ir">Molecular Simulation Lab</a></li>
                                             </ul>
                                         </li>
                                         {{--<li><a href="{{url('/conferences')}}">Conferences/Workshops</a></li>--}}
                                         <li><a href="{{url('/research/innovation')}}">Innovation center</a></li>
-                                        <li><a href="">Research center</a>
+                                        <li><a href="">Research centers</a>
                                             <ul class="dropdown " style="width:250px ;margin-left: 40%">
                                                 <li class="dropdown1"><a href="">Institutes</a>
                                                     <ul class="dropdown " style="width:330px ;margin-left: 28%">
-                                                        <li><a href="{{url('/research/Social and Mental Health')}}">Social and Mental Health</a></li>
+                                                        <li><a href="{{url('/research/Social and Mental Health')}}" >Social and Mental Health</a></li>
                                                         <li><a href="{{url('/research/Cognitive Sciences and Technology')}}">Cognitive Sciences and Technology</a></li>
                                                         <li><a href="{{url('/research/Applied Power System')}}">Applied Power System</a></li>
                                                     </ul>
@@ -139,7 +139,7 @@
                                 </li>
 
 
-                                <li><a href="#">Campus life</a>
+                                <li><a href="#" style="text-transform: uppercase">Campus life</a>
                                     <ul class="dropdown" style="width:250px">
                                         @if(\App\CampusLife::where('name', 'like', 'accommodation')->first() != null)
                                             <li><a href="{{url('/campus-life/accommodation')}}">accomodation</a></li>
@@ -155,7 +155,7 @@
                                         @endif
 
                                         @if(\App\CampusLife::where('name', 'like', 'sports')->first() != null)
-                                            <li><a href="{{url('/campus-life/sports')}}">Sports</a></li>
+                                            <li><a href="{{url('/campus-life/sports')}}">Sports Center</a></li>
                                         @endif
                                         @if(\App\CampusLife::where('name', 'like', 'dormitory')->first() != null)
                                             <li><a href="{{url('/campus-life/dormitory')}}">dormitory</a></li>
@@ -163,8 +163,7 @@
                                         @if(\App\CampusLife::where('name', 'like', 'banks')->first() != null)
                                             <li><a href="{{url('/campus-life/banks')}}">Banks</a></li>
                                         @endif
-                                        <li><a href="#">Other</a>
-                                            <ul class="dropdown" style="width:250px ; margin-left: 28%">
+
                                                 @if(\App\CampusLife::where('name', 'like', 'health center')->first() != null)
                                                     <li><a href="{{url('/campus-life/health center')}}">Health Center</a></li>
                                                 @endif
@@ -184,12 +183,25 @@
                                                     @if(\App\CampusLife::where('name', 'like', 'post office')->first() != null)
                                                         <li><a href="{{url('/campus-life/post office')}}">Post Office</a></li>
                                                     @endif
-                                            </ul>
-                                        </li>
                                     </ul>
                                     {{--{{route('home')}}--}}
                                 </li>
-                                <li><a href="#">International </a>
+                                <li><a href="#" style="text-transform: uppercase">Admission</a>
+                                    <ul class="dropdown" style="width:250px">
+                                        @if(\App\Admission::where('name', 'like', 'graduate')->first() != null)
+                                            <li><a href="{{url('admission/graduate')}}">Graduate</a></li>
+                                        @endif
+                                        @if(\App\Admission::where('name', 'like', 'undergraduate')->first() != null)
+                                            <li><a href="{{url('admission/undergraduate')}}">Undergraduate</a></li>
+                                        @endif
+                                        @if(\App\Admission::where('name', 'like', 'unknown')->first() != null)
+                                            <li><a href="{{url('admission/unknown')}}">Unknown</a></li>
+                                        @endif
+
+
+                                    </ul>
+                                </li>
+                                <li><a href="#" style="text-transform: uppercase">International Office</a>
                                     <ul class="dropdown" style="width:350px">
                                         <li><a href="#" >Office</a>
                                             <ul class="dropdown " style="width:250px ; margin-left: 48%">
@@ -222,7 +234,7 @@
 
                                             </ul>
                                         </li>
-                                        <li><a href="#" >Language Learning Center(LLC)</a>
+                                        <li><a href="#" >Language Learning Center (LLC)</a>
                                             <ul class="dropdown " style="width:300px;margin-left: 48%">
                                                 <li class="dropdown1"><a href="{{url('/forms')}}">Application forms</a></li>
                                                 <li class="dropdown1"><a href="{{url('/courses')}}">Courses</a></li>
@@ -230,9 +242,9 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="{{url('/news')}}">News</a>
+                                <li><a href="{{url('/news')}}" style="text-transform: uppercase">News</a>
                                 </li>
-                                <li><a href="{{url('/contact-us')}}">Contact Us</a>
+                                <li><a href="{{url('/contact-us')}}" style="text-transform: uppercase">Contact Us</a>
                                 </li>
                             </ul>
                         </div>

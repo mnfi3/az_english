@@ -49,7 +49,6 @@ class ResearchController extends Controller
     $research->description = $request->description;
     $research->save();
 
-
     if($request->hasFile('images')){
       $files = $request->file('images');
       foreach ($files as $file) {

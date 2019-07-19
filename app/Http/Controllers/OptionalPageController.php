@@ -40,12 +40,33 @@ class OptionalPageController extends Controller
     return back();
   }
 
+  public function edit(Request $request){
+    $page = OptionalPage::find($request->id);
+//    $research->type = $request->type;
+    $page->title = $request->title;
+    $page->content = $request->get('content');
+    $page->save();
+
+
+    if($request->hasFile('images')){
+      $files = $request->file('images');
+      foreach ($files as $file) {
+        Uploader::saveImage('App\OptionalPage', $page->id, $file);
+      }
+    }
+
+    return redirect(url('admin-optional-pages'));
+  }
 
   public function remove($id){
    $page = OptionalPage::find($id);
    $page->delete();
    return back();
   }
-  
-  
+
+  public function editPage($id){
+    $page = OptionalPage::find($id);
+    return view('admin.previewEdit', compact(['page']));
+  }
+
 }

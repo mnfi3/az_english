@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\About;
+use App\Admission;
 use App\CampusLife;
 use App\Conference;
 use App\Contact;
@@ -194,6 +195,11 @@ class SiteController extends Controller
       $page = OptionalPage::find($id);
       return view('preview', compact(['page']));
     }
+
+  public function admission($name){
+    $admission = Admission::orderBy('id', 'desc')->where('name', 'like', $name)->first();
+    return view('admission.admission', compact('admission'));
+  }
 
 
 }

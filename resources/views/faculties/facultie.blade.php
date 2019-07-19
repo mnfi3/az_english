@@ -68,9 +68,9 @@
                                 <h3 style="font-size: 1.1rem" class="text-white" > Faculty Dean : </h3>
                                 {{--<p class="ml-3" style="font-size: 1.1rem"> {{$faculty->dean}} <br>--}}
                                <div class="text-white">
-                                   name : {{$faculty->dean}}<br>
-                                   phone number : {{$faculty->dean_phone}}<br>
-                                   Email : {{$faculty->dean_email}}</p>
+                                   {{$faculty->dean}}<br>
+                                   {{$faculty->dean_phone}}<br>
+                                   {{$faculty->dean_email}}</p>
                                </div>
                             </div>
 
@@ -82,7 +82,7 @@
 
 
         </div>
-        <h2 class="text-white pb-2">{{$faculty->name}} Faculty Departments</h2>
+        <h2 class="text-white pb-2"> Departments</h2>
         <div id="accordion" role="tablist" class="mt-25">
 
             @php($i=0)
@@ -113,8 +113,6 @@
                                 <tr>
                                     <th scope="col">Row</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Research Area</th>
-                                    <th scope="col">Academic Rank </th>
                                     <th scope="col">Email </th>
                                     <th scope="col">Picture </th>
                                     <th scope="col">CV </th>
@@ -127,8 +125,7 @@
                                     <tr>
                                         <th scope="row">{{++$i}}</th>
                                         <td>{{$master->name}}</td>
-                                        <td>{{$master->speciality}}</td>
-                                        <td>{{$master->rank}}</td>
+
                                         <td>{{$master->email}}</td>
                                         <td>
                                             @if($master->image != null)
@@ -147,7 +144,11 @@
                                 </tbody>
                             </table>
                         </div>
-
+                            <div class="py-2 m-2">
+                                <p class="text-dark" style="font-size: 1rem">
+                                    Description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut explicabo iste ratione recusandae saepe! Iste, nesciunt, rem. Distinctio, labore quae.
+                                </p>
+                            </div>
                     </div>
                 </div>
             @endforeach

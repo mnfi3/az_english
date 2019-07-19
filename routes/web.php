@@ -102,8 +102,23 @@ Route::post('/admin-remove-image', 'ImageController@remove');
 Route::post('/admin-remove-image', 'ImageController@remove');
 
 Route::get('/admin-optional-pages', 'OptionalPageController@show');
+Route::post('/optional-edit', 'OptionalPageController@edit');
 Route::post('/admin-optional-page-add', 'OptionalPageController@add');
 Route::get('/admin-optional-page-remove/{id}', 'OptionalPageController@remove');
+Route::get('/previewEdit/{id}', 'OptionalPageController@editPage');
+
+
+
+Route::get('/admin-quick-links', 'QuickLinkController@all');
+Route::post('/admin-quick-link-add', 'QuickLinkController@add');
+Route::post('/admin-quick-link-remove', 'QuickLinkController@remove');
+
+Route::get('/admin-admission', 'AdmissionController@admission');
+Route::post('/admin-admission-add', 'AdmissionController@add');
+Route::post('/admin-admission-remove', 'AdmissionController@remove');
+Route::post('/admin-admission-edit', 'AdmissionController@edit');
+Route::get('/admin-admission-edit-page/{id}', 'AdmissionController@editPage');
+
 
 //import masters from excel file
 //  Route::get('/import-masters', 'DepartmentController@import');
@@ -111,7 +126,8 @@ Route::get('/admin-optional-page-remove/{id}', 'OptionalPageController@remove');
 //get backup from system
 Route::get('/admin-backup', 'BackupController@index')->name('admin-backup');
 
-
+Route::post('/student-edit', 'StudentController@edit');
+Route::get('/studentEdit/{id}', 'StudentController@editPage');
 //end Admin-----------------------------------------------------------------------
 
 
@@ -143,4 +159,5 @@ Route::get('/contact-us', 'SiteController@contact');
 Route::post('/message-send', 'SiteController@messageSend');
 Route::get('/search', 'SiteController@search');
 Route::get('/preview/{id}', 'SiteController@preview');
+Route::get('/admission/{name}', 'SiteController@admission');
 

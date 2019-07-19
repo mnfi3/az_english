@@ -193,6 +193,28 @@
                     <a href="{{url('/admin-optional-pages')}}" class="card-footer">Enter</a>
                 </div>
             </div>
+            <div class="col-12 col-md-3 py-3">
+                <div class="card text-center bg-three text-white">
+                    <div class="card-body">
+                        <h3 class="pb-3">Quick Links</h3>
+                        <h2 class="display-3">
+                            <i class="fa fa-link"></i>
+                        </h2>
+                    </div>
+                    <a href="{{url('/admin-quick-links')}}" class="card-footer">Enter</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 py-3">
+                <div class="card text-center bg-three text-white">
+                    <div class="card-body">
+                        <h3 class="pb-3">Admission</h3>
+                        <h2 class="display-3">
+                            <i class="fa fa-graduation-cap"></i>
+                        </h2>
+                    </div>
+                    <a href="{{url('/admin-admission')}}" class="card-footer">Enter</a>
+                </div>
+            </div>
         </div>
 
     </div>

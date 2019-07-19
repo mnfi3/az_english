@@ -4,23 +4,6 @@
     <div class="main-footer-area section-padding-100-0">
         <div class="container">
             <div class="row">
-                <!-- Footer Widget Area -->
-                <!--<div class="col-12 col-sm-6 col-lg-4">-->
-                <!--<div class="footer-widget mb-100">-->
-                <!--<div class="widget-title">-->
-                <!--<a href="#"><img src="img/core-img/logo2.png" alt=""></a>-->
-                <!--</div>-->
-                <!--<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget.</p>-->
-                <!--<div class="footer-social-info">-->
-                <!--<a href="#"><i class="fa fa-facebook"></i></a>-->
-                <!--<a href="#"><i class="fa fa-twitter"></i></a>-->
-                <!--<a href="#"><i class="fa fa-dribbble"></i></a>-->
-                <!--<a href="#"><i class="fa fa-behance"></i></a>-->
-                <!--<a href="#"><i class="fa fa-instagram"></i></a>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!-- Footer Widget Area -->
 
                 @php
                 use App\About;
@@ -34,7 +17,7 @@
                 $links = Link::all();
                 $contact = Contact::orderBy('id', 'desc')->first();
                 @endphp
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="footer-widget mb-100">
                         <div class="widget-title">
                             <h6>Usefull Links</h6>
@@ -49,7 +32,7 @@
                     </div>
                 </div>
                 <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="footer-widget mb-100">
                         <div class="widget-title">
                             <h6>Gallery</h6>
@@ -64,7 +47,7 @@
                     </div>
                 </div>
                 <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="footer-widget mb-100">
                         <div class="widget-title">
                             <h6>Contact</h6>
@@ -85,6 +68,21 @@
                         @endif
                     </div>
                 </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>Quick Links</h6>
+                        </div>
+                        <nav>
+                            @php($quick_links = \App\QuickLink::all())
+                            <ul class="useful-links">
+                                @foreach($quick_links as $link)
+                                    <li><a href="{{$link->url}}">{{$link->title}}</a></li>
+                                @endforeach
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -94,7 +92,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p ><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved for Azarbaijan Shahid Madani University | Designed by <a href="http://www.ezitech.ir/" target="_blank">EziTech</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
