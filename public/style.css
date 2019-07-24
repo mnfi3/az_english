@@ -427,14 +427,13 @@ img {
   border-radius:50%;
 }
 .header-area .academy-main-menu .classy-nav-container {
-  background-color: #002147; }
+  background-color: #001a33; }
 .header-area .academy-main-menu .classy-navbar {
-  background-color: #f5f7fa;
-  /*border: 4px solid #f8a51f;*/
-  /*border-left: 4px solid #f8a51f;*/
-  /*border-right: 4px solid #f8a51f;*/
-  border-top: 4px solid #f8a51f;
-  border-bottom: 4px solid #f8a51f;
+  background-color: #001a33;
+
+
+  border-top: 4px solid #001a33;
+  border-bottom: 4px solid #001a33;
 
   height: 70px;
   padding: 0; }
@@ -970,7 +969,7 @@ img {
 /* Footer Area CSS */
 
 .main-footer-area {
-  background-color: #003066; }
+  background-color: #053162; }
 .main-footer-area .footer-widget .widget-title {
   margin-bottom: 45px; }
 .main-footer-area .footer-widget .widget-title h6 {
@@ -989,10 +988,11 @@ img {
 .main-footer-area .footer-widget .useful-links li a {
   display: block;
   color: #cccccc;
-  margin-bottom: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
   font-family: "Times New Roman";
   font-size: 17px;
-  font-weight: 600; }
+  font-weight: 500; }
 .main-footer-area .footer-widget .useful-links li a:hover, .main-footer-area .footer-widget .useful-links li a:focus {
   color: #0e5ab1; }
 .main-footer-area .footer-widget .gallery-list a {
@@ -1018,21 +1018,28 @@ img {
   opacity: 1;
   visibility: visible; }
 .main-footer-area .footer-widget .single-contact i {
-  color: #0e5ab1;
-  font-size: 22px;
+  color: #ffffff;
+  font-size: 19px;
   font-weight: 900;
   margin-right: 15px;
   padding-top: 7px; }
 .main-footer-area .footer-widget .single-contact p {
   margin-bottom: 0;
   font-family: "Times New Roman";
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   color: #cccccc;
 }
-
+.useful-links2 li a {
+  display: inline;
+  color: #cccccc;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: 500; }
 .bottom-footer-area {
-  background-color: #002147;
+  background-color: #001a33;
   padding: 30px 0;
   text-align: center; }
 .bottom-footer-area p {

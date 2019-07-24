@@ -20,6 +20,7 @@ class DepartmentController extends Controller
       'faculty_id' => $request->faculty_id,
       'name' => $request->name,
       'head' => $request->head,
+      'description' => $request->description,
     ]);
 
     return back();
@@ -36,6 +37,7 @@ class DepartmentController extends Controller
     $dep->faculty_id = $request->faculty_id;
     $dep->name = $request->name;
     $dep->head = $request->head;
+    $dep->description = $request->description;
     $dep->save();
 
     return redirect(url('admin-dep'));

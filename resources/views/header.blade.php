@@ -9,7 +9,7 @@
                         <div >
                             <a href="{{url('/')}}"><img src="{{asset('img/bg-img/logo.png')}}" alt="" style="max-height: 101px;" class="py-3"></a>
                         </div>
-                        <h3 class=" text-white ml-3">Azarbaijan Shahid Madani University</h3>
+                        <h3 class=" text-white ml-3 mt-2">Azarbaijan Shahid Madani University</h3>
                         <div class="login-content ">
                             <!--<a href="#" class="text-white">Register / Login</a>-->
                         </div>
@@ -51,9 +51,9 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul class="text-white">
-                                <li><a href="{{url('/')}}" style="text-transform: uppercase">home</a></li>
-                                <li><a href="#" style="text-transform: uppercase">About Us</a>
-                                    <ul class="dropdown" style="width:250px">
+                                <li><a href="{{url('/')}}" class="text-white" style="text-transform: uppercase">home</a></li>
+                                <li><a href="#" class="text-white" style="text-transform: uppercase">About Us</a>
+                                    <ul class="dropdown text-white" style="width:250px">
                                         <li><a href="{{url('/history')}}">History</a></li>
                                         <li><a href="{{url('/message')}}">Presiden's Message</a></li>
                                         <li><a href="#">Administration</a>
@@ -79,7 +79,7 @@
                                 {{--</ul>--}}
 
                                 {{--</li>--}}
-                                <li><a href="#" style="text-transform: uppercase">Academics</a>
+                                <li><a href="#" class="text-white" style="text-transform: uppercase">Academics</a>
                                     <ul class="dropdown" style="width:180px">
                                         <li class="edit-list"><a href="#">faculties</a>
                                             @php
@@ -96,7 +96,7 @@
 
                                 </li>
 
-                                <li><a href="#" style="text-transform: uppercase">Research</a>
+                                <li><a href="#" class="text-white" style="text-transform: uppercase">Research</a>
                                     <ul class="dropdown" style="width:300px">
 
                                         <li><a href="{{url('/research/libraries')}}" class="uppercase" >Libraries</a></li>
@@ -139,7 +139,7 @@
                                 </li>
 
 
-                                <li><a href="#" style="text-transform: uppercase">Campus life</a>
+                                <li><a href="{{url('/campus-container')}}" class="text-white" style="text-transform: uppercase">Campus life</a>
                                     <ul class="dropdown" style="width:250px">
                                         @if(\App\CampusLife::where('name', 'like', 'accommodation')->first() != null)
                                             <li><a href="{{url('/campus-life/accommodation')}}">accomodation</a></li>
@@ -186,22 +186,22 @@
                                     </ul>
                                     {{--{{route('home')}}--}}
                                 </li>
-                                <li><a href="#" style="text-transform: uppercase">Admission</a>
+                                <li><a href="#" class="text-white" style="text-transform: uppercase">Admission</a>
                                     <ul class="dropdown" style="width:250px">
-                                        @if(\App\Admission::where('name', 'like', 'graduate')->first() != null)
-                                            <li><a href="{{url('admission/graduate')}}">Graduate</a></li>
+                                        @if(\App\Admission::where('name', 'like', 'Departments & Courses')->first() != null)
+                                            <li><a href="{{url('admission/Departments & Courses')}}">Departments & Courses</a></li>
                                         @endif
-                                        @if(\App\Admission::where('name', 'like', 'undergraduate')->first() != null)
-                                            <li><a href="{{url('admission/undergraduate')}}">Undergraduate</a></li>
+                                        @if(\App\Admission::where('name', 'like', 'How to apply')->first() != null)
+                                            <li><a href="{{url('admission/How to apply')}}">How to apply</a></li>
                                         @endif
-                                        @if(\App\Admission::where('name', 'like', 'unknown')->first() != null)
-                                            <li><a href="{{url('admission/unknown')}}">Unknown</a></li>
-                                        @endif
+                                        {{--@if(\App\Admission::where('name', 'like', 'unknown')->first() != null)--}}
+                                            {{--<li><a href="{{url('admission/unknown')}}">Unknown</a></li>--}}
+                                        {{--@endif--}}
 
 
                                     </ul>
                                 </li>
-                                <li><a href="#" style="text-transform: uppercase">International Office</a>
+                                <li><a href="#" class="text-white" style="text-transform: uppercase">International Office</a>
                                     <ul class="dropdown" style="width:350px">
                                         <li><a href="#" >Office</a>
                                             <ul class="dropdown " style="width:250px ; margin-left: 48%">
@@ -210,30 +210,30 @@
 
                                             </ul>
                                         </li>
-                                        <li><a href="#" >students</a>
-                                            <ul class="dropdown " style="width:250px; margin-left: 48%">
-                                                @if(\App\Student::where('type', 'like', 'admission')->first() != null)
-                                                    <li class="dropdown1" ><a href="{{url('/student/admission')}}">admission</a></li>
-                                                @endif
-                                                @if(\App\Student::where('type', 'like', 'scholarship')->first() != null)
-                                                    <li class="dropdown1"><a href="{{url('/student/scholarship')}}">Scholarship</a></li>
-                                                @endif
-                                                @if(\App\Student::where('type', 'like', 'programs')->first() != null)
-                                                    <li class="dropdown1"><a href="{{url('/student/programs')}}">Programs</a></li>
-                                                @endif
+                                        {{--<li><a href="#" >students</a>--}}
+                                            {{--<ul class="dropdown " style="width:250px; margin-left: 48%">--}}
+                                                {{--@if(\App\Student::where('type', 'like', 'admission')->first() != null)--}}
+                                                    {{--<li class="dropdown1" ><a href="{{url('/student/admission')}}">admission</a></li>--}}
+                                                {{--@endif--}}
+                                                {{--@if(\App\Student::where('type', 'like', 'scholarship')->first() != null)--}}
+                                                    {{--<li class="dropdown1"><a href="{{url('/student/scholarship')}}">Scholarship</a></li>--}}
+                                                {{--@endif--}}
+                                                {{--@if(\App\Student::where('type', 'like', 'programs')->first() != null)--}}
+                                                    {{--<li class="dropdown1"><a href="{{url('/student/programs')}}">Programs</a></li>--}}
+                                                {{--@endif--}}
 
-                                                @if(\App\Student::where('type', 'like', 'cost and free')->first() != null)
-                                                    <li class="dropdown1"> <a href="{{url('student/cost and free')}}">Costs and Frees</a></li>
-                                                @endif
-                                                @if(\App\Student::where('type', 'like', 'how to apply')->first() != null)
-                                                    <li class="dropdown1"><a href="{{url('/student/how to apply')}}">How to apply</a></li>
-                                                @endif
+                                                {{--@if(\App\Student::where('type', 'like', 'cost and free')->first() != null)--}}
+                                                    {{--<li class="dropdown1"> <a href="{{url('student/cost and free')}}">Costs and Frees</a></li>--}}
+                                                {{--@endif--}}
+                                                {{--@if(\App\Student::where('type', 'like', 'how to apply')->first() != null)--}}
+                                                    {{--<li class="dropdown1"><a href="{{url('/student/how to apply')}}">How to apply</a></li>--}}
+                                                {{--@endif--}}
 
 
-                                                <li class="dropdown1"><a href="{{url('/campus-container')}}">Campus Life</a></li>
+                                                {{--<li class="dropdown1"><a href="{{url('/campus-container')}}">Campus Life</a></li>--}}
 
-                                            </ul>
-                                        </li>
+                                            {{--</ul>--}}
+                                        {{--</li>--}}
                                         <li><a href="#" >Language Learning Center (LLC)</a>
                                             <ul class="dropdown " style="width:300px;margin-left: 48%">
                                                 <li class="dropdown1"><a href="{{url('/forms')}}">Application forms</a></li>
@@ -242,9 +242,9 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="{{url('/news')}}" style="text-transform: uppercase">News</a>
+                                <li><a href="{{url('/news')}}" class="text-white" style="text-transform: uppercase">News</a>
                                 </li>
-                                <li><a href="{{url('/contact-us')}}" style="text-transform: uppercase">Contact Us</a>
+                                <li><a href="{{url('/contact-us')}}" class="text-white" style="text-transform: uppercase">Contact Us</a>
                                 </li>
                             </ul>
                         </div>

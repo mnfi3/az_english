@@ -57,6 +57,22 @@
                                class="form-control" name="head" placeholder="Enter Head Name Here">
                     </div>
                 </div>
+
+                <div class="form-group row py-4">
+                    <label class="col-md-4 col-form-label "
+                           style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Department Description
+                        :</label>
+                    <div class="col-md-8 mr-auto">
+                         <textarea type="text" id="editor1" required=""
+                                   class="form-control" name="description" placeholder="set description here">
+                            </textarea>
+                        <script>
+                          CKEDITOR.replace( 'editor1' );
+                        </script>
+                    </div>
+                </div>
+
+
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-success mt-30 mx-3" type="submit">Save</button>
                 </div>

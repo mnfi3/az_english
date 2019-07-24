@@ -82,6 +82,9 @@
 
 
         </div>
+
+
+
         <h2 class="text-white pb-2"> Departments</h2>
         <div id="accordion" role="tablist" class="mt-25">
 
@@ -95,11 +98,17 @@
                                 {{$department->name}}
                             </a>
                         </h5>
+                        <h6 class="text-dark  ml-1" style="">
+                                <span class="ml-1" style="font-size: 0.9rem">
+                                 DESCRIPTION :   <?php echo $department->description; ?>
+
+                                </span>
+                        </h6>
                         <span class=" tooltiptext "> Click For More Details </span>
 
                     </div>
 
-                    <div id="collapseOne{{$department->id}}" class="collapse" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion">
+                    <div id="collapseOne{{$department->id}}" class="collapse" role="tabpanel" aria-labelledby="headingOne{{$department->id}}" data-parent="#accordion" style="background-color: #e6e6e6">
                         <div style="width: 100%">
                             <h6 class="text-dark p-3 ml-3" style="font-size: 1.1rem; ">
                                 Head of Departments :
@@ -114,7 +123,7 @@
                                     <th scope="col">Row</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Email </th>
-                                    <th scope="col">Picture </th>
+                                    {{--<th scope="col">Picture </th>--}}
                                     <th scope="col">CV </th>
 
                                 </tr>
@@ -122,18 +131,18 @@
                                 <tbody style="alignment: center" class="">
                                 @php($i=0)
                                 @foreach($department->masters as $master)
+
                                     <tr>
                                         <th scope="row">{{++$i}}</th>
-                                        <td>{{$master->name}}</td>
-
+                                        <td>{{$master->name}} </td>
                                         <td>{{$master->email}}</td>
-                                        <td>
-                                            @if($master->image != null)
-                                                <img src="{{asset($master->image->path)}}" class="img-container mt-0" alt="">
-                                            @else
-                                                <img src="" class="img-container mt-0" alt="">
-                                            @endif
-                                        </td>
+                                        {{--<td>--}}
+                                            {{--@if($master->image != null)--}}
+                                                {{--<img src="{{asset($master->image->path)}}" class="img-container mt-0" alt="">--}}
+                                            {{--@else--}}
+                                                {{--<img src="" class="img-container mt-0" alt="">--}}
+                                            {{--@endif--}}
+                                        {{--</td>--}}
                                         @if($master->doc != null)
                                             <td><a href="{{\Illuminate\Support\Facades\URL::to('/').'/'.$master->doc->path}}" download>Download</a></td>
                                         @else
@@ -144,11 +153,6 @@
                                 </tbody>
                             </table>
                         </div>
-                            <div class="py-2 m-2">
-                                <p class="text-dark" style="font-size: 1rem">
-                                    Description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut explicabo iste ratione recusandae saepe! Iste, nesciunt, rem. Distinctio, labore quae.
-                                </p>
-                            </div>
                     </div>
                 </div>
             @endforeach

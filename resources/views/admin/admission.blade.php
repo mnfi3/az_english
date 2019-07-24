@@ -33,9 +33,9 @@
                     <div class="col-md-8 mr-auto">
                         <select name="name" id="" class="form-control">
                             <option value="1"></option>
-                            <option value="graduate">graduate</option>
-                            <option value="undergraduate">undergraduate</option>
-                            <option value="unknown">unknown</option>
+                            <option value="Departments & Courses">Departments & Courses</option>
+                            <option value="How to apply">How to apply</option>
+                            {{--<option value="unknown">unknown</option>--}}
 
                         </select>
                     </div>

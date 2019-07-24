@@ -35,9 +35,9 @@
                     <div class="col-md-8 mr-auto">
                         <select name="name" id="" class="form-control">
                             <option value="1"></option>
-                            <option value="graduate" @if($admission->name == 'graduate') selected @endif>graduate</option>
-                            <option value="undergraduate" @if($admission->name == 'undergraduate') selected @endif>undergraduate</option>
-                            <option value="unknown"  @if($admission->name == 'unknown') selected @endif>unknown</option>
+                            <option value="Departments & Courses" @if($admission->name == 'Departments & Courses') selected @endif>Departments & Courses</option>
+                            <option value="How to apply" @if($admission->name == 'How to apply') selected @endif>How to apply</option>
+                            {{--<option value="unknown"  @if($admission->name == 'unknown') selected @endif>unknown</option>--}}
 
                         </select>
                     </div>

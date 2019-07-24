@@ -63,10 +63,13 @@
                            style="text-align: left ; font-size: 1.3rem; font-weight: 500" for="title">Department Description
                         :</label>
                     <div class="col-md-8 mr-auto">
-                        <textarea type="text" id="description" required=""
-                               class="form-control text-dark" name="head">
-                            description
-                        </textarea>
+                         <textarea type="text" id="editor1" required=""
+                                   class="form-control" name="description" placeholder="set description here">
+                             {{$department->description}}
+                            </textarea>
+                        <script>
+                          CKEDITOR.replace( 'editor1' );
+                        </script>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3">

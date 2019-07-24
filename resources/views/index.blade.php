@@ -119,7 +119,7 @@
             <!-- Single Top Popular Course -->
             @foreach($posts as $post)
                 <div class="col-12 col-lg-6" style="border-color:  #6c757d ;">
-                    <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow " data-wow-delay="600ms" style=" border: 2px solid #f8a51f;">
+                    <div class="single-top-popular-course d-flex  flex-wrap mb-30 wow " data-wow-delay="600ms" style=" border: 2px solid #222222;">
                         <div class="popular-course-content">
                             @if($post->image != null)
                                 <div class="popular-course-thumb bg-img " style="background-image: url({{asset($post->image->path)}}); max-width: 400px; min-height: 230px;"></div>
